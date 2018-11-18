@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Forum Emojis</title>
+	<link rel="icon" href="https://cdn.discordapp.com/attachments/424983208610889759/507260061861806110/favicon_e3456d85b4ee601d.ico">
+</head>
+<link rel="stylesheet" href="style2.css">
+<body>
+<div class="container">
+<button onclick="location.href='index.html'" class="btn btn1">Main Page</button>
+</div>
+<center>
+<img src="https://cdn.discordapp.com/attachments/506753067052695552/506812177953456128/forum_emojis.png">
+<br/>
+
+<p style="font-family:zubuntu;">
+<font size=3>
+  As you may have already noticed, and you surely noticed, that our forum has no proper way of using emojis in threads and comments.
+  <img src="http://bit.ly/cc_confused">
+  <br>
+  Therefore I came up with an alternate way... Just <b>click</b> an emoji you want to use and <b>paste</b> the code to your comment/discussion.
+  <img src="http://bit.ly/cc_wink">
+ </font>
+</p>
+<br/>
+<div class="emojis">
+<!-- Emojis -->
+<img src="http://bit.ly/cc_slight_smile" onclick='copyToClipboard("<img src=\"http://bit.ly/cc_slight_smile\">")' >
+<img src="http://bit.ly/cc_grinning" onclick='copyToClipboard("<img src=\"http://bit.ly/cc_grinning\">")' >
+<img src="http://bit.ly/cc_smile" onclick='copyToClipboard("<img src=\"http://bit.ly/cc_smile\">")' >
+<img src="http://bit.ly/cc_laughing" onclick='copyToClipboard("<img src=\"http://bit.ly/cc_laughing\">")' >
+<img src="http://bit.ly/cc_joy" onclick='copyToClipboard("<img src=\"http://bit.ly/cc_joy\">")' >
+<img src="http://bit.ly/cc_sunglasses" onclick='copyToClipboard("<img src=\"http://bit.ly/cc_sunglasses\">")' >
+<img src="http://bit.ly/cc_wink" onclick='copyToClipboard("<img src=\"http://bit.ly/cc_wink\">")' >
+<img src="http://bit.ly/cc_smirk" onclick='copyToClipboard("<img src=\"http://bit.ly/cc_smirk\">")' >
+<img src="http://bit.ly/cc_unamused" onclick='copyToClipboard("<img src=\"http://bit.ly/cc_unamused\">")' >
+<img src="http://bit.ly/cc_thinking" onclick='copyToClipboard("<img src=\"http://bit.ly/cc_thinking\">")' >
+<img src="http://bit.ly/cc_innocent" onclick='copyToClipboard("<img src=\"http://bit.ly/cc_innocent\">")' >
+<img src="http://bit.ly/cc_open_mouth" onclick='copyToClipboard("<img src=\"http://bit.ly/cc_open_mouth\">")' >
+<img src="http://bit.ly/cc_confused" onclick='copyToClipboard("<img src=\"http://bit.ly/cc_confused\">")' >
+<img src="http://bit.ly/cc_confounded" onclick='copyToClipboard("<img src=\"http://bit.ly/cc_confounded\">")' >
+<img src="http://bit.ly/cc_cry" onclick='copyToClipboard("<img src=\"http://bit.ly/cc_cry\">")' >
+<br/>
+<img src="http://bit.ly/cc_sob" onclick='copyToClipboard("<img src=\"http://bit.ly/cc_sob\">")' >
+<img src="http://bit.ly/cc_expressionless" onclick='copyToClipboard("<img src=\"http://bit.ly/cc_expressionless\">")' >
+<img src="http://bit.ly/cc_angry" onclick='copyToClipboard("<img src=\"http://bit.ly/cc_angry\">")' >
+<img src="http://bit.ly/cc_rage" onclick='copyToClipboard("<img src=\"http://bit.ly/cc_rage\">")' >
+<img src="http://bit.ly/cc_scream" onclick='copyToClipboard("<img src=\"http://bit.ly/cc_scream\">")' >
+<img src="http://bit.ly/cc_relaxed" onclick='copyToClipboard("<img src=\"http://bit.ly/cc_relaxed\">")' >
+<img src="http://bit.ly/cc_smiling_imp" onclick='copyToClipboard("<img src=\"http://bit.ly/cc_smilinig_imp\">")' >
+<img src="http://bit.ly/cc_face_palm" onclick='copyToClipboard("<img src=\"http://bit.ly/cc_face_palm\">")' >
+<img src="http://bit.ly/cc_shrug" onclick='copyToClipboard("<img src=\"http://bit.ly/cc_shrug\">")' >
+<img src="http://bit.ly/cc_thumbsup" onclick='copyToClipboard("<img src=\"http://bit.ly/cc_thumbsup\">")' >
+<img src="http://bit.ly/cc_thumbsdown" onclick='copyToClipboard("<img src=\"http://bit.ly/cc_thumbsdown\">")' >
+<img src="http://bit.ly/cc_cubit" onclick='copyToClipboard("<img src=\"http://bit.ly/cc_cubit\">")' >
+<img src="http://bit.ly/cc_recube" onclick='copyToClipboard("<img src=\"http://bit.ly/cc_recube\">")' >
+</div>
+<br/>
+<br/>
+<div class="bottom">
+<p style="font-family:zubuntu;">
+<font size=2>
+  Got an idea for emoji? Let me know <a href="http://forums2.cubiccastles.com/index.php?p=/discussion/23679/forum-emojis">here</a>.
+  <br/>
+  -Kewbin
+</font>
+</p>
+</div>
+</center>
+<div id="toast" style="font-family:zubuntu;">Succesfully Copied!</div>
+</body>
+
+<style>
+#toast {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+	opacity: 0.75;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+}
+
+#toast.show {
+    visibility: visible;
+   -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+   animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 0.75;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 0.75;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 0.75;}
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 0.75;}
+    to {bottom: 0; opacity: 0;}
+}
+</style>
+
+<script>
+function copyToClipboard(text){
+    var dummy = document.createElement("input");
+    document.body.appendChild(dummy);
+    dummy.setAttribute('value', text);
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
+
+	var x = document.getElementById("toast");
+	x.className = "show";
+	setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+
+}
+</script>
+</html>
