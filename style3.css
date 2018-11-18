@@ -55,3 +55,24 @@
 .btn1:hover::before{
   height: 180%;
 }
+
+@media screen and (max-width:600px) {
+	.container{
+		position: absolute;
+		width: 200px;
+		height: 100px;
+		top: 0%;
+		left: 50%;
+		text-align: center;
+		margin-top: 0px;
+		margin-left: -100px;
+	}
+	.frame{
+		position: absolute;
+		text-align: center;
+		top: 15%;
+		height: auto;
+		width: 98%;
+		bottom: 0%;
+}
+}
