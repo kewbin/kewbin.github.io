@@ -7,7 +7,7 @@
   text-align: center;
   height: auto;
   width: 98%;
-  bottom: 0%;
+  top: 15%;
 }
 .container{
 	position: absolute;
@@ -73,6 +73,5 @@
 		top: 15%;
 		height: auto;
 		width: 98%;
-		bottom: 0%;
 	}
 }
