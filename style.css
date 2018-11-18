@@ -99,7 +99,7 @@ html{
 	margin-top: -100px;
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:300px) {
 	.title {
 		position: absolute;
 		left: 50%;
