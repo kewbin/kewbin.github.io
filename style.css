@@ -153,7 +153,7 @@ html{
 		font-size: 15px;
 		font-family: "zubuntu";
 		font-weight: bold;
-		text-shadow: 2px 1px white;
+		text-shadow: 2px 1px black;
 		cursor: pointer;
 		margin: 5px;
 		width: 150px;
@@ -164,6 +164,6 @@ html{
 		overflow: hidden;
 	}
 	.btn1{
-		color: #890806;
+		color: white;
 	}
 }
