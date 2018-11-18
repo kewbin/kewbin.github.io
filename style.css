@@ -170,7 +170,7 @@ html{
 @media screen and (max-width:600px) {
 	.logo {
 		position: absolute;
-		top: 10%;
+		top: 20%;
 		left: 50%;
 		border-radius: 50%;
 		width: 100px;
@@ -181,7 +181,7 @@ html{
 	.title {
 		position: absolute;
 		left: 50%;
-		top: 5%;
+		top: 10%;
 		width: 200px;
 		height: 60px;
 		margin-left: -100px;
@@ -210,5 +210,25 @@ html{
 		position: relative;
 		outline: none;
 		overflow: hidden;
+	}
+	.container{
+		position: absolute;
+		width: 200px;
+		height: 200px;
+		top: 50%;
+		left: 20%;
+		text-align: center;
+		margin-top: -100px;
+		margin-left: -100px;
+	}
+	.container2{
+		position: absolute;
+		width: 200px;
+		height: 200px;
+		top: 50%;
+		left: 80%;
+		text-align: center;
+		margin-top: -100px;
+		margin-left: -100px;
 	}
 }
