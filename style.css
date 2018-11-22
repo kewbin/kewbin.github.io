@@ -67,7 +67,7 @@ html{
   color: white;
 }
 .btn1:hover{
-  color: #890806;
+  color: #207c22;
 	text-shadow: 2px 1px white;
 	font-weight: bold;
 }
@@ -139,7 +139,7 @@ html{
 		position: absolute;
 		width: 200px;
 		height: 100px;
-		top: 50%;
+		top: 60%;
 		left: 50%;
 		text-align: center;
 		margin-top: 0px;
