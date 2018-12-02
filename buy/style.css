@@ -169,3 +169,31 @@ a:visited {
 	left: 50%;
 	top: 15%;
 	}
+	.mailbox {
+	border-radius: 50%;
+	width: 100px;
+	text-align: center;
+	padding: 10px;
+	}
+	.selling {
+	position: absolute;
+	width: 400px;
+	height: 120px;
+	bottom: 50px;
+	left: 50%;
+	margin-left: -200px;
+	font-family: "zubuntu";
+	color: white;
+	text-shadow: 3px 2px black;
+	border-radius: 20px;
+	background-color: #33691E;
+	}
+	.selltext {
+	font-size: 10px;
+	padding: 0 20px;
+	position: absolute;
+	height: 50px;
+	margin-top: -25px;
+	top: 50%;
+	z-index: 1;
+	}
