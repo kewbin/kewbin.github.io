@@ -1,6 +1,9 @@
+html {
+	background-color: #FFF176;
+}
 @font-face {
   font-family: zubuntu;
-  src: url('Ubuntu-R.ttf')  format('truetype');
+  src: url('../Ubuntu-R.ttf')  format('truetype');
 }
 .container{
 	position: absolute;
