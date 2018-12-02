@@ -1,6 +1,6 @@
 @font-face {
   font-family: zubuntu;
-  src: url('Ubuntu-R.ttf')  format('truetype');
+  src: url('../Ubuntu-R.ttf')  format('truetype');
 }
 .frame{
   position: absolute;
