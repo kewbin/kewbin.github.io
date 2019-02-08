@@ -1,234 +1,152 @@
 html{
 	background-image:url("bg.png");
+	background-color: white;
 	height: 100%;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+	background-attachment: fixed;
+	background-position: left top;
+	background-repeat: repeat;
 	padding: 0;
 }
 @font-face {
   font-family: zubuntu;
   src: url('Ubuntu-R.ttf')  format('truetype');
 }
+.navbar {
+	overflow: hidden;
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	top: 0px;
+	left:0px;
+	background-color: rgba(255, 255, 255, .5);
+	align-items: right;
+}
+.navbar a {
+	position: relative;
+	display: table-cell;
+	height: 47px;
+	width: auto;
+	vertical-align: middle;
+	color: black;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-decoration: none;
+	font-size: 1vw;
+	font-weight: bold;
+}
+.links {
+	position: relative;
+	float: right;
+}
+.navbar a:hover{
+	background-color: white;
+}
+.main {
+	top: 50px;
+	position: absolute;
+	margin-left: -35vw;
+	left: 50%;
+	height: auto;
+	background-color: rgba(255, 255, 255, .5);
+	width: 70vw;
+	border-radius: 20px;
+	overflow: hidden;
+	box-shadow: 2px 2px 10px;
+	text-align: center;
+}
+#Html2 {
+	padding-top: 20%;
+}
+#Html3 {
+	padding-top: 100px;
+}
+.main a {
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+	font-size: 15px;
+}
+.downloads {
+	position: relative;
+    width:50%;
+	margin-left: -25%;
+	margin-top: 0px;
+	left: 50%;
+	text-align: center;
+	font-weight: bold;
+}
+td {
+    padding: 15px;
+    text-align: center;
+	font-family: "zubuntu";
+	align-items: center;
+	align-content: center;
+}
+table img {
+	width: 100px;
+	height: 100px;
+	transition: 0.3s;
+}
+table img:hover {
+	transform: scale(1.1);
+}
+.titlevideo {
+	position: relative;
+	width:100%;
+	height: 350px;
+	overflow: hidden;
+}
+.titlevideo video {
+	position: relative;
+	width:100%;
+}
 .title {
 	position: absolute;
+	width: 50vw;
+	margin-left: -25vw;
 	left: 50%;
-	top: 25%;
-	width: 200px;
-	height: 60px;
-	margin-left: -100px;
-	margin-top: -30px;
-	text-align: center;
-	font-family: "zubuntu";
-	font-weight: bold;
-	color: white;
-	font-size: 50px;
-	text-shadow: 3px 2px black;
+	top: 100px;
 }
-.container{
-	position: absolute;
-	width: 200px;
-	height: 100px;
-	top: 50%;
-	left: 20%;
-	text-align: center;
-	margin-top: -150px;
-	margin-left: -100px;
+.gallery {
+	margin: 10px 50px;
 }
-.container2{
-	position: absolute;
-	width: 200px;
-	height: 100px;
-	top: 50%;
-	left: 80%;
-	text-align: center;
-	margin-top: -150px;
-	margin-left: -100px;
-}
-.btn{
-  border: 2px solid white;
-	border-radius: 10%;
-  background: none;
-  padding: 10px 20px;
-  font-size: 15px;
-  font-family: "zubuntu";
-	font-weight: bold;
-	text-shadow: 2px 1px black;
-  cursor: pointer;
-	margin: 20px;
+.gallery img {
 	width: 150px;
-	height: 40px;
-  transition: 0.8s;
-  position: relative;
-	outline: none;
-  overflow: hidden;
+	padding: 5px;
+	transition: 0.3s;
 }
-.btn1{
+.gallery img:hover {
+	transform: scale(1.1);
+}
+.socialmedia {
+	position: absolute;
+	top: 100px;
+	left: 85vw;
+}
+.fa-facebook {
+  background: #3B5998;
   color: white;
 }
-.btn1:hover{
-  color: #207c22;
-	text-shadow: 2px 1px white;
-	font-weight: bold;
+.fa-tumblr {
+  background: #2c4762;
+  color: white;
 }
-.btn::before{
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 0%;
-  background: white;
-  z-index: -1;
-  transition: 0.8s;
+.fa-instagram {
+  background: #125688;
+  color: white;
 }
-.btn1::before{
-  top: 0;
-  border-radius: 0 0 50% 50%;
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
 }
-.btn1:hover::before{
-  height: 180%;
+.fa {
+  padding: 10px;
+  width: 15px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  transition: 0.3s;
 }
-.logo{
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	border-radius: 50%;
-	width: 200px;
-	display: block;
-	margin-left: -100px;
-	margin-top: -100px;
-}
-
-@media screen and (max-width:474px) {
-	.title {
-		position: absolute;
-		left: 50%;
-		top: 5%;
-		width: 200px;
-		height: 60px;
-		margin-left: -100px;
-		margin-top: -30px;
-		text-align: center;
-		font-family: "zubuntu";
-		font-weight: bold;
-		color: white;
-		font-size: 50px;
-		text-shadow: 3px 2px black;
-	}
-	.logo {
-		position: absolute;
-		top: 10%;
-		left: 50%;
-		border-radius: 50%;
-		width: 100px;
-		display: block;
-		margin-left: -50px;
-		margin-top: 0px;
-	}
-	.container {
-		position: absolute;
-		width: 200px;
-		height: 100px;
-		top: 40%;
-		left: 10%;
-		text-align: center;
-		margin-top: 0px;
-		margin-left: 0px;
-	}
-	.container2{
-		position: absolute;
-		width: 200px;
-		height: 100px;
-		top: 40%;
-		right: 10%;
-		text-align: center;
-		margin-top: 0px;
-		margin-right: 0px;
-	}
-	.btn{
-		border: 2px solid white;
-		border-radius: 10%;
-		background: none;
-		padding: 10px 20px;
-		font-size: 15px;
-		font-family: "zubuntu";
-		font-weight: bold;
-		text-shadow: 2px 1px black;
-		cursor: pointer;
-		margin: 5px;
-		width: 150px;
-		height: 40px;
-		transition: 0.8s;
-		position: relative;
-		outline: none;
-		overflow: hidden;
-	}
-	.btn1{
-		color: white;
-	}
-}
-@media screen and (max-width:600px) and (min-width: 475px) {
-	.logo {
-		position: absolute;
-		top: 20%;
-		left: 50%;
-		border-radius: 50%;
-		width: 100px;
-		display: block;
-		margin-left: -50px;
-		margin-top: 0px;
-	}
-	.title {
-		position: absolute;
-		left: 50%;
-		top: 10%;
-		width: 200px;
-		height: 60px;
-		margin-left: -100px;
-		margin-top: -30px;
-		text-align: center;
-		font-family: "zubuntu";
-		font-weight: bold;
-		color: white;
-		font-size: 50px;
-		text-shadow: 3px 2px black;
-	}
-	.btn{
-		border: 2px solid white;
-		border-radius: 10%;
-		background: none;
-		padding: 10px 20px;
-		font-size: 15px;
-		font-family: "zubuntu";
-		font-weight: bold;
-		text-shadow: 2px 1px black;
-		cursor: pointer;
-		margin: 5px;
-		width: 150px;
-		height: 40px;
-		transition: 0.8s;
-		position: relative;
-		outline: none;
-		overflow: hidden;
-	}
-	.container{
-		position: absolute;
-		width: 200px;
-		height: 200px;
-		top: 50%;
-		left: 20%;
-		text-align: center;
-		margin-top: -100px;
-		margin-left: -100px;
-	}
-	.container2{
-		position: absolute;
-		width: 200px;
-		height: 200px;
-		top: 50%;
-		left: 80%;
-		text-align: center;
-		margin-top: -100px;
-		margin-left: -100px;
-	}
+.fa:hover {
+	transform: scale(1.1); 
 }
