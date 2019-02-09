@@ -153,22 +153,10 @@ table img:hover {
 }
 @media screen and (max-width:614px) {
 .main {
-	top: 50px;
-	position: absolute;
 	margin-left: -45vw;
-	left: 50%;
-	height: auto;
-	background-color: rgba(255, 255, 255, .5);
 	width: 90vw;
-	border-radius: 20px;
-	overflow: hidden;
-	box-shadow: 2px 2px 10px;
-	text-align: center;
 }
 .main a {
-	text-decoration: none;
-	color: black;
-	font-weight: bold;
 	font-size: 10px;
 }
 #Html2 {
@@ -178,60 +166,29 @@ table img:hover {
 	padding-top: 20px;
 }
 .downloads {
-	position: relative;
     width:100%;
 	margin-left: 0px;
 	margin: 0px;
 	left: 0px;
-	text-align: center;
-	font-weight: bold;
 }
 td {
     padding: 10px;
-    text-align: center;
-	font-family: "zubuntu";
-	align-items: center;
-	align-content: center;
 }
 .navbar a {
-	position: relative;
-	display: table-cell;
-	height: 47px;
-	width: auto;
-	vertical-align: middle;
-	color: black;
 	padding-left: 5.5px;
 	padding-right: 5.5px;
-	text-decoration: none;
 	font-size: 10px;
-	font-weight: bold;
 }
 .titlevideo {
-	position: relative;
-	width:100%;
 	height: auto;
-	overflow: hidden;
 }
 .socialmedia {
-	position: absolute;
 	width: 100%;
 	top: 0px;
 	left: 0px;
 	text-align: center;
 }
-.fa {
-  display: table-cell;
-  padding: 10px;
-  width: 15px;
-  text-align: center;
-  text-decoration: none;
-  margin: 5px 2px;
-  transition: 0.3s;
-}
 .title {
-	position: absolute;
 	width: 70vw;
 	margin-left: -35vw;
-	left: 50%;
-	top: 100px;
 }
