@@ -55,21 +55,21 @@ html{
 	text-align: center;
 }
 #Html2 {
-	padding-top: 20%;
+	padding-top: 20vw;
 }
 #Html3 {
-	padding-top: 100px;
+	padding-top: 10vw;
 }
 .main a {
 	text-decoration: none;
 	color: black;
 	font-weight: bold;
-	font-size: 15px;
+	font-size: 1.2vw;
 }
 .downloads {
 	position: relative;
-    width:50%;
-	margin-left: -25%;
+    width:50vw;
+	margin-left: -25vw;
 	margin-top: 0px;
 	left: 50%;
 	text-align: center;
@@ -83,8 +83,8 @@ td {
 	align-content: center;
 }
 table img {
-	width: 100px;
-	height: 100px;
+	width: 7vw;
+	height: 7vw;
 	transition: 0.3s;
 }
 table img:hover {
