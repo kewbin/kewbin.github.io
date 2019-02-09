@@ -90,6 +90,12 @@ table img {
 table img:hover {
 	transform: scale(1.1);
 }
+.titleslideshow {
+	position: relative;
+	width:100%;
+	height: 30vw;
+	overflow: hidden;
+}
 .title {
 	position: absolute;
 	width: 50vw;
@@ -169,7 +175,7 @@ td {
 	padding-right: 5.5px;
 	font-size: 10px;
 }
-.titlevideo {
+.titleslideshow {
 	height: auto;
 }
 .socialmedia {
