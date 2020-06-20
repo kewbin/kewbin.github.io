@@ -1,0 +1,1548 @@
+<html>
+<style>
+	@font-face {
+		font-family: BDC;
+		src: url("Comic Book.otf") format("opentype");
+	}
+
+	body {
+		margin: 0px;
+		user-select: none;
+	}
+
+	.scene {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		transform: translate(-50%);
+		top: 0%;
+		left: 50%;
+		transition-duration: 0.2s;
+		overflow: hidden;
+	}
+
+
+	.cube {
+		width: 200px;
+		height: 200px;
+		position: absolute;
+		transform-style: preserve-3d;
+		top: Calc(0% - 251px);
+		left: Calc(50% + 26px);
+		transition-duration: 0.1s;
+	}
+
+	.cube__face {
+		position: absolute;
+	}
+
+	.cube__face--front {
+		transform: rotateY(0deg) rotateZ(0deg) translate(50%, -50%);
+		filter: brightness(80%);
+		top: 128px;
+		transition-duration: 0.1s;
+		z-index: 3;
+	}
+
+	.cube__face--back {
+		transform: rotateY(180deg) rotateZ(0deg) translate(-50%, -50%) translateZ(128px);
+		filter: brightness(80%);
+		top: 128px;
+		transition-duration: 0.1s;
+		z-index: 2;
+	}
+
+	.cube__face--left {
+		transform: rotateY(-90deg) translate(-50%, -50%);
+		filter: brightness(120%);
+		top: 128px;
+		transition-duration: 0.1s;
+		z-index: 3;
+	}
+
+	.cube__face--right {
+		transform: rotateX(90deg) rotateY(90deg) translate(-50%, -50%) translateZ(128px);
+		filter: brightness(120%);
+		top: 128px;
+		transition-duration: 0.1s;
+		z-index: 2;
+	}
+
+	.cube__face--top {
+		transform: rotateX(90deg) rotateZ(0deg) translate(50%, -50%);
+		transition-duration: 0.1s;
+		z-index: 4;
+	}
+
+	.cube__face--bottom {
+		transform: rotateX(90deg) rotateZ(90deg) translate(-50%, -50%);
+		box-shadow: 0px 0px 20px;
+		top: 128px;
+		transition-duration: 0.1s;
+		z-index: 1;
+	}
+
+	.cube {
+		transform: translate(-50%, -50%) rotateX(-45deg) rotateY(45deg);
+	}
+
+	.tnt {
+		width: 200px;
+		height: 200px;
+		position: absolute;
+		transform-style: preserve-3d;
+		top: Calc(50% - 50px);
+		left: Calc(50% - 150px);
+		transition-duration: 0.1s;
+		display: none;
+	}
+
+	.tnt__face {
+		position: absolute;
+		animation-name: tnt_fuse;
+		animation-duration: 1s;
+		animation-iteration-count: infinite;
+	}
+
+	.tnt__face--front {
+		transform: rotateY(0deg) rotateZ(0deg) translate(50%, -50%);
+		--normal_brght: 0.8;
+		top: 128px;
+		transition-duration: 0.1s;
+		z-index: 3;
+	}
+
+	.tnt__face--back {
+		transform: rotateY(180deg) rotateZ(0deg) translate(-50%, -50%) translateZ(128px);
+		--normal_brght: 0.8;
+		top: 128px;
+		transition-duration: 0.1s;
+		z-index: 2;
+	}
+
+	.tnt__face--left {
+		transform: rotateY(-90deg) translate(-50%, -50%);
+		--normal_brght: 1.2;
+		top: 128px;
+		transition-duration: 0.1s;
+		z-index: 3;
+	}
+
+	.tnt__face--right {
+		transform: rotateX(90deg) rotateY(90deg) translate(-50%, -50%) translateZ(128px);
+		--normal_brght: 1.2;
+		top: 128px;
+		transition-duration: 0.1s;
+		z-index: 2;
+	}
+
+	.tnt__face--top {
+		transform: rotateX(90deg) rotateZ(0deg) translate(50%, -50%);
+		transition-duration: 0.1s;
+		z-index: 4;
+	}
+
+	.tnt__face--bottom {
+		transform: rotateX(90deg) rotateZ(90deg) translate(-50%, -50%);
+		box-shadow: 0px 0px 20px;
+		top: 128px;
+		transition-duration: 0.1s;
+		z-index: 1;
+	}
+
+	.tnt {
+		transform: translate(-50%, -50%) rotateX(-45deg) rotateY(45deg);
+	}
+
+	@keyframes tnt_fuse {
+		0% {
+			filter: brightness(var(--normal_brght))
+		}
+
+		50% {
+			filter: brightness(2)
+		}
+
+		100% {
+			filter: brightness(var(--normal_brght))
+		}
+	}
+
+	.exp {
+		position: absolute;
+		max-width: 500px;
+		height: 20px;
+		transform: translate(-50%);
+		left: 50%;
+		bottom: 0px;
+		width: 90%;
+	}
+
+	.exp img {
+		position: absolute;
+		width: 100%;
+	}
+
+	.full_xp {
+		clip: rect(0px, 0px, 20px, 0px);
+		transition-duration: 0.2s;
+	}
+
+	.tnt_timer {
+		position: absolute;
+		width: 150px;
+		height: 15px;
+		transform: translate(-50%);
+		left: 50%;
+		top: 70%;
+		display: none;
+	}
+
+	.tnt_timer img {
+		position: absolute;
+		width: 100%;
+		height: 15px;
+	}
+
+	.tnt_full {
+		clip: rect(0px, 0px, 15px, 0px);
+		transition-duration: 5s;
+		transition-timing-function: linear;
+	}
+
+	.destroy {
+		position: absolute;
+		transform: translate(-100%);
+		filter: opacity(0.5) drop-shadow(0 0 0 #b86723);
+	}
+
+	.money_bg {
+		position: absolute;
+		height: 70px;
+		width: 100%;
+		font-family: BDC;
+		font-size: 34px;
+		color: #5cf284;
+		text-shadow: 2px 2px 0 #000;
+		box-shadow: inset 0px 200px 50px -200px rgba(0, 0, 0, 0.75);
+		font-weight: bolder;
+	}
+
+	.money_bg img {
+		position: absolute;
+		height: 50px;
+		left: -50px;
+	}
+
+	#money {
+		position: relative;
+		float: right;
+	}
+
+	.moneylabel {
+		position: absolute;
+		transform: translate(-50%, -50%);
+		left: 50%;
+		top: 60%;
+	}
+
+	.shop_bg {
+		position: absolute;
+		height: 50px;
+		left: 50%;
+		bottom: 20px;
+		transform: translate(-50%, -50%);
+		font-family: BDC;
+		font-size: 25px;
+		color: #c71c1c;
+		text-shadow: 1px 1px 0 #700f0f;
+		transition-duration: 0.1s;
+	}
+
+	.shop_bg img {
+		position: relative;
+		height: 45px;
+		margin-top: 2px;
+		left: 50%;
+		transform: translate(-50%);
+	}
+
+	#shoptext {
+		text-align: center;
+		transform: translateY(-10px);
+	}
+
+	.shop {
+		position: absolute;
+		width: 90%;
+		height: 90vw;
+		max-width: 500px;
+		max-height: 500px;
+		transform: translate(-50%, -50%);
+		left: -50%;
+		top: 50%;
+		transition-duration: 1s;
+	}
+
+	.window {
+		position: absolute;
+		width: 100%;
+		transform: translate(-50%, -50%);
+		left: 50%;
+		top: 50%;
+	}
+
+	.shop_inner {
+		position: absolute;
+		transform: translate(-50%, -50%);
+		top: 50%;
+		left: 50%;
+		width: 87%;
+		height: 90vw;
+		max-height: 500px;
+		font-family: BDC;
+		text-shadow: 2px 2px 0 black;
+		text-align: center;
+		font-size: 34px;
+		color: white;
+		font-weight: strong;
+		overflow-y: scroll;
+	}
+
+	.shop_scene {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		transform: translate(-50%);
+		top: 0%;
+		left: 50%;
+		transition-duration: 0.2s;
+		overflow: hidden;
+		display: none;
+	}
+
+	.shopitem {
+		position: relative;
+		width: 95%;
+		height: 100px;
+		background-color: #cccccc;
+		transform: translate(-50%);
+		left: 50%;
+		border-top: 5px solid white;
+		border-left: 5px solid white;
+		border-bottom: 5px solid #5c5c5c;
+		border-right: 5px solid #5c5c5c;
+		border-radius: 10px;
+		margin-bottom: 20px;
+	}
+
+	.shopitem:before {
+		content: " ";
+		position: absolute;
+		z-index: -1;
+		top: -7px;
+		left: -7px;
+		right: -7px;
+		bottom: -7px;
+		border: 2px solid black;
+		border-radius: 10px;
+	}
+
+	.shopicon {
+		position: absolute;
+		height: 100%;
+		width: auto;
+		right: 0px;
+	}
+
+	.shopicon_haste {
+		position: absolute;
+		transform: translate(-20%, -50%);
+		top: 50%;
+		width: auto;
+		right: 0px;
+	}
+
+	.price {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+	}
+
+	.price img {
+		position: relative;
+		height: 40px;
+	}
+
+	.pricemoney {
+		float: right;
+		margin: 0px;
+		font-size: 28px;
+	}
+
+	.itemname {
+		position: absolute;
+		font-weight: strong;
+		top: 42px;
+		font-size: 20px;
+		margin-left: 10px;
+	}
+
+	.desc {
+		position: absolute;
+		font-weight: normal;
+		top: 75px;
+		font-size: 15px;
+		margin-left: 10px;
+		color: #5c5c5c;
+		text-shadow: none;
+	}
+
+	.hastelevel {
+		position: absolute;
+		font-weight: normal;
+		top: 0px;
+		right: 5px;
+		font-size: 15px;
+		margin-left: 10px;
+		color: #5c5c5c;
+		text-shadow: none;
+	}
+
+	.pickaxe {
+		width: 200px;
+		height: 200px;
+		position: absolute;
+		transform-style: preserve-3d;
+		top: Calc(50% + 100px);
+		left: Calc(50% + 150px);
+		transition-duration: 0.1s;
+		transform: translate(-50%, -50%) rotateX(-45deg) rotateY(45deg);
+	}
+
+	.pickaxe__face {
+		position: absolute;
+	}
+
+	.shovel {
+		width: 200px;
+		height: 200px;
+		position: absolute;
+		transform-style: preserve-3d;
+		top: Calc(50% - 50px);
+		left: Calc(50% + 125px);
+		transition-duration: 0.1s;
+		transform: translate(-50%, -50%) rotateX(-45deg) rotateY(45deg);
+		z-index: -20;
+	}
+
+	.shovel__face {
+		position: absolute;
+	}
+
+	.axe {
+		width: 200px;
+		height: 200px;
+		position: absolute;
+		transform-style: preserve-3d;
+		top: Calc(50% + 150px);
+		left: Calc(50% - 60px);
+		transition-duration: 0.1s;
+		transform: translate(-50%, -50%) rotateX(-45deg) rotateY(45deg);
+	}
+
+	.axe__face {
+		position: absolute;
+	}
+
+	.book {
+		width: 200px;
+		height: 200px;
+		position: absolute;
+		transform-style: preserve-3d;
+		top: Calc(50% - 190px);
+		left: Calc(50% + 40px);
+		transition-duration: 0.1s;
+		transform: translate(-50%, -50%) rotateX(-45deg) rotateY(20deg);
+		z-index: -20;
+	}
+
+	.book__face {
+		position: absolute;
+	}
+
+	.book__face--back {
+		transform: rotateY(180deg) rotateZ(-90deg) translateZ(25px) translateY(-16px) translateX(8px);
+		filter: brightness(80%);
+		top: 128px;
+		transition-duration: 0.1s;
+		z-index: 2;
+	}
+
+	.book__face--front {
+		transform: rotateY(0deg) rotateZ(-90deg) translateZ(21px) translateY(16px) translateX(5px);
+		filter: brightness(80%);
+		top: 128px;
+		transition-duration: 0.1s;
+		z-index: 2;
+	}
+
+	.book__face--top {
+		transform: rotateX(90deg) rotateZ(-90deg) translateZ(-111px);
+		transition-duration: 0.1s;
+		z-index: 4;
+	}
+
+	.book__face--bottom {
+		transform: rotateX(90deg) rotateZ(90deg);
+		top: 128px;
+		transition-duration: 0.1s;
+		z-index: 1;
+		filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.5)) drop-shadow(0px 0px 3px);
+	}
+
+	.book__face--left {
+		transform: rotateY(-90deg) translateZ(35px) translateY(24px) translateX(-2px);
+		filter: brightness(120%);
+		top: 128px;
+		transition-duration: 0.1s;
+		z-index: 3;
+	}
+
+	.book--bonus_xp {
+		position: absolute;
+		font-family: BDC;
+		transform: translate(-50%, -50%);
+		color: rgba(0, 0, 0, .5);
+		top: Calc(50% - 180px);
+		left: Calc(50% - 35px);
+		z-index: -10;
+	}
+
+	.tool--bonus_break {
+		position: absolute;
+		min-width: 105px;
+		font-family: BDC;
+		transform: translate(-50%, -50%);
+		color: rgba(0, 0, 0, .5);
+		top: Calc(50% - 135px);
+		left: Calc(50% + 90px);
+		z-index: -10;
+		text-align: center;
+	}
+
+	.book3d {
+		position: absolute;
+		top: Calc(50% - 164px);
+		left: Calc(50% - 88px);
+		z-index: -10;
+	}
+
+	.shovel3d {
+		position: absolute;
+		top: Calc(50% - 115px);
+		left: Calc(50% + 50px);
+		z-index: -10;
+	}
+
+	.pickaxe3d {
+		position: absolute;
+		top: Calc(50% + 45px);
+		left: Calc(50% + 50px);
+		z-index: -10;
+	}
+
+	.axe3d {
+		position: absolute;
+		top: Calc(50% + 80px);
+		left: Calc(50% - 130px);
+		z-index: -10;
+	}
+
+	.stage {
+		position: absolute;
+		font-family: BDC;
+		color: #00ff5e;
+		text-shadow: 1.5px 1.5px 0 #000;
+		transform: translate(-50%, -50%);
+		left: 50%;
+		font-size: 17px;
+	}
+
+	#canvas {
+		position: absolute;
+		z-index: 2;
+	}
+
+	.shopicon_tnt {
+		position: absolute;
+		transform: translate(-20%, -50%);
+		top: 50%;
+		width: auto;
+		right: 0px;
+		width: 65px;
+	}
+
+	.tntlevel {
+		position: absolute;
+		font-weight: normal;
+		top: 0px;
+		right: 5px;
+		font-size: 15px;
+		margin-left: 10px;
+		color: #5c5c5c;
+		text-shadow: none;
+	}
+</style>
+
+
+<body>
+	<div id="applixir_vanishing_div" hidden>
+		<iframe id="applixir_parent" allow="autoplay, fullscreen"></iframe>
+	</div>
+	<div class="scene">
+
+		<div class="tnt">
+			<div class="tnt__face tnt__face--front"><img src="blocks/tnt.png"></div>
+			<div class="tnt__face tnt__face--left"><img src="blocks/tnt.png"></div>
+			<div class="tnt__face tnt__face--right"><img src="blocks/tnt.png"></div>
+			<div class="tnt__face tnt__face--back"><img src="blocks/tnt.png"></div>
+			<div class="tnt__face tnt__face--top"><img src="blocks/tnt_top.png"></div>
+			<div class="tnt__face tnt__face--bottom"><img src="blocks/tnt_top.png"></div>
+		</div>
+		<div class="cube">
+			<div class="cube__face cube__face--front"><img src=""><img class="destroy" src=""></div>
+			<div class="cube__face cube__face--left"><img src=""><img class="destroy" src=""></div>
+			<div class="cube__face cube__face--right"><img src=""><img class="destroy" src=""></div>
+			<div class="cube__face cube__face--back"><img src=""><img class="destroy" src=""></div>
+			<div class="cube__face cube__face--top"><img src=""><img class="destroy" src=""></div>
+			<div class="cube__face cube__face--bottom"><img src=""><img class="destroy" src=""></div>
+		</div>
+		<div class="tool--bonus_break"></div>
+		<img class="pickaxe3d" src="">
+		<img class="shovel3d" src="">
+		<img class="axe3d" src="">
+		<div class="book--bonus_xp"></div>
+		<img class="book3d" src="">
+		<canvas id="canvas" width="100px" height="100px"></canvas>
+	</div>
+	<div class="exp">
+		<img class="empty_xp" src="empty_xp.png">
+		<img class="full_xp" src="full_xp.png">
+		<div class="stage"></div>
+	</div>
+	<div class="tnt_timer">
+		<img class="tnt_empty" src="tnt_empty.png">
+		<img class="tnt_full" src="tnt_full.png">
+	</div>
+	<div class="money_bg">
+		<div class="moneylabel"><img src="emerald.png">
+			<div id="money">0</div>
+		</div>
+	</div>
+	<div class="shop_bg" ontouchmove="openshopmove()">
+		<img src="hero_of_the_village.png">
+		<div id="shoptext">Shop</div>
+	</div>
+	<div class="shop_scene" ontouchmove="move=1"></div>
+	<div class="shop"><img class="window" src="window.png">
+		<div class="shop_inner">
+
+			<div class="tnt_shop shopitem"><img class="shopicon_tnt" src="blocks/tnt.png">
+				<div class="price"><img src="emerald.png">
+					<p class="pricemoney" id="tnt">100</p>
+				</div>
+				<div class="itemname">BUY tnt</div>
+				<div class="desc">TNT blows up every 5 seconds</div>
+				<div class="tntlevel">lvl 0</div>
+			</div>
+
+			<div class="haste shopitem"><img class="shopicon_haste" src="haste.png">
+				<div class="price"><img src="emerald.png">
+					<p class="pricemoney" id="haste">1000</p>
+				</div>
+				<div class="itemname">UPGRADE haste</div>
+				<div class="desc">Base break power +1</div>
+				<div class="hastelevel">lvl 0</div>
+			</div>
+
+			<div class="bonus_break shopitem"><img class="shopicon" src="">
+				<div class="price"><img src="emerald.png">
+					<p class="pricemoney" id="bonus_break">1000</p>
+				</div>
+				<div class="itemname">BUY Wooden Tools</div>
+				<div class="desc">Break power +100%</div>
+			</div>
+
+			<div class="bonus_xp shopitem"><img class="shopicon" src="">
+				<div class="price"><img src="emerald.png">
+					<p class="pricemoney" id="bonus_break">10000</p>
+				</div>
+				<div class="itemname">BUY experience book</div>
+				<div class="desc">XP Bonus +25%</div>
+			</div>
+
+		</div>
+	</div>
+
+	<script src="jquery.js"></script>
+	<script src="nicernumbers.js"></script>
+	<script src="particles.js"></script>
+	<script src="https://cdn.applixir.com/applixir.sdk3.0m.js"></script>
+	<script>
+
+		function adStatusCallback(status) {
+			if (status)
+				console.log('Applixir status: ' + status);
+		}
+
+		var options = {
+			zoneId: 3197,
+			devId: 4242,
+			gameId: 5235,
+			//custom1: nnnn,  // optional values such as user ID
+			//custom2: nnnn,  // optional values such as reward information
+			dMode: 1,       // dMode 1 for MD5 checksum 0 for no MD5 checksum
+			adStatusCb: adStatusCallback,
+		};
+		invokeApplixirVideoUnit(options);
+
+		$.fn.multiline = function (text) {
+			this.text(text);
+			this.html(this.html().replace(/\n/g, '<br/>'));
+			return this;
+		}
+
+		move = 0;
+		breaks = 0;
+		breakreset = 0;
+		tnt_time = 5.1;
+		var tntTicking;
+
+		if (localStorage.getItem("stage") === null) {
+			stage = 0
+		} else {
+			stage = parseInt(localStorage.getItem("stage"));
+		}
+
+		if (localStorage.getItem("xp_goal") === null) {
+			xp_goal = 100
+		} else {
+			xp_goal = parseInt(localStorage.getItem("xp_goal"));
+		}
+
+		if (localStorage.getItem("current_xp") === null) {
+			current_xp = 0
+		} else {
+			current_xp = parseInt(localStorage.getItem("current_xp"));
+		}
+
+		if (localStorage.getItem("bonus_money") === null) {
+			bonus_money = 0
+		} else {
+			bonus_money = parseInt(localStorage.getItem("bonus_money"));
+		}
+
+		if (localStorage.getItem("bonus_break") === null) {
+			bonus_break = 0
+		} else {
+			bonus_break = parseInt(localStorage.getItem("bonus_break"));
+		}
+
+		if (localStorage.getItem("bonus_xp") === null) {
+			bonus_xp = 0
+		} else {
+			bonus_xp = parseInt(localStorage.getItem("bonus_xp"));
+		}
+
+		if (localStorage.getItem("tool_stage") === null) {
+			tool_stage = 0
+		} else {
+			tool_stage = parseInt(localStorage.getItem("tool_stage"));
+		}
+
+		if (localStorage.getItem("book_stage") === null) {
+			book_stage = 0
+		} else {
+			book_stage = parseInt(localStorage.getItem("book_stage"));
+		}
+
+		if (localStorage.getItem("base_power") === null) {
+			base_power = 1
+		} else {
+			base_power = parseInt(localStorage.getItem("base_power"));
+		}
+
+		if (localStorage.getItem("base_level") === null) {
+			base_level = 0
+		} else {
+			base_level = parseInt(localStorage.getItem("base_level"));
+		}
+
+		if (localStorage.getItem("tnt_level") === null) {
+			tnt_level = 0
+		} else {
+			tnt_level = parseInt(localStorage.getItem("tnt_level"));
+		}
+
+		function upd_tnt() {
+			if (tnt_level > 0 && tnt_level <= 40) {
+				$(".tnt_timer").css("display", "block");
+				$(".tnt").css("display", "block");
+				tnt_price = Math.floor(100 * Math.pow(1.651, tnt_level));
+				$(".tnt_shop .pricemoney").text(tnt_price);
+				tnt_time = (51 - Math.floor(0.1 * tnt_level * 10)) / 10;
+
+				$(".tnt_shop .tntlevel").text("lvl " + tnt_level);
+				$(".tnt_shop .intemname").text("UPGRADE tnt");
+				$(".tnt_shop .desc").text("TNT blows up every " + tnt_time + " seconds");
+				tntTicking = setInterval(tnt_blow, tnt_time * 1000);
+				maxed_tnt = false
+			} else if (tnt_level == 40) {
+				$(".tnt_timer").css("display", "block");
+				$(".tnt").css("display", "block");
+				maxed_tnt = true
+				tnt_time = (51 - Math.floor(0.1 * tnt_level * 10)) / 10;
+				$(".tnt_full").css({ "transition-duration": tnt_time + "s" });
+				$(".tnt_shop .tntlevel").text("lvl " + tnt_level);
+				$(".tnt_shop").css("background", "rgb(130, 130, 130)");
+				$(".tnt_shop .pricemoney").text("MAXED");
+				$(".tnt_shop .intemname").text("TNT");
+				$(".tnt_shop .desc").text("TNT blows up every " + tnt_time + " seconds");
+				tntTicking = setInterval(tnt_blow, tnt_time * 1000);
+				$(".tnt_full").css({ "clip": "rect(0px, 150px, 15px, 0px)" });
+			} else {
+				tnt_price = 100;
+				maxed_tnt = false;
+			}
+			$(".tnt_full").css("transition-duration", tnt_time + "s");
+		}
+
+		upd_tnt();
+
+		stages = [{
+			"stage": 0,
+			"textures": ["dirt.png", "dirt.png", "dirt.png", "dirt.png", "dirt.png", "dirt.png"],
+			"durab": 10,
+			"money_pb": 1,
+			"color": "b86723",
+			"xp_goal": 100,
+		}, {
+			"stage": 1,
+			"textures": ["grass_block_top.png", "grass_block_side.png", "grass_block_side.png", "grass_block_side.png", "grass_block_side.png", "dirt.png"],
+			"durab": 18,
+			"money_pb": 2,
+			"color": "b86723",
+			"xp_goal": 200,
+		}, {
+			"stage": 2,
+			"textures": ["oak_log_top.png", "oak_log.png", "oak_log.png", "oak_log.png", "oak_log.png", "oak_log_top.png"],
+			"durab": 25,
+			"money_pb": 3,
+			"color": "421e00",
+			"xp_goal": 300,
+		}, {
+			"stage": 3,
+			"textures": ["oak_planks.png", "oak_planks.png", "oak_planks.png", "oak_planks.png", "oak_planks.png", "oak_planks.png"],
+			"durab": 30,
+			"money_pb": 4,
+			"color": "bf814d",
+			"xp_goal": 400,
+		}, {
+			"stage": 4,
+			"textures": ["crafting_table_top.png", "crafting_table_front.png", "crafting_table_front.png", "crafting_table_side.png", "crafting_table_front.png", "oak_planks.png"],
+			"durab": 35,
+			"money_pb": 5,
+			"color": "693e1b",
+			"xp_goal": 500,
+		}, {
+			"stage": 5,
+			"textures": ["cobblestone.png", "cobblestone.png", "cobblestone.png", "cobblestone.png", "cobblestone.png", "cobblestone.png"],
+			"durab": 65,
+			"money_pb": 10,
+			"color": "474747",
+			"xp_goal": 0,
+			"xp_goal": 600,
+		}, {
+			"stage": 6,
+			"textures": ["granite.png", "granite.png", "granite.png", "granite.png", "granite.png", "granite.png"],
+			"durab": 94,
+			"money_pb": 15,
+			"color": "c26b55",
+			"xp_goal": 700,
+		}, {
+			"stage": 7,
+			"textures": ["diorite.png", "diorite.png", "diorite.png", "diorite.png", "diorite.png", "diorite.png"],
+			"durab": 118,
+			"money_pb": 20,
+			"color": "cccccc",
+			"xp_goal": 800,
+		}, {
+			"stage": 8,
+			"textures": ["andesite.png", "andesite.png", "andesite.png", "andesite.png", "andesite.png", "andesite.png"],
+			"durab": 139,
+			"money_pb": 25,
+			"color": "8f8f8f",
+			"xp_goal": 900,
+		}, {
+			"stage": 9,
+			"textures": ["furnace_top.png", "furnace_side.png", "furnace_side.png", "furnace_front.png", "furnace_side.png", "cobblestone.png"],
+			"durab": 210,
+			"money_pb": 40,
+			"color": "4f4f4f",
+			"xp_goal": 1000,
+		}, {
+			"stage": 10,
+			"textures": ["coal_ore.png", "coal_ore.png", "coal_ore.png", "coal_ore.png", "coal_ore.png", "coal_ore.png"],
+			"durab": 300,
+			"money_pb": 60,
+			"color": "4f4f4f",
+			"xp_goal": 1100,
+		}, {
+			"stage": 11,
+			"textures": ["coal_block.png", "coal_block.png", "coal_block.png", "coal_block.png", "coal_block.png", "coal_block.png"],
+			"durab": 310,
+			"money_pb": 65,
+			"color": "000000",
+			"xp_goal": 1200,
+		}, {
+			"stage": 12,
+			"textures": ["iron_ore.png", "iron_ore.png", "iron_ore.png", "iron_ore.png", "iron_ore.png", "iron_ore.png"],
+			"durab": 365,
+			"money_pb": 80,
+			"color": "4f4f4f",
+			"xp_goal": 1300,
+		}, {
+			"stage": 13,
+			"textures": ["iron_block.png", "iron_block.png", "iron_block.png", "iron_block.png", "iron_block.png", "iron_block.png"],
+			"durab": 370,
+			"money_pb": 85,
+			"color": "fff",
+			"xp_goal": 1400,
+		}, {
+			"stage": 14,
+			"textures": ["redstone_ore.png", "redstone_ore.png", "redstone_ore.png", "redstone_ore.png", "redstone_ore.png", "redstone_ore.png"],
+			"durab": 415,
+			"money_pb": 100,
+			"color": "4f4f4f",
+			"xp_goal": 1500,
+		}, {
+			"stage": 15,
+			"textures": ["redstone_block.png", "redstone_block.png", "redstone_block.png", "redstone_block.png", "redstone_block.png", "redstone_block.png"],
+			"durab": 440,
+			"money_pb": 110,
+			"color": "bd0000",
+			"xp_goal": 1600,
+		}, {
+			"stage": 16,
+			"textures": ["lapis_ore.png", "lapis_ore.png", "lapis_ore.png", "lapis_ore.png", "lapis_ore.png", "lapis_ore.png"],
+			"durab": 500,
+			"money_pb": 130,
+			"color": "4f4f4f",
+			"xp_goal": 1700,
+		}, {
+			"stage": 17,
+			"textures": ["lapis_block.png", "lapis_block.png", "lapis_block.png", "lapis_block.png", "lapis_block.png", "lapis_block.png"],
+			"durab": 518,
+			"money_pb": 140,
+			"color": "336bc4",
+			"xp_goal": 1800,
+		}, {
+			"stage": 18,
+			"textures": ["gold_ore.png", "gold_ore.png", "gold_ore.png", "gold_ore.png", "gold_ore.png", "gold_ore.png"],
+			"durab": 570,
+			"money_pb": 160,
+			"color": "4f4f4f",
+			"xp_goal": 1900,
+		}, {
+			"stage": 19,
+			"textures": ["gold_block.png", "gold_block.png", "gold_block.png", "gold_block.png", "gold_block.png", "gold_block.png"],
+			"durab": 585,
+			"money_pb": 170,
+			"color": "eeff00",
+			"xp_goal": 2000,
+		}, {
+			"stage": 20,
+			"textures": ["diamond_ore.png", "diamond_ore.png", "diamond_ore.png", "diamond_ore.png", "diamond_ore.png", "diamond_ore.png"],
+			"durab": 630,
+			"money_pb": 190,
+			"color": "4f4f4f",
+			"xp_goal": 2100,
+		}, {
+			"stage": 21,
+			"textures": ["diamond_block.png", "diamond_block.png", "diamond_block.png", "diamond_block.png", "diamond_block.png", "diamond_block.png"],
+			"durab": 645,
+			"money_pb": 200,
+			"color": "00f2ff",
+			"xp_goal": 2200,
+		}, {
+			"stage": 22,
+			"textures": ["emerald_ore.png", "emerald_ore.png", "emerald_ore.png", "emerald_ore.png", "emerald_ore.png", "emerald_ore.png"],
+			"durab": 687,
+			"money_pb": 220,
+			"color": "4f4f4f",
+			"xp_goal": 2300,
+		}, {
+			"stage": 23,
+			"textures": ["emerald_block.png", "emerald_block.png", "emerald_block.png", "emerald_block.png", "emerald_block.png", "emerald_block.png"],
+			"durab": 695,
+			"money_pb": 230,
+			"color": "00ff48",
+			"xp_goal": 2400,
+		},];
+
+		if (localStorage.getItem("money") === null) {
+			money = 0
+		} else {
+			money = parseInt(localStorage.getItem("money"));
+			var abbrmoney = abbreviate(money, 3, 3, false);
+			$("#money").text(abbrmoney)
+		}
+
+		$(document).ready(function () {
+			$(".tnt_full").css({ "clip": "rect(0px, 150px, 15px, 0px)" });
+
+			base_cost = Math.floor(1000 * Math.pow(5, base_level));
+			$(".haste .pricemoney").text(abbreviate(base_cost));
+			$(".hastelevel").text("lvl " + base_level);
+			$(".stage").text("Stage " + (stage + 1));
+
+			$(".cube__face--top img:not(.destroy)").attr("src", "blocks/" + stages[stage]["textures"][0]);
+			$(".cube__face--front img:not(.destroy)").attr("src", "blocks/" + stages[stage]["textures"][1]);
+			$(".cube__face--back img:not(.destroy)").attr("src", "blocks/" + stages[stage]["textures"][2]);
+			$(".cube__face--left img:not(.destroy)").attr("src", "blocks/" + stages[stage]["textures"][3]);
+			$(".cube__face--right img:not(.destroy)").attr("src", "blocks/" + stages[stage]["textures"][4]);
+			$(".cube__face--bottom img:not(.destroy)").attr("src", "blocks/" + stages[stage]["textures"][5]);
+			if (tool_stage != 0) {
+				$(".shovel3d").attr("src", "tools/" + tool_stages[tool_stage]["name"] + "_shovel.png");
+				$(".pickaxe3d").attr("src", "tools/" + tool_stages[tool_stage]["name"] + "_pickaxe.png");
+				$(".axe3d").attr("src", "tools/" + tool_stages[tool_stage]["name"] + "_axe.png");
+				$(".tool--bonus_break").multiline("Break power\n+" + (tool_stages[tool_stage]["bonus_break"] * 100) + "%");
+			}
+			else {
+				$(".tool--bonus_break").text("");
+			}
+			if (tool_stage < (tool_stages.length - 1)) {
+				$(".bonus_break .itemname").text("BUY " + tool_stages[tool_stage + 1]["name"] + " tools");
+				$(".bonus_break .pricemoney").text(abbreviate(tool_stages[tool_stage + 1]["cost"], 3, 3, false));
+				$(".bonus_break .shopicon").attr("src", "tools/icon_" + tool_stages[tool_stage + 1]["name"] + "_pickaxe.png");
+			}
+			else {
+				$(".bonus_break .itemname").text("POWERED tools");
+				$(".bonus_break .pricemoney").text("MAXED");
+				$(".bonus_break .shopicon").attr("src", "tools/icon_" + tool_stages[tool_stage]["name"] + "_pickaxe.png");
+				$(".bonus_break").css({ "background-color": "#828282" })
+			}
+			if (book_stage != 0) {
+				$(".book--bonus_xp").text("+" + book_stages[book_stage]["bonus_exp"] * 100 + "% exp");
+				$(".book3d").attr("src", book_stages[book_stage]["name"] + "_book3d.png");
+			}
+			else {
+				$(".book--bonus_xp").text("");
+			}
+			if (book_stage < (book_stages.length - 1)) {
+				$(".bonus_xp .itemname").text("BUY " + book_stages[book_stage + 1]["name"] + " book");
+				$(".bonus_xp .pricemoney").text(abbreviate(book_stages[book_stage + 1]["cost"], 3, 3, false));
+				$(".bonus_xp .shopicon").attr("src", book_stages[book_stage + 1]["name"] + "_book.png");
+			}
+			else {
+				$(".bonus_xp").css({ "background-color": "#828282" })
+				$(".bonus_xp .itemname").text("APPRENTICE book");
+				$(".bonus_xp .pricemoney").text("MAXED");
+				$(".bonus_xp .shopicon").attr("src", book_stages[book_stage]["name"] + "_book.png");
+			}
+			$(".destroy").css({ "filter": "opacity(0.5) drop-shadow(0 0 0 #" + stages[stage]["color"] + ")" });
+			max_durability = stages[stage]["durab"];
+			block_durability = stages[stage]["durab"];
+			barwidth = $(".full_xp").width();
+			percentage = current_xp / stages[stage]["xp_goal"] * 100;
+			$(".full_xp").css({ "clip": "rect(0px, " + barwidth / 100 * percentage + "px, 20px, 0px)" });
+
+			setTimeout(function () {
+				$(".cube__face--top").css({ "transform": "rotateX( 90deg) rotateZ(0deg) translate(50%, -50%) translateZ(7px) scale(0.9, 0.9)" });
+				$(".cube__face--front").css({ "transform": "rotateY(0deg) rotateZ(0deg) translate(50%, -50%) translateZ(-7px) scale(0.9,1.1)" });
+				$(".cube__face--left").css({ "transform": "rotateY(-90deg) translate(-50%, -50%) translateZ(-7px) scale(0.9,1.1)" });
+				$(".cube__face--right").css({ "transform": "rotateX(90deg) rotateY(90deg) translate(-50%, -50%) translateZ(121px) scale(1.1,0.9)" });
+				$(".cube__face--back").css({ "transform": "rotateY(180deg) rotateZ(0deg) translate(-50%, -50%) translateZ(121px) scale(0.9,1.1)" });
+				$(".cube__face--bottom").css({ "transform": "rotateX( 90deg) rotateZ(90deg) translate(-50%, -50%) translateZ(4px) scale(0.9, 0.9)" });
+				$(".destroy").attr("src", "");
+			}, 100);
+			setTimeout(function () {
+				$(".cube").css({ "top": "Calc(50% + 31px)" });
+				block_durability = stages[stage]["durab"];
+			}, 300);
+			setTimeout(function () {
+				$(".cube__face--top").css({ "transform": "rotateX( 90deg) rotateZ(0deg) translate(50%, -50%) translateZ(-7px) scale(1.1, 1.1)" });
+				$(".cube__face--front").css({ "transform": "rotateY(0deg) rotateZ(0deg) translate(50%, -50%) translateZ(6px) scale(1.1,0.9)" });
+				$(".cube__face--left").css({ "transform": "rotateY(-90deg) translate(-50%, -50%) translateZ(6px) scale(1.1,0.9)" });
+				$(".cube__face--right").css({ "transform": "rotateX(90deg) rotateY(90deg) translate(-50%, -50%) translateZ(135px) scale(0.9,1.1)" });
+				$(".cube__face--back").css({ "transform": "rotateY(180deg) rotateZ(0deg) translate(-50%, -50%) translateZ(135px) scale(1.1,0.9)" });
+				$(".cube__face--bottom").css({ "transform": "rotateX( 90deg) rotateZ(90deg) translate(-50%, -50%) translateZ(4px) scale(1.1, 1.1)" });
+			}, 400)
+			setTimeout(function () {
+				$(".cube__face--top").css({ "transform": "rotateX( 90deg) rotateZ(0deg) translate(50%, -50%) translateZ(0px) scale(1,1)" });
+				$(".cube__face--front").css({ "transform": "rotateY(0deg) rotateZ(0deg) translate(50%, -50%) translateZ(0px) scale(1,1)" });
+				$(".cube__face--left").css({ "transform": "rotateY(-90deg) translate(-50%, -50%) translateZ(0px) scale(1,1)" });
+				$(".cube__face--right").css({ "transform": "rotateX(90deg) rotateY(90deg) translate(-50%, -50%) translateZ(128px) scale(1,1)" });
+				$(".cube__face--back").css({ "transform": "rotateY(180deg) rotateZ(0deg) translate(-50%, -50%) translateZ(128px) scale(1,1)" });
+				$(".cube__face--bottom").css({ "transform": "rotateX( 90deg) rotateZ(90deg) translate(-50%, -50%) translateZ(0px) scale(1,1)" });
+				breaks = 0;
+			}, 500);
+		})
+
+		function stage_up() {
+			stage++;
+			localStorage.setItem('stage', stage);
+			$(".stage").text("Stage " + (stage + 1));
+			$(".cube__face--top img:not(.destroy)").attr("src", "blocks/" + stages[stage]["textures"][0]);
+			$(".cube__face--front img:not(.destroy)").attr("src", "blocks/" + stages[stage]["textures"][1]);
+			$(".cube__face--back img:not(.destroy)").attr("src", "blocks/" + stages[stage]["textures"][2]);
+			$(".cube__face--left img:not(.destroy)").attr("src", "blocks/" + stages[stage]["textures"][3]);
+			$(".cube__face--right img:not(.destroy)").attr("src", "blocks/" + stages[stage]["textures"][4]);
+			$(".cube__face--bottom img:not(.destroy)").attr("src", "blocks/" + stages[stage]["textures"][5]);
+			$(".destroy").css({ "filter": "opacity(0.5) drop-shadow(0 0 0 #" + stages[stage]["color"] + ")" });
+			max_durability = stages[stage]["durab"];
+			block_durability = stages[stage]["durab"];
+
+			current_xp = 0;
+
+			localStorage.setItem('current_xp', current_xp);
+
+			barwidth = $(".full_xp").width();
+			percentage = current_xp / stages[stage]["xp_goal"] * 100;
+			$(".full_xp").css({ "clip": "rect(0px, " + barwidth / 100 * percentage + "px, 20px, 0px)" });
+		}
+
+		function broken() {
+			breaks = 1;
+			clearTimeout(breakreset);
+			$(".cube__face--top").css({ "transform": "rotateX( 90deg) rotateZ(0deg) translate(50%, -50%) translateZ(-128px) scale(0, 0)" });
+			$(".cube__face--front").css({ "transform": "rotateY(0deg) rotateZ(0deg) translate(50%, 0%) translateZ(-64px) scale(0,0)" });
+			$(".cube__face--left").css({ "transform": "rotateY(-90deg) translate(-50%, 0%) translateZ(-64px) scale(0,0)" });
+			$(".cube__face--right").css({ "transform": "rotateX(90deg) rotateY(90deg) translate(0%, -50%) translateZ(64px) scale(0,0)" });
+			$(".cube__face--back").css({ "transform": "rotateY(180deg) rotateZ(0deg) translate(-50%, 0%) translateZ(64px) scale(0,0)" });
+			$(".cube__face--bottom").css({ "transform": "rotateX( 90deg) rotateZ(90deg) translate(-50%, -50%) translateZ(4px) scale(0, 0)" });
+			money = money + stages[stage]["money_pb"] + bonus_money;
+			localStorage.setItem('money', money);
+			$("#money").text(abbreviate(money, 3, 3, false));
+
+			current_xp = current_xp + 1 + book_stages[book_stage]["bonus_exp"];
+			localStorage.setItem('current_xp', current_xp);
+			barwidth = $(".full_xp").width();
+			percentage = current_xp / stages[stage]["xp_goal"] * 100;
+			$(".full_xp").css({ "clip": "rect(0px, " + barwidth / 100 * percentage + "px, 20px, 0px)" });
+
+			if (percentage >= 100) {
+				stage_up();
+			}
+
+			setTimeout(function () {
+				$(".cube").css({ "top": "Calc(0% - 251px)" })
+			}, 100)
+			setTimeout(function () {
+				$(".cube__face--top").css({ "transform": "rotateX( 90deg) rotateZ(0deg) translate(50%, -50%) translateZ(7px) scale(0.9, 0.9)" });
+				$(".cube__face--front").css({ "transform": "rotateY(0deg) rotateZ(0deg) translate(50%, -50%) translateZ(-7px) scale(0.9,1.1)" });
+				$(".cube__face--left").css({ "transform": "rotateY(-90deg) translate(-50%, -50%) translateZ(-7px) scale(0.9,1.1)" });
+				$(".cube__face--right").css({ "transform": "rotateX(90deg) rotateY(90deg) translate(-50%, -50%) translateZ(121px) scale(1.1,0.9)" });
+				$(".cube__face--back").css({ "transform": "rotateY(180deg) rotateZ(0deg) translate(-50%, -50%) translateZ(121px) scale(0.9,1.1)" });
+				$(".cube__face--bottom").css({ "transform": "rotateX( 90deg) rotateZ(90deg) translate(-50%, -50%) translateZ(4px) scale(0.9, 0.9)" });
+				$(".destroy").attr("src", "");
+			}, 200);
+			setTimeout(function () {
+				$(".cube").css({ "top": "Calc(50% + 31px)" });
+				block_durability = stages[stage]["durab"];
+			}, 300);
+			setTimeout(function () {
+				$(".cube__face--top").css({ "transform": "rotateX( 90deg) rotateZ(0deg) translate(50%, -50%) translateZ(-7px) scale(1.1, 1.1)" });
+				$(".cube__face--front").css({ "transform": "rotateY(0deg) rotateZ(0deg) translate(50%, -50%) translateZ(6px) scale(1.1,0.9)" });
+				$(".cube__face--left").css({ "transform": "rotateY(-90deg) translate(-50%, -50%) translateZ(6px) scale(1.1,0.9)" });
+				$(".cube__face--right").css({ "transform": "rotateX(90deg) rotateY(90deg) translate(-50%, -50%) translateZ(135px) scale(0.9,1.1)" });
+				$(".cube__face--back").css({ "transform": "rotateY(180deg) rotateZ(0deg) translate(-50%, -50%) translateZ(135px) scale(1.1,0.9)" });
+				$(".cube__face--bottom").css({ "transform": "rotateX( 90deg) rotateZ(90deg) translate(-50%, -50%) translateZ(4px) scale(1.1, 1.1)" });
+			}, 400)
+			setTimeout(function () {
+				$(".cube__face--top").css({ "transform": "rotateX( 90deg) rotateZ(0deg) translate(50%, -50%) translateZ(0px) scale(1,1)" });
+				$(".cube__face--front").css({ "transform": "rotateY(0deg) rotateZ(0deg) translate(50%, -50%) translateZ(0px) scale(1,1)" });
+				$(".cube__face--left").css({ "transform": "rotateY(-90deg) translate(-50%, -50%) translateZ(0px) scale(1,1)" });
+				$(".cube__face--right").css({ "transform": "rotateX(90deg) rotateY(90deg) translate(-50%, -50%) translateZ(128px) scale(1,1)" });
+				$(".cube__face--back").css({ "transform": "rotateY(180deg) rotateZ(0deg) translate(-50%, -50%) translateZ(128px) scale(1,1)" });
+				$(".cube__face--bottom").css({ "transform": "rotateX( 90deg) rotateZ(90deg) translate(-50%, -50%) translateZ(0px) scale(1,1)" });
+				breaks = 0;
+			}, 500);
+		};
+
+		$(".scene").on("touchstart", function () {
+			clearTimeout(breakreset);
+			if (breaks != 1) {
+				$(".cube__face--top").css({ "transform": "rotateX( 90deg) rotateZ(0deg) translate(50%, -50%) translateZ(-3px) scale(1.05, 1.05)" });
+				$(".cube__face--front").css({ "transform": "rotateY(0deg) rotateZ(0deg) translate(50%, -50%) translateZ(3px) scale(1.05,0.95)" });
+				$(".cube__face--left").css({ "transform": "rotateY(-90deg) translate(-50%, -50%) translateZ(3px) scale(1.05,0.95)" });
+				$(".cube__face--right").css({ "transform": "rotateX(90deg) rotateY(90deg) translate(-50%, -50%) translateZ(131px) scale(0.95,1.05)" });
+				$(".cube__face--back").css({ "transform": "rotateY(180deg) rotateZ(0deg) translate(-50%, -50%) translateZ(131px) scale(1.05,0.95)" });
+				$(".cube__face--bottom").css({ "transform": "rotateX( 90deg) rotateZ(90deg) translate(-50%, -50%) translateZ(4px) scale(1.05, 1.05)" });
+				block_durability = block_durability - base_power - (base_power * tool_stages[tool_stage]["bonus_break"]);
+				block_percentage = block_durability / max_durability * 100;
+				switch (true) {
+					case (block_percentage < (tool_stages.length - 1) && block_percentage > 0):
+						$(".destroy").attr("src", "destroy_stage_9.png");
+						break;
+					case (block_percentage < 20 && block_percentage >= 10):
+						$(".destroy").attr("src", "destroy_stage_8.png");
+						break;
+					case (block_percentage < 30 && block_percentage >= 20):
+						$(".destroy").attr("src", "destroy_stage_7.png");
+						break;
+					case (block_percentage < 40 && block_percentage >= 30):
+						$(".destroy").attr("src", "destroy_stage_6.png");
+						break;
+					case (block_percentage < 50 && block_percentage >= 40):
+						$(".destroy").attr("src", "destroy_stage_5.png");
+						break;
+					case (block_percentage < 60 && block_percentage >= 50):
+						$(".destroy").attr("src", "destroy_stage_4.png");
+						break;
+					case (block_percentage < 70 && block_percentage >= 60):
+						$(".destroy").attr("src", "destroy_stage_3.png");
+						break;
+					case (block_percentage < 80 && block_percentage >= 70):
+						$(".destroy").attr("src", "destroy_stage_2.png");
+						break;
+					case (block_percentage < 90 && block_percentage >= 80):
+						$(".destroy").attr("src", "destroy_stage_1.png");
+						break;
+					case (block_percentage < 95 && block_percentage >= 90):
+						$(".destroy").attr("src", "destroy_stage_0.png");
+						break;
+					case (block_percentage <= 0):
+						broken();
+				}
+			}
+		})
+
+		$(".scene").on("touchend", function () {
+			if (breaks != 1) {
+				$(".cube__face--top").css({ "transform": "rotateX( 90deg) rotateZ(0deg) translate(50%, -50%) translateZ(0px) scale(1,1)" });
+				$(".cube__face--front").css({ "transform": "rotateY(0deg) rotateZ(0deg) translate(50%, -50%) translateZ(0px) scale(1,1)" });
+				$(".cube__face--left").css({ "transform": "rotateY(-90deg) translate(-50%, -50%) translateZ(0px) scale(1,1)" });
+				$(".cube__face--right").css({ "transform": "rotateX(90deg) rotateY(90deg) translate(-50%, -50%) translateZ(128px) scale(1,1)" });
+				$(".cube__face--back").css({ "transform": "rotateY(180deg) rotateZ(0deg) translate(-50%, -50%) translateZ(128px) scale(1,1)" });
+				$(".cube__face--bottom").css({ "transform": "rotateX( 90deg) rotateZ(90deg) translate(-50%, -50%) translateZ(0px) scale(1,1)" });
+				clearTimeout(breakreset);
+				breakreset = setTimeout(function () {
+					block_durability = max_durability;
+					$(".destroy").attr("src", "");
+				}, 7000);
+			}
+		})
+
+		$(".shop_bg").on("touchstart", function () {
+			$(this).css({ "transform": "scale(0.98,0.98) translate(-50%,-50%)" });
+		})
+
+		$(".shop_bg").on("touchend", function () {
+			if (move != 1) {
+				$(".shop").css({ "left": "50%" });
+				$(".shop_bg").css({ "transform": "scale(1,1) translate(-50%,-50%)" });
+				$(".shop_scene").css({ "display": "block" });
+			}
+			else {
+				move = 0;
+				$(".shop_bg").css({ "transform": "scale(1,1) translate(-50%,-50%)" });
+			}
+		})
+
+		function openshopmove() {
+			move = 1;
+			$(".shop_bg").css({ "transform": "scale(1,1) translate(-50%,-50%)" });
+		}
+
+		$(".shop_scene").on("touchend", function () {
+			if (move != 1) {
+				$(".shop").css({ "left": "-50%", "transition-duration": "1s" });
+				$(".shop_scene").css({ "display": "none" });
+			}
+			else {
+				move = 0;
+			}
+		})
+
+		tool_stages = [{
+			"stage": 0,
+			"cost": 0,
+			"name": "",
+			"bonus_break": 0,
+		}, {
+			"stage": 1,
+			"cost": 1000,
+			"name": "wooden",
+			"bonus_break": 1,
+		}, {
+			"stage": 2,
+			"cost": 3000,
+			"name": "stone",
+			"bonus_break": 2,
+		}, {
+			"stage": 3,
+			"cost": 8000,
+			"name": "copper",
+			"bonus_break": 3,
+		}, {
+			"stage": 4,
+			"cost": 18000,
+			"name": "ironwood",
+			"bonus_break": 4,
+		}, {
+			"stage": 5,
+			"cost": 50000,
+			"name": "iron",
+			"bonus_break": 5,
+		}, {
+			"stage": 6,
+			"cost": 120000,
+			"name": "tin",
+			"bonus_break": 6,
+		}, {
+			"stage": 7,
+			"cost": 300000,
+			"name": "golden",
+			"bonus_break": 7,
+		}, {
+			"stage": 8,
+			"cost": 700000,
+			"name": "lapis",
+			"bonus_break": 8,
+		}, {
+			"stage": 9,
+			"cost": 1500000,
+			"name": "diamond",
+			"bonus_break": 9,
+		}, {
+			"stage": 10,
+			"cost": 3100000,
+			"name": "adamantium",
+			"bonus_break": 10,
+		}, {
+			"stage": 11,
+			"cost": 6500000,
+			"name": "quartz",
+			"bonus_break": 11,
+		}, {
+			"stage": 12,
+			"cost": 14000000,
+			"name": "obsidian",
+			"bonus_break": 12,
+		}, {
+			"stage": 13,
+			"cost": 30000000,
+			"name": "dark matter",
+			"bonus_break": 13,
+		}, {
+			"stage": 14,
+			"cost": 70000000,
+			"name": "onyx",
+			"bonus_break": 14,
+		}, {
+			"stage": 15,
+			"cost": 150000000,
+			"name": "elemental",
+			"bonus_break": 15,
+		}, {
+			"stage": 16,
+			"cost": 400000000,
+			"name": "void",
+			"bonus_break": 16,
+		}, {
+			"stage": 17,
+			"cost": 1000000000,
+			"name": "powered",
+			"bonus_break": 17,
+		},];
+
+		book_stages = [{
+			"stage": 0,
+			"cost": 0,
+			"name": "",
+			"bonus_exp": 0,
+		}, {
+			"stage": 1,
+			"cost": 10000,
+			"name": "novice",
+			"bonus_exp": 0.25,
+		}, {
+			"stage": 2,
+			"cost": 50000,
+			"name": "apprentice",
+			"bonus_exp": 0.5,
+		}]
+
+		$(".bonus_break").on("touchstart", function () {
+			if (tool_stage < (tool_stages.length - 1)) {
+				if (money >= tool_stages[tool_stage + 1]["cost"]) {
+					$(this).css({ "background-color": "#828282" })
+				}
+				else {
+					$(this).css({ "background-color": "#bd6666", "border-bottom": "5px solid #9c0808", "border-right": "5px solid #9c0808", "border-top": "5px solid #ffb5b5", "border-left": "5px solid #ffb5b5", "border-bottom": "5px solid #9c0808", "border-right": "5px solid #9c0808", "border-top": "5px solid #ffb5b5", "border-left": "5px solid #ffb5b5" })
+				}
+			}
+		});
+
+		$(".bonus_break").on("touchend", function () {
+			if (tool_stage < (tool_stages.length - 1)) {
+				if (move != 1 && money >= tool_stages[tool_stage + 1]["cost"]) {
+					upg_bonus_break();
+				}
+				else {
+					move = 0;
+					$(".bonus_break").css({ "background-color": "#cccccc", "border-bottom": "5px solid #5c5c5c", "border-right": "5px solid #5c5c5c", "border-top": "5px solid #fff", "border-left": "5px solid #fff" });
+				}
+			}
+		});
+
+		function upg_bonus_break() {
+			money = money - tool_stages[tool_stage + 1]["cost"];
+			localStorage.setItem('money', money);
+			$("#money").text(abbreviate(money, 3, 3, false));
+			tool_stage = tool_stage + 1;
+			localStorage.setItem('tool_stage', tool_stage);
+			$(".tool--bonus_break").multiline("Break power\n+" + (tool_stages[tool_stage]["bonus_break"] * 100) + "%");
+			if (tool_stage < (tool_stages.length - 1)) {
+				$(".bonus_break .itemname").text("BUY " + tool_stages[tool_stage + 1]["name"] + " tools");
+				$(".bonus_break .pricemoney").text(abbreviate(tool_stages[tool_stage + 1]["cost"], 3, 3, false));
+				$(".bonus_break .shopicon").attr("src", "tools/icon_" + tool_stages[tool_stage + 1]["name"] + "_pickaxe.png");
+				$(".bonus_break").css({ "background-color": "#cccccc", "border-bottom": "5px solid #5c5c5c", "border-right": "5px solid #5c5c5c", "border-top": "5px solid #fff", "border-left": "5px solid #fff" });
+			}
+			else {
+				$(".bonus_break").css({ "background-color": "#828282" })
+				$(".bonus_break .itemname").text("POWERED tools");
+				$(".bonus_break .pricemoney").text("MAXED");
+			}
+			$(".pickaxe3d").attr("src", "tools/" + tool_stages[tool_stage]["name"] + "_pickaxe.png");
+			$(".shovel3d").attr("src", "tools/" + tool_stages[tool_stage]["name"] + "_shovel.png");
+			$(".axe3d").attr("src", "tools/" + tool_stages[tool_stage]["name"] + "_axe.png");
+		}
+
+		$(".bonus_xp").on("touchstart", function () {
+			if (book_stage < (book_stages.length - 1)) {
+				if (money >= book_stages[book_stage + 1]["cost"]) {
+					$(this).css({ "background-color": "#828282" })
+				}
+				else {
+					$(this).css({ "background-color": "#bd6666", "border-bottom": "5px solid #9c0808", "border-right": "5px solid #9c0808", "border-top": "5px solid #ffb5b5", "border-left": "5px solid #ffb5b5" })
+				}
+			}
+		});
+
+		$(".bonus_xp").on("touchend", function () {
+			if (book_stage < (book_stages.length - 1)) {
+				if (move != 1 && money >= book_stages[book_stage + 1]["cost"]) {
+					upg_bonus_exp();
+				}
+				else {
+					move = 0;
+					$(".bonus_xp").css({ "background-color": "#cccccc", "border-bottom": "5px solid #5c5c5c", "border-right": "5px solid #5c5c5c", "border-top": "5px solid #fff", "border-left": "5px solid #fff" });
+				}
+			}
+		});
+
+		function upg_bonus_exp() {
+			money = money - book_stages[book_stage + 1]["cost"];
+			localStorage.setItem('money', money);
+			$("#money").text(abbreviate(money, 3, 3, false));
+			book_stage = book_stage + 1;
+			localStorage.setItem('book_stage', book_stage);
+			$(".book3d").attr("src", book_stages[book_stage]["name"] + "_book3d.png");
+			$(".book--bonus_xp").text("+" + book_stages[book_stage]["bonus_exp"] * 100 + "% exp");
+			if (book_stage < (book_stages.length - 1)) {
+				$(".bonus_xp .itemname").text("BUY " + book_stages[book_stage + 1]["name"] + " book");
+				$(".bonus_xp .pricemoney").text(abbreviate(book_stages[book_stage + 1]["cost"], 3, 3, false));
+				$(".bonus_xp .shopicon").attr("src", book_stages[book_stage + 1]["name"] + "_book.png");
+				$(".bonus_xp").css({ "background-color": "#cccccc", "border-bottom": "5px solid #5c5c5c", "border-right": "5px solid #5c5c5c", "border-top": "5px solid #fff", "border-left": "5px solid #fff" });
+			}
+			else {
+				$(".bonus_xp").css({ "background-color": "#828282" })
+				$(".bonus_xp .itemname").text("APPRENTICE book");
+				$(".bonus_xp .pricemoney").text("MAXED");
+			}
+		}
+
+		$(".haste").on("touchstart", function () {
+			if (money >= base_cost) {
+				$(this).css({ "background-color": "#828282" })
+			}
+			else {
+				$(this).css({ "background-color": "#bd6666", "border-bottom": "5px solid #9c0808", "border-right": "5px solid #9c0808", "border-top": "5px solid #ffb5b5", "border-left": "5px solid #ffb5b5" })
+			}
+		});
+
+		$(".haste").on("touchend", function () {
+			if (move != 1 && money >= base_cost) {
+				upg_haste();
+			}
+			else {
+				move = 0;
+				$(".haste").css({ "background-color": "#cccccc", "border-bottom": "5px solid #5c5c5c", "border-right": "5px solid #5c5c5c", "border-top": "5px solid #fff", "border-left": "5px solid #fff" });
+			}
+		});
+
+		function upg_haste() {
+			money = money - base_cost;
+			localStorage.setItem('money', money);
+			$("#money").text(abbreviate(money, 3, 3, false));
+			base_power = base_power + 1;
+			localStorage.setItem('base_power', base_power);
+			base_level = base_level + 1;
+			localStorage.setItem('base_level', base_level);
+			$(".hastelevel").text("lvl " + base_level);
+			base_cost = Math.floor(1000 * Math.pow(5, base_level));
+			$(".haste").css({ "background-color": "#cccccc", "border-bottom": "5px solid #5c5c5c", "border-right": "5px solid #5c5c5c", "border-top": "5px solid #fff", "border-left": "5px solid #fff" });
+			$(".haste .pricemoney").text(abbreviate(base_cost));
+		}
+
+		function tnt_blow() {
+			$(".tnt_full").css({ "transition-duration": "0s" });
+			$(".tnt_full").css({ "clip": "rect(0px, 0px, 15px, 0px)" });
+			explosions.push(
+				new explosion((c.width / 2) - 150, (c.height / 2) - 50)
+			);
+			broken()
+			$(".tnt_full").css({ "transition-duration": tnt_time + "s" });
+			$(".tnt_full").css({ "clip": "rect(0px, 150px, 15px, 0px)" });
+		}
+
+		$(".tnt_shop").on("touchstart", function () {
+			if (!maxed_tnt) {
+				if (money >= tnt_price) {
+					$(this).css({ "background-color": "#828282" })
+				}
+				else {
+					$(this).css({ "background-color": "#bd6666", "border-bottom": "5px solid #9c0808", "border-right": "5px solid #9c0808", "border-top": "5px solid #ffb5b5", "border-left": "5px solid #ffb5b5" })
+				}
+			}
+		});
+
+		$(".tnt_shop").on("touchend", function () {
+			if (!maxed_tnt) {
+				if (move != 1 && money >= tnt_price) {
+					upg_tnt();
+				}
+				else {
+					move = 0;
+					$(".tnt_shop").css({ "background-color": "#cccccc", "border-bottom": "5px solid #5c5c5c", "border-right": "5px solid #5c5c5c", "border-top": "5px solid #fff", "border-left": "5px solid #fff" });
+				}
+			}
+		});
+
+		function upg_tnt() {
+			$(".tnt_shop").css({ "background-color": "#cccccc", "border-bottom": "5px solid #5c5c5c", "border-right": "5px solid #5c5c5c", "border-top": "5px solid #fff", "border-left": "5px solid #fff" });
+			money -= tnt_price;
+			localStorage.setItem('money', money);
+			$("#money").text(abbreviate(money, 3, 3, false));
+			tnt_level += 1;
+			clearInterval(tntTicking);
+			upd_tnt();
+			localStorage.setItem('tnt_level', tnt_level);
+		}
+	</script>
+</body>
+
+</html>
