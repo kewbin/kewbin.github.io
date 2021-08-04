@@ -23,7 +23,7 @@ $.ajax({
         });
       		for(member in members){
                   player = data["members"][member]
-                  $("table").append("<tr><td>"+(parseInt(member)+1)+"</td><td class=\"playername\">"+player["name"]+"</td><td class=\"contributed\">"+player["contributed"].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"</td></tr>");
+                  $("table").append("<tr><td>"+(parseInt(member)+1)+"</td><td><img src=\"https://minotar.net/helm/"+player["uuid"]+"/35.png\"></td><td class=\"playername\">"+player["name"]+"</td><td class=\"contributed\">"+player["contributed"].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"</td></tr>");
               }
       	}
   });
