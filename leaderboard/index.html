@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAq GXP Leaderboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <table class="leaderboard"></table>
+</body>
+<script src="jquery.js"></script>
+<script>
+$.ajax({
+    'url': "https://api.wynncraft.com/public_api.php?action=guildStats&command=The%20Aquarium",
+    'success': function (data) {
+        members = data["members"].sort(function (a, b) {
+            return b.contributed - a.contributed;
+        });
+      		for(member in members){
+                  player = data["members"][member]
+                  $("table").append("<tr><td>"+(parseInt(member)+1)+"</td><td class=\"playername\">"+player["name"]+"</td><td class=\"contributed\">"+player["contributed"].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"</td></tr>");
+              }
+      	}
+  });
+</script>
+</html>
