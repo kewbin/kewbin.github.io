@@ -44,3 +44,14 @@ tr td:last-child {
         opacity: 1;
    }
 }
+
+@media only screen and (max-width: 600px) {
+    td {
+        font-size: 17px;
+        padding: 5px 15px;
+    }
+
+    td img {
+        height: 20px;
+    }
+  }
