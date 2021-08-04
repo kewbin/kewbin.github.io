@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAq GUXP Leaderboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <table class="leaderboard"></table>
+</body>
+<script src="jquery.js"></script>
+<script>
+    $.ajax({
+      	'async': false,
+      	'global': true,
+      	'url': "start.json",
+      	'dataType': "json",
+      	'success': function (data) {
+      		start_data = data;
+      	}
+      });
+
+$.ajax({
+    'url': "https://api.wynncraft.com/public_api.php?action=guildStats&command=The%20Aquarium",
+    'success': function (data) {
+
+        for (member in data["members"]) {
+            for (old_data in start_data){
+                if(start_data[old_data]["uuid"] == data["members"][member]["uuid"]){
+                    old_p_data = start_data[old_data]
+                    break
+                } else if (old_data == start_data.length-1) {
+                    old_p_data["contributed"] = 0;
+                }
+            }
+            real_xp = data["members"][member]["contributed"] - old_p_data["contributed"]
+            data["members"][member]["contributed"] = real_xp
+        }
+
+        members = data["members"].sort(function (a, b) {
+            return b.contributed - a.contributed;
+        });
+      		for(member in members){
+                  player = data["members"][member]
+                  $("table").append("<tr><td>"+(parseInt(member)+1)+"</td><td class=\"head\"><img src=\"https://minotar.net/helm/"+player["uuid"]+"/35.png\"></td><td class=\"playername\">"+player["name"]+"</td><td class=\"contributed\">"+player["contributed"].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"</td></tr>");
+              }
+      	}
+  });
+</script>
+</html>
