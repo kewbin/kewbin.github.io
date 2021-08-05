@@ -1,810 +1,810 @@
 [
-    {
-      "name": "WoodCreature",
-      "uuid": "aa7402cc-bf1c-4aed-838b-fd8897d38836",
-      "rank": "CHIEF",
-      "contributed": 141243001330,
-      "joined": "2020-10-06T16:22:01.147Z",
-      "joinedFriendly": "Oct 6th 2020"
-    },
-    {
-      "name": "ArchoKast",
-      "uuid": "3408764b-71dc-45d4-b517-4aef98e5848d",
-      "rank": "CHIEF",
-      "contributed": 11113603887,
-      "joined": "2020-12-29T22:29:32.270Z",
-      "joinedFriendly": "Dec 29th 2020"
-    },
-    {
-      "name": "sweeeeeeeeeeeeem",
-      "uuid": "969a9ab8-ae9c-4d14-9179-b153e814f81f",
-      "rank": "STRATEGIST",
-      "contributed": 133182175,
-      "joined": "2021-01-05T19:58:50.856Z",
-      "joinedFriendly": "Jan 5th 2021"
-    },
-    {
-      "name": "Ecowo_",
-      "uuid": "c98e61e0-b37c-42aa-b7c2-067c13bc2266",
-      "rank": "CHIEF",
-      "contributed": 1615773567,
-      "joined": "2021-01-16T09:41:17.324Z",
-      "joinedFriendly": "Jan 16th 2021"
-    },
-    {
-      "name": "ezzath",
-      "uuid": "9423aef5-b150-430b-b6f7-f53be2f3400a",
-      "rank": "CHIEF",
-      "contributed": 11131826816,
-      "joined": "2021-01-16T13:47:42.109Z",
-      "joinedFriendly": "Jan 16th 2021"
-    },
-    {
-      "name": "Ghost1John",
-      "uuid": "9781f21f-8910-4b55-a5e2-7d73500f23a0",
-      "rank": "CHIEF",
-      "contributed": 6541672567,
-      "joined": "2021-01-17T23:05:58.891Z",
-      "joinedFriendly": "Jan 17th 2021"
-    },
-    {
-      "name": "ThaDeny",
-      "uuid": "5ea51078-cdc9-4942-81ba-2fd8da8598b2",
-      "rank": "CHIEF",
-      "contributed": 54160558413,
-      "joined": "2020-11-13T13:24:21.923Z",
-      "joinedFriendly": "Nov 13th 2020"
-    },
-    {
-      "name": "WeaponMerchant",
-      "uuid": "0c997de8-722d-48dc-8c46-0631d1c45f74",
-      "rank": "OWNER",
-      "contributed": 86491402422,
-      "joined": "2021-01-20T13:15:12.535Z",
-      "joinedFriendly": "Jan 20th 2021"
-    },
-    {
-      "name": "Uniimog",
-      "uuid": "69192e0f-48c0-4dec-8e78-3a098ec63c42",
-      "rank": "RECRUITER",
-      "contributed": 97333906,
-      "joined": "2021-01-20T15:36:59.900Z",
-      "joinedFriendly": "Jan 20th 2021"
-    },
-    {
-      "name": "Magic_Poi",
-      "uuid": "160b17a1-3c70-4d59-bb60-00a0c6badd82",
-      "rank": "RECRUIT",
-      "contributed": 51837726,
-      "joined": "2021-02-05T15:10:45.206Z",
-      "joinedFriendly": "Feb 5th 2021"
-    },
-    {
-      "name": "GlassJars",
-      "uuid": "48dd804e-bccc-4697-bc6a-ad0b0b3a0e9b",
-      "rank": "RECRUITER",
-      "contributed": 2593842416,
-      "joined": "2021-02-08T20:01:22.922Z",
-      "joinedFriendly": "Feb 8th 2021"
-    },
-    {
-      "name": "pokefreak134562",
-      "uuid": "6102847d-9d6b-4ccf-ab4b-40979933fe3d",
-      "rank": "CAPTAIN",
-      "contributed": 14246173,
-      "joined": "2021-02-23T09:46:34.641Z",
-      "joinedFriendly": "Feb 23rd 2021"
-    },
-    {
-      "name": "Classicalad",
-      "uuid": "948674f4-7e7c-40f6-add1-d3ed2dc0e1ec",
-      "rank": "CAPTAIN",
-      "contributed": 1076700,
-      "joined": "2021-02-25T19:11:57.228Z",
-      "joinedFriendly": "Feb 25th 2021"
-    },
-    {
-      "name": "BoredPoison",
-      "uuid": "b180b724-6b4b-4b71-ab93-97128bccf5d5",
-      "rank": "CHIEF",
-      "contributed": 0,
-      "joined": "2021-03-01T13:43:47.545Z",
-      "joinedFriendly": "Mar 1st 2021"
-    },
-    {
-      "name": "Aqualost",
-      "uuid": "b3908bed-6762-4aee-85ee-ea7c23dbdefb",
-      "rank": "CHIEF",
-      "contributed": 9753534067,
-      "joined": "2021-03-02T13:16:11.137Z",
-      "joinedFriendly": "Mar 2nd 2021"
-    },
-    {
-      "name": "IkMagJouNiet",
-      "uuid": "340c7eae-1900-4f72-a712-c2e06dcad764",
-      "rank": "STRATEGIST",
-      "contributed": 9302781444,
-      "joined": "2021-03-09T23:37:03.256Z",
-      "joinedFriendly": "Mar 9th 2021"
-    },
-    {
-      "name": "Maracs",
-      "uuid": "ee5a9eb5-d45c-4ff7-b4a9-4e016a586236",
-      "rank": "STRATEGIST",
-      "contributed": 7189963945,
-      "joined": "2021-03-12T21:27:32.138Z",
-      "joinedFriendly": "Mar 12th 2021"
-    },
-    {
-      "name": "Huruf",
-      "uuid": "9ec4a70e-080f-4291-96c4-5afc1d8c8afa",
-      "rank": "CAPTAIN",
-      "contributed": 393933183,
-      "joined": "2021-03-16T00:00:59.503Z",
-      "joinedFriendly": "Mar 16th 2021"
-    },
-    {
-      "name": "RedGamer735",
-      "uuid": "94247385-86e5-4b76-b0df-795fc95cddb7",
-      "rank": "CAPTAIN",
-      "contributed": 88342665,
-      "joined": "2021-03-22T06:13:34.850Z",
-      "joinedFriendly": "Mar 22nd 2021"
-    },
-    {
-      "name": "NovaWolf",
-      "uuid": "6ce05d35-b957-4d73-9ed4-9b965a9d8e30",
-      "rank": "RECRUIT",
-      "contributed": 27321718,
-      "joined": "2021-02-17T21:43:35.937Z",
-      "joinedFriendly": "Feb 17th 2021"
-    },
-    {
-      "name": "SonnyVA",
-      "uuid": "c4d7612d-c753-46e8-ae0e-8f283b6efcf8",
-      "rank": "STRATEGIST",
-      "contributed": 964715404,
-      "joined": "2021-04-26T22:31:24.604Z",
-      "joinedFriendly": "Apr 26th 2021"
-    },
-    {
-      "name": "CuzImTimer",
-      "uuid": "b5b912cd-5773-4279-8af5-bb8003c25d3e",
-      "rank": "STRATEGIST",
-      "contributed": 73356460048,
-      "joined": "2021-04-29T20:10:08.428Z",
-      "joinedFriendly": "Apr 29th 2021"
-    },
-    {
-      "name": "Aleksander299",
-      "uuid": "a0417bd8-1bfc-4d7c-b761-6a00404ee7b8",
-      "rank": "RECRUITER",
-      "contributed": 11143043,
-      "joined": "2021-05-02T20:29:38.995Z",
-      "joinedFriendly": "May 2nd 2021"
-    },
-    {
-      "name": "thebigcnu",
-      "uuid": "19d80203-506e-43c4-802f-a4e4649a1849",
-      "rank": "STRATEGIST",
-      "contributed": 9638493588,
-      "joined": "2021-05-13T11:38:43.791Z",
-      "joinedFriendly": "May 13th 2021"
-    },
-    {
-      "name": "LordQualle",
-      "uuid": "bba9b3ea-511c-4d2f-99cb-b6d3930e1820",
-      "rank": "STRATEGIST",
-      "contributed": 13773742466,
-      "joined": "2021-05-14T12:57:19.353Z",
-      "joinedFriendly": "May 14th 2021"
-    },
-    {
-      "name": "N3bulaHS",
-      "uuid": "dd10bd55-93ad-4fac-b4a5-537c4454ac98",
-      "rank": "RECRUITER",
-      "contributed": 66556999,
-      "joined": "2021-05-17T14:19:13.320Z",
-      "joinedFriendly": "May 17th 2021"
-    },
-    {
-      "name": "LordGonner",
-      "uuid": "0c229131-7875-49b5-937a-01c173daf776",
-      "rank": "CAPTAIN",
-      "contributed": 516890177,
-      "joined": "2021-05-17T17:00:43.224Z",
-      "joinedFriendly": "May 17th 2021"
-    },
-    {
-      "name": "MasterPig1",
-      "uuid": "72bda61d-a186-4a3d-b559-463fcf7710a2",
-      "rank": "RECRUITER",
-      "contributed": 169161028,
-      "joined": "2021-05-17T17:01:54.059Z",
-      "joinedFriendly": "May 17th 2021"
-    },
-    {
-      "name": "EnCrypTeD__",
-      "uuid": "0eab4b9d-596e-4d28-ac75-b934d53f3f2b",
-      "rank": "CAPTAIN",
-      "contributed": 28819751,
-      "joined": "2021-05-21T23:55:42.001Z",
-      "joinedFriendly": "May 21st 2021"
-    },
-    {
-      "name": "LaufeyGL",
-      "uuid": "a04629c1-9080-4a65-bf7e-408bbf660dc1",
-      "rank": "CAPTAIN",
-      "contributed": 0,
-      "joined": "2021-03-01T22:21:33.812Z",
-      "joinedFriendly": "Mar 1st 2021"
-    },
-    {
-      "name": "xAllura",
-      "uuid": "252e4211-aa0b-4f26-84c3-1c33720a33ae",
-      "rank": "RECRUITER",
-      "contributed": 2498017041,
-      "joined": "2021-06-13T23:33:50.446Z",
-      "joinedFriendly": "Jun 13th 2021"
-    },
-    {
-      "name": "underlein",
-      "uuid": "a51f0443-d8b6-4c4a-8b76-50ca7fc3ab3b",
-      "rank": "CAPTAIN",
-      "contributed": 1436274160,
-      "joined": "2021-06-14T17:55:44.187Z",
-      "joinedFriendly": "Jun 14th 2021"
-    },
-    {
-      "name": "WayaBoy",
-      "uuid": "084609b5-b871-4691-95b1-dce7abbcb4bf",
-      "rank": "CAPTAIN",
-      "contributed": 448721373,
-      "joined": "2021-06-14T18:04:55.283Z",
-      "joinedFriendly": "Jun 14th 2021"
-    },
-    {
-      "name": "the_quaxterr",
-      "uuid": "9e8358c8-50ef-4004-83a7-8b22c1670fc1",
-      "rank": "RECRUITER",
-      "contributed": 785205119,
-      "joined": "2021-06-16T11:29:08.640Z",
-      "joinedFriendly": "Jun 16th 2021"
-    },
-    {
-      "name": "Pffa",
-      "uuid": "49203299-694e-46fe-844e-5330d6b07c70",
-      "rank": "RECRUITER",
-      "contributed": 9513768322,
-      "joined": "2021-06-16T15:59:52.215Z",
-      "joinedFriendly": "Jun 16th 2021"
-    },
-    {
-      "name": "Flora_San_",
-      "uuid": "a82e8dee-4ace-4c4c-9f57-5d02234d9530",
-      "rank": "STRATEGIST",
-      "contributed": 221019465,
-      "joined": "2021-06-16T21:07:06.307Z",
-      "joinedFriendly": "Jun 16th 2021"
-    },
-    {
-      "name": "Kediana",
-      "uuid": "37279bf6-f005-41f7-b7e2-f42db69bf5ec",
-      "rank": "RECRUIT",
-      "contributed": 79466721,
-      "joined": "2021-06-17T14:11:04.337Z",
-      "joinedFriendly": "Jun 17th 2021"
-    },
-    {
-      "name": "wholg",
-      "uuid": "6a22fb47-d398-478d-864f-eb396fa1280e",
-      "rank": "CAPTAIN",
-      "contributed": 228997276,
-      "joined": "2021-05-21T20:36:09.353Z",
-      "joinedFriendly": "May 21st 2021"
-    },
-    {
-      "name": "WildnYT",
-      "uuid": "69eae71a-4921-4e8b-834c-8624821fa6d1",
-      "rank": "RECRUITER",
-      "contributed": 26278426,
-      "joined": "2021-06-17T21:12:28.653Z",
-      "joinedFriendly": "Jun 17th 2021"
-    },
-    {
-      "name": "MeteorMes",
-      "uuid": "45f80e79-1cdc-48e7-bf34-9d06201717d6",
-      "rank": "CAPTAIN",
-      "contributed": 343712966,
-      "joined": "2021-06-17T21:27:13.562Z",
-      "joinedFriendly": "Jun 17th 2021"
-    },
-    {
-      "name": "Illuwm",
-      "uuid": "21a9a844-005b-4567-9db4-2580451d6cba",
-      "rank": "RECRUIT",
-      "contributed": 880734622,
-      "joined": "2021-06-17T22:40:18.546Z",
-      "joinedFriendly": "Jun 17th 2021"
-    },
-    {
-      "name": "kalkapat",
-      "uuid": "474246f4-621d-45b1-9345-ce14aba66d25",
-      "rank": "CAPTAIN",
-      "contributed": 103169363,
-      "joined": "2021-06-19T21:06:20.515Z",
-      "joinedFriendly": "Jun 19th 2021"
-    },
-    {
-      "name": "rehgi",
-      "uuid": "204f975d-18e8-4ba7-b49b-e389ea4fe8d9",
-      "rank": "CAPTAIN",
-      "contributed": 67368483,
-      "joined": "2021-06-27T15:04:31.448Z",
-      "joinedFriendly": "Jun 27th 2021"
-    },
-    {
-      "name": "WoahMan",
-      "uuid": "240897da-c8c1-4279-a346-1c4151b0d114",
-      "rank": "RECRUITER",
-      "contributed": 100731904,
-      "joined": "2021-06-27T17:12:37.212Z",
-      "joinedFriendly": "Jun 27th 2021"
-    },
-    {
-      "name": "Jannyaaa",
-      "uuid": "c96befd3-387a-477b-94ea-a0ffe4a45fa9",
-      "rank": "RECRUITER",
-      "contributed": 15211238,
-      "joined": "2021-06-28T20:02:13.192Z",
-      "joinedFriendly": "Jun 28th 2021"
-    },
-    {
-      "name": "WanPunch",
-      "uuid": "4357f2d9-1624-4be0-8260-a32890e21e25",
-      "rank": "CAPTAIN",
-      "contributed": 67175977,
-      "joined": "2021-06-28T20:26:03.535Z",
-      "joinedFriendly": "Jun 28th 2021"
-    },
-    {
-      "name": "TrilogyXO",
-      "uuid": "a27fbdef-26d3-4435-b036-87c5bf4ef2fa",
-      "rank": "CAPTAIN",
-      "contributed": 12037818852,
-      "joined": "2021-06-30T21:18:46.617Z",
-      "joinedFriendly": "Jun 30th 2021"
-    },
-    {
-      "name": "uwustar",
-      "uuid": "6bff2d8a-8cd5-494f-9864-864a67bb54b1",
-      "rank": "RECRUIT",
-      "contributed": 21358908,
-      "joined": "2021-07-01T01:06:48.924Z",
-      "joinedFriendly": "Jul 1st 2021"
-    },
-    {
-      "name": "OceanTheGreat",
-      "uuid": "8f184e98-7b57-490b-a6f9-b6fbf4ed2e82",
-      "rank": "RECRUIT",
-      "contributed": 9680357,
-      "joined": "2021-07-01T01:12:14.917Z",
-      "joinedFriendly": "Jul 1st 2021"
-    },
-    {
-      "name": "WigglesMan07",
-      "uuid": "866c5d12-7760-4cbc-a85c-e069cacf1901",
-      "rank": "RECRUITER",
-      "contributed": 844749501,
-      "joined": "2021-07-03T18:17:44.461Z",
-      "joinedFriendly": "Jul 3rd 2021"
-    },
-    {
-      "name": "talonexstar",
-      "uuid": "5b79d124-ba55-42fa-8539-2404f584e6f8",
-      "rank": "STRATEGIST",
-      "contributed": 348673551,
-      "joined": "2021-07-05T19:59:20.384Z",
-      "joinedFriendly": "Jul 5th 2021"
-    },
-    {
-      "name": "Savanah__",
-      "uuid": "582f17f7-b90f-4a9c-952f-fdd3b81d1a7a",
-      "rank": "RECRUIT",
-      "contributed": 133942668,
-      "joined": "2021-07-05T20:38:30.762Z",
-      "joinedFriendly": "Jul 5th 2021"
-    },
-    {
-      "name": "SilverSaibot",
-      "uuid": "5bb7eacf-2906-40fa-95c3-5ac5747cc122",
-      "rank": "RECRUIT",
-      "contributed": 333885155,
-      "joined": "2021-07-06T09:10:01.516Z",
-      "joinedFriendly": "Jul 6th 2021"
-    },
-    {
-      "name": "AshZwynn",
-      "uuid": "20c4fb78-dc2f-42f7-8817-9dd6c71e3e94",
-      "rank": "CAPTAIN",
-      "contributed": 88056570,
-      "joined": "2021-07-06T09:46:21.303Z",
-      "joinedFriendly": "Jul 6th 2021"
-    },
-    {
-      "name": "Zephylox",
-      "uuid": "341e4251-6295-41c6-8005-75053a8f518f",
-      "rank": "RECRUIT",
-      "contributed": 0,
-      "joined": "2021-07-06T17:19:35.349Z",
-      "joinedFriendly": "Jul 6th 2021"
-    },
-    {
-      "name": "IceWarox",
-      "uuid": "4631f472-b6e9-4602-9e79-6157c399f0b9",
-      "rank": "CAPTAIN",
-      "contributed": 10324277794,
-      "joined": "2021-07-07T11:21:52.422Z",
-      "joinedFriendly": "Jul 7th 2021"
-    },
-    {
-      "name": "bakklava_",
-      "uuid": "d84646ff-73b6-43a3-a83d-ff8944b204e0",
-      "rank": "RECRUIT",
-      "contributed": 17980002,
-      "joined": "2021-07-07T18:47:43.306Z",
-      "joinedFriendly": "Jul 7th 2021"
-    },
-    {
-      "name": "xXxPony_LoverxXx",
-      "uuid": "3a75b0fa-b798-43ac-b3c2-42d0de1e8826",
-      "rank": "CAPTAIN",
-      "contributed": 2617005,
-      "joined": "2021-07-03T07:31:58.203Z",
-      "joinedFriendly": "Jul 3rd 2021"
-    },
-    {
-      "name": "PlazmaVolt",
-      "uuid": "83dafaab-2c9c-461b-a5e2-8c712f260f15",
-      "rank": "RECRUIT",
-      "contributed": 206822014,
-      "joined": "2021-07-08T02:29:27.218Z",
-      "joinedFriendly": "Jul 8th 2021"
-    },
-    {
-      "name": "Penguins76",
-      "uuid": "defbd47c-9e20-4c58-b0c1-fa855fd345d1",
-      "rank": "RECRUIT",
-      "contributed": 1391590583,
-      "joined": "2021-07-08T13:45:58.302Z",
-      "joinedFriendly": "Jul 8th 2021"
-    },
-    {
-      "name": "SaitoZin",
-      "uuid": "a10010e2-c7ee-4a33-b099-cf106819550f",
-      "rank": "RECRUIT",
-      "contributed": 0,
-      "joined": "2021-07-08T23:04:13.187Z",
-      "joinedFriendly": "Jul 8th 2021"
-    },
-    {
-      "name": "Kewbin",
-      "uuid": "4ca975e2-cb91-4ebc-bcd1-fcd22e40f41b",
-      "rank": "CAPTAIN",
-      "contributed": 13242929561,
-      "joined": "2021-07-13T22:21:51.065Z",
-      "joinedFriendly": "Jul 13th 2021"
-    },
-    {
-      "name": "Varianth",
-      "uuid": "1aca1b32-64ab-4a15-b7e9-b833ed6f9f53",
-      "rank": "RECRUIT",
-      "contributed": 4898844,
-      "joined": "2021-07-14T01:08:03.068Z",
-      "joinedFriendly": "Jul 14th 2021"
-    },
-    {
-      "name": "SiteBite",
-      "uuid": "eada305f-4746-415a-8bac-8d970065571d",
-      "rank": "RECRUIT",
-      "contributed": 37408487,
-      "joined": "2021-07-14T04:08:28.363Z",
-      "joinedFriendly": "Jul 14th 2021"
-    },
-    {
-      "name": "YummyIsIce",
-      "uuid": "7aa0bbc0-a4f9-45fa-a954-c9cbb65d4b39",
-      "rank": "RECRUIT",
-      "contributed": 4542286,
-      "joined": "2021-07-14T15:25:53.487Z",
-      "joinedFriendly": "Jul 14th 2021"
-    },
-    {
-      "name": "turlismus",
-      "uuid": "ddc55272-f843-4aa9-9c44-357178b28ce8",
-      "rank": "RECRUIT",
-      "contributed": 238176098,
-      "joined": "2021-07-14T18:24:08.909Z",
-      "joinedFriendly": "Jul 14th 2021"
-    },
-    {
-      "name": "Lqlx",
-      "uuid": "fbdb7c3b-5b9f-47a3-b008-731566148a8d",
-      "rank": "RECRUITER",
-      "contributed": 41171547,
-      "joined": "2021-07-14T23:25:01.529Z",
-      "joinedFriendly": "Jul 14th 2021"
-    },
-    {
-      "name": "Gumbear",
-      "uuid": "a4fb34df-a976-4957-b1c4-ee9c2ce1f4c9",
-      "rank": "CAPTAIN",
-      "contributed": 50503659035,
-      "joined": "2021-07-15T18:22:57.765Z",
-      "joinedFriendly": "Jul 15th 2021"
-    },
-    {
-      "name": "VireVeonix",
-      "uuid": "db9b5947-f159-43ea-8153-4d4df292b2c4",
-      "rank": "RECRUIT",
-      "contributed": 685921794,
-      "joined": "2021-07-15T21:00:51.267Z",
-      "joinedFriendly": "Jul 15th 2021"
-    },
-    {
-      "name": "xxAim",
-      "uuid": "0d46a2a8-6069-4ffc-adb7-596e1e2c9a32",
-      "rank": "RECRUIT",
-      "contributed": 20928909,
-      "joined": "2021-07-15T23:24:12.825Z",
-      "joinedFriendly": "Jul 15th 2021"
-    },
-    {
-      "name": "AidenPlayzYT",
-      "uuid": "07f22edb-67c1-44e7-826d-3c12138bbcad",
-      "rank": "RECRUIT",
-      "contributed": 1689504748,
-      "joined": "2021-07-17T19:32:44.802Z",
-      "joinedFriendly": "Jul 17th 2021"
-    },
-    {
-      "name": "BurningAspect",
-      "uuid": "ee78ba7b-e6e9-4fc2-8d62-6ada52add467",
-      "rank": "RECRUIT",
-      "contributed": 942436872,
-      "joined": "2021-07-18T00:57:47.920Z",
-      "joinedFriendly": "Jul 18th 2021"
-    },
-    {
-      "name": "AddictedStoner",
-      "uuid": "43f07c42-1efe-4cbb-8392-64e9cbc04c9b",
-      "rank": "RECRUIT",
-      "contributed": 13024281,
-      "joined": "2021-07-18T05:41:49.083Z",
-      "joinedFriendly": "Jul 18th 2021"
-    },
-    {
-      "name": "TricksterTommy",
-      "uuid": "6b811755-bf74-49f0-b3ae-a121cbef6c4d",
-      "rank": "RECRUIT",
-      "contributed": 481258,
-      "joined": "2021-07-19T21:54:35.447Z",
-      "joinedFriendly": "Jul 19th 2021"
-    },
-    {
-      "name": "ItsEddiot",
-      "uuid": "25c52e30-152a-4b38-af8f-82d0d4f0543f",
-      "rank": "RECRUIT",
-      "contributed": 247908768,
-      "joined": "2021-07-19T23:49:38.739Z",
-      "joinedFriendly": "Jul 19th 2021"
-    },
-    {
-      "name": "CebuPacific",
-      "uuid": "89e9a699-a350-4be1-9489-fffbe48c4fe1",
-      "rank": "RECRUIT",
-      "contributed": 1470299398,
-      "joined": "2021-07-20T02:07:24.881Z",
-      "joinedFriendly": "Jul 20th 2021"
-    },
-    {
-      "name": "SleeepingSheep",
-      "uuid": "d9bdfd53-4fa3-4a67-a4de-a9493c6f25a1",
-      "rank": "RECRUIT",
-      "contributed": 3678614360,
-      "joined": "2021-07-20T14:24:37.279Z",
-      "joinedFriendly": "Jul 20th 2021"
-    },
-    {
-      "name": "FeodorRomanov",
-      "uuid": "8c91f720-24d0-4bfb-a1ac-0efb012f6a02",
-      "rank": "STRATEGIST",
-      "contributed": 282474279,
-      "joined": "2021-07-21T18:08:32.786Z",
-      "joinedFriendly": "Jul 21st 2021"
-    },
-    {
-      "name": "PokemonGamer11",
-      "uuid": "bef54242-fc5c-4c5b-b9a9-f735a9a6337c",
-      "rank": "CAPTAIN",
-      "contributed": 10199852315,
-      "joined": "2021-07-22T09:59:01.205Z",
-      "joinedFriendly": "Jul 22nd 2021"
-    },
-    {
-      "name": "Nepttuune",
-      "uuid": "a695c080-a142-4fe2-9b7e-f78e80a41976",
-      "rank": "RECRUIT",
-      "contributed": 0,
-      "joined": "2021-07-24T15:53:22.507Z",
-      "joinedFriendly": "Jul 24th 2021"
-    },
-    {
-      "name": "DeepLilac",
-      "uuid": "f0111c78-d7c8-45f7-81a6-3b3b58020eb6",
-      "rank": "RECRUIT",
-      "contributed": 54980329,
-      "joined": "2021-07-24T15:53:38.088Z",
-      "joinedFriendly": "Jul 24th 2021"
-    },
-    {
-      "name": "PicoBlomst",
-      "uuid": "123b65dd-753d-463b-aaa3-c2c2b6b7c8b4",
-      "rank": "RECRUITER",
-      "contributed": 1215702139,
-      "joined": "2021-07-25T11:38:50.537Z",
-      "joinedFriendly": "Jul 25th 2021"
-    },
-    {
-      "name": "07E",
-      "uuid": "762f8643-5aa9-4cfb-ad4e-5e8c95d168c9",
-      "rank": "RECRUIT",
-      "contributed": 0,
-      "joined": "2021-07-25T20:27:47.081Z",
-      "joinedFriendly": "Jul 25th 2021"
-    },
-    {
-      "name": "Populist",
-      "uuid": "a0801200-3d2e-4fbf-a7c9-be09e9630b78",
-      "rank": "RECRUIT",
-      "contributed": 1648821037,
-      "joined": "2021-07-25T22:25:47.965Z",
-      "joinedFriendly": "Jul 25th 2021"
-    },
-    {
-      "name": "5h4w",
-      "uuid": "1e1bfa22-5d9f-478c-bd30-27ddda2c2500",
-      "rank": "RECRUIT",
-      "contributed": 47922296,
-      "joined": "2021-07-26T18:52:49.022Z",
-      "joinedFriendly": "Jul 26th 2021"
-    },
-    {
-      "name": "Funumunuh",
-      "uuid": "b16646f4-9a35-46bd-8db1-dabc76bf768f",
-      "rank": "RECRUIT",
-      "contributed": 0,
-      "joined": "2021-07-26T19:25:04.435Z",
-      "joinedFriendly": "Jul 26th 2021"
-    },
-    {
-      "name": "SaintRuiz",
-      "uuid": "f7e3ee11-4f43-4237-a267-ac7af3e5087e",
-      "rank": "RECRUIT",
-      "contributed": 190810,
-      "joined": "2021-07-27T00:50:20.031Z",
-      "joinedFriendly": "Jul 27th 2021"
-    },
-    {
-      "name": "nerdynerdz",
-      "uuid": "eb57e3dc-6f46-4ace-aad1-962923fcba38",
-      "rank": "RECRUIT",
-      "contributed": 98957496,
-      "joined": "2021-07-28T22:39:31.943Z",
-      "joinedFriendly": "Jul 28th 2021"
-    },
-    {
-      "name": "Nitrogen7",
-      "uuid": "fa6a83d3-202a-43ab-989c-676ca1a75ea4",
-      "rank": "CAPTAIN",
-      "contributed": 11056922232,
-      "joined": "2021-07-29T14:37:47.300Z",
-      "joinedFriendly": "Jul 29th 2021"
-    },
-    {
-      "name": "alex1axel",
-      "uuid": "9726fb92-7de0-40f6-b35c-9a99334ea0fd",
-      "rank": "RECRUIT",
-      "contributed": 179561132,
-      "joined": "2021-07-29T17:23:49.007Z",
-      "joinedFriendly": "Jul 29th 2021"
-    },
-    {
-      "name": "MrSlushie96",
-      "uuid": "67f4346f-7203-4a3e-a439-ff92c2eda6c7",
-      "rank": "RECRUIT",
-      "contributed": 219933210,
-      "joined": "2021-07-30T18:14:38.437Z",
-      "joinedFriendly": "Jul 30th 2021"
-    },
-    {
-      "name": "Iron_Chopper",
-      "uuid": "1dc1ebf3-a4c5-49fa-952f-730ff611059a",
-      "rank": "RECRUITER",
-      "contributed": 151938587,
-      "joined": "2021-07-30T22:32:30.322Z",
-      "joinedFriendly": "Jul 30th 2021"
-    },
-    {
-      "name": "CramCTQ",
-      "uuid": "df1896e1-e468-451b-b3f4-7ff156a7708d",
-      "rank": "RECRUIT",
-      "contributed": 1043692581,
-      "joined": "2021-07-31T15:12:40.332Z",
-      "joinedFriendly": "Jul 31st 2021"
-    },
-    {
-      "name": "Golemboy",
-      "uuid": "32386f22-90bc-4567-8e8b-a9fc5b353c19",
-      "rank": "RECRUIT",
-      "contributed": 285003,
-      "joined": "2021-08-01T00:21:38.685Z",
-      "joinedFriendly": "Aug 1st 2021"
-    },
-    {
-      "name": "AlwaysInAMood",
-      "uuid": "cf4a4bed-839a-4e06-ba57-7a310c4f499d",
-      "rank": "RECRUIT",
-      "contributed": 2203595,
-      "joined": "2021-08-01T00:45:48.128Z",
-      "joinedFriendly": "Aug 1st 2021"
-    },
-    {
-      "name": "Led",
-      "uuid": "722e095a-a585-4f7e-9117-7fc2839e8853",
-      "rank": "RECRUIT",
-      "contributed": 1632267,
-      "joined": "2021-08-01T03:10:06.755Z",
-      "joinedFriendly": "Aug 1st 2021"
-    },
-    {
-      "name": "Strichmann1515",
-      "uuid": "310bce81-6baa-4b05-b8b0-9ea4dcd1dd0b",
-      "rank": "RECRUIT",
-      "contributed": 0,
-      "joined": "2021-08-01T22:53:17.662Z",
-      "joinedFriendly": "Aug 1st 2021"
-    },
-    {
-      "name": "FutaFan",
-      "uuid": "6adaeb8e-9b6e-4c0e-b8c9-02a9e19f22f8",
-      "rank": "RECRUIT",
-      "contributed": 1705745,
-      "joined": "2021-08-03T17:05:11.836Z",
-      "joinedFriendly": "Aug 3rd 2021"
-    },
-    {
-      "name": "znel2002",
-      "uuid": "1065e065-4fff-44be-977b-c66918cb8e8c",
-      "rank": "RECRUIT",
-      "contributed": 0,
-      "joined": "2021-08-03T17:25:17.266Z",
-      "joinedFriendly": "Aug 3rd 2021"
-    },
-    {
-      "name": "simongao1126",
-      "uuid": "0a6b79f0-9c30-4226-8e17-f47745244e0e",
-      "rank": "RECRUITER",
-      "contributed": 324,
-      "joined": "2021-08-03T17:34:08.436Z",
-      "joinedFriendly": "Aug 3rd 2021"
-    },
-    {
-      "name": "Peanutyy",
-      "uuid": "4bca596b-8573-4139-a7f3-616c0f55730d",
-      "rank": "RECRUIT",
-      "contributed": 110130,
-      "joined": "2021-08-03T18:13:31.688Z",
-      "joinedFriendly": "Aug 3rd 2021"
-    }
-  ]
+  {
+    "name": "WoodCreature",
+    "uuid": "aa7402cc-bf1c-4aed-838b-fd8897d38836",
+    "rank": "CHIEF",
+    "contributed": 145021094182,
+    "joined": "2020-10-06T16:22:01.147Z",
+    "joinedFriendly": "Oct 6th 2020"
+  },
+  {
+    "name": "ArchoKast",
+    "uuid": "3408764b-71dc-45d4-b517-4aef98e5848d",
+    "rank": "CHIEF",
+    "contributed": 11388877025,
+    "joined": "2020-12-29T22:29:32.270Z",
+    "joinedFriendly": "Dec 29th 2020"
+  },
+  {
+    "name": "sweeeeeeeeeeeeem",
+    "uuid": "969a9ab8-ae9c-4d14-9179-b153e814f81f",
+    "rank": "STRATEGIST",
+    "contributed": 133182175,
+    "joined": "2021-01-05T19:58:50.856Z",
+    "joinedFriendly": "Jan 5th 2021"
+  },
+  {
+    "name": "Ecowo_",
+    "uuid": "c98e61e0-b37c-42aa-b7c2-067c13bc2266",
+    "rank": "CHIEF",
+    "contributed": 1615773567,
+    "joined": "2021-01-16T09:41:17.324Z",
+    "joinedFriendly": "Jan 16th 2021"
+  },
+  {
+    "name": "ezzath",
+    "uuid": "9423aef5-b150-430b-b6f7-f53be2f3400a",
+    "rank": "CHIEF",
+    "contributed": 11132808733,
+    "joined": "2021-01-16T13:47:42.109Z",
+    "joinedFriendly": "Jan 16th 2021"
+  },
+  {
+    "name": "Ghost1John",
+    "uuid": "9781f21f-8910-4b55-a5e2-7d73500f23a0",
+    "rank": "CHIEF",
+    "contributed": 6541672567,
+    "joined": "2021-01-17T23:05:58.891Z",
+    "joinedFriendly": "Jan 17th 2021"
+  },
+  {
+    "name": "ThaDeny",
+    "uuid": "5ea51078-cdc9-4942-81ba-2fd8da8598b2",
+    "rank": "CHIEF",
+    "contributed": 54160558413,
+    "joined": "2020-11-13T13:24:21.923Z",
+    "joinedFriendly": "Nov 13th 2020"
+  },
+  {
+    "name": "WeaponMerchant",
+    "uuid": "0c997de8-722d-48dc-8c46-0631d1c45f74",
+    "rank": "OWNER",
+    "contributed": 87312186300,
+    "joined": "2021-01-20T13:15:12.535Z",
+    "joinedFriendly": "Jan 20th 2021"
+  },
+  {
+    "name": "Uniimog",
+    "uuid": "69192e0f-48c0-4dec-8e78-3a098ec63c42",
+    "rank": "RECRUITER",
+    "contributed": 97333906,
+    "joined": "2021-01-20T15:36:59.900Z",
+    "joinedFriendly": "Jan 20th 2021"
+  },
+  {
+    "name": "Magic_Poi",
+    "uuid": "160b17a1-3c70-4d59-bb60-00a0c6badd82",
+    "rank": "RECRUIT",
+    "contributed": 51837726,
+    "joined": "2021-02-05T15:10:45.206Z",
+    "joinedFriendly": "Feb 5th 2021"
+  },
+  {
+    "name": "GlassJars",
+    "uuid": "48dd804e-bccc-4697-bc6a-ad0b0b3a0e9b",
+    "rank": "RECRUITER",
+    "contributed": 2596433918,
+    "joined": "2021-02-08T20:01:22.922Z",
+    "joinedFriendly": "Feb 8th 2021"
+  },
+  {
+    "name": "pokefreak134562",
+    "uuid": "6102847d-9d6b-4ccf-ab4b-40979933fe3d",
+    "rank": "CAPTAIN",
+    "contributed": 14246173,
+    "joined": "2021-02-23T09:46:34.641Z",
+    "joinedFriendly": "Feb 23rd 2021"
+  },
+  {
+    "name": "Classicalad",
+    "uuid": "948674f4-7e7c-40f6-add1-d3ed2dc0e1ec",
+    "rank": "CAPTAIN",
+    "contributed": 1076700,
+    "joined": "2021-02-25T19:11:57.228Z",
+    "joinedFriendly": "Feb 25th 2021"
+  },
+  {
+    "name": "BoredPoison",
+    "uuid": "b180b724-6b4b-4b71-ab93-97128bccf5d5",
+    "rank": "CHIEF",
+    "contributed": 0,
+    "joined": "2021-03-01T13:43:47.545Z",
+    "joinedFriendly": "Mar 1st 2021"
+  },
+  {
+    "name": "Aqualost",
+    "uuid": "b3908bed-6762-4aee-85ee-ea7c23dbdefb",
+    "rank": "CHIEF",
+    "contributed": 9753534067,
+    "joined": "2021-03-02T13:16:11.137Z",
+    "joinedFriendly": "Mar 2nd 2021"
+  },
+  {
+    "name": "IkMagJouNiet",
+    "uuid": "340c7eae-1900-4f72-a712-c2e06dcad764",
+    "rank": "STRATEGIST",
+    "contributed": 10045603048,
+    "joined": "2021-03-09T23:37:03.256Z",
+    "joinedFriendly": "Mar 9th 2021"
+  },
+  {
+    "name": "Maracs",
+    "uuid": "ee5a9eb5-d45c-4ff7-b4a9-4e016a586236",
+    "rank": "STRATEGIST",
+    "contributed": 7189963945,
+    "joined": "2021-03-12T21:27:32.138Z",
+    "joinedFriendly": "Mar 12th 2021"
+  },
+  {
+    "name": "Huruf",
+    "uuid": "9ec4a70e-080f-4291-96c4-5afc1d8c8afa",
+    "rank": "CAPTAIN",
+    "contributed": 393933183,
+    "joined": "2021-03-16T00:00:59.503Z",
+    "joinedFriendly": "Mar 16th 2021"
+  },
+  {
+    "name": "RedGamer735",
+    "uuid": "94247385-86e5-4b76-b0df-795fc95cddb7",
+    "rank": "CAPTAIN",
+    "contributed": 88342665,
+    "joined": "2021-03-22T06:13:34.850Z",
+    "joinedFriendly": "Mar 22nd 2021"
+  },
+  {
+    "name": "NovaWolf",
+    "uuid": "6ce05d35-b957-4d73-9ed4-9b965a9d8e30",
+    "rank": "RECRUIT",
+    "contributed": 27321796,
+    "joined": "2021-02-17T21:43:35.937Z",
+    "joinedFriendly": "Feb 17th 2021"
+  },
+  {
+    "name": "SonnyVA",
+    "uuid": "c4d7612d-c753-46e8-ae0e-8f283b6efcf8",
+    "rank": "STRATEGIST",
+    "contributed": 990807379,
+    "joined": "2021-04-26T22:31:24.604Z",
+    "joinedFriendly": "Apr 26th 2021"
+  },
+  {
+    "name": "CuzImTimer",
+    "uuid": "b5b912cd-5773-4279-8af5-bb8003c25d3e",
+    "rank": "STRATEGIST",
+    "contributed": 75288667185,
+    "joined": "2021-04-29T20:10:08.428Z",
+    "joinedFriendly": "Apr 29th 2021"
+  },
+  {
+    "name": "Aleksander299",
+    "uuid": "a0417bd8-1bfc-4d7c-b761-6a00404ee7b8",
+    "rank": "RECRUITER",
+    "contributed": 11143166,
+    "joined": "2021-05-02T20:29:38.995Z",
+    "joinedFriendly": "May 2nd 2021"
+  },
+  {
+    "name": "thebigcnu",
+    "uuid": "19d80203-506e-43c4-802f-a4e4649a1849",
+    "rank": "STRATEGIST",
+    "contributed": 9639154092,
+    "joined": "2021-05-13T11:38:43.791Z",
+    "joinedFriendly": "May 13th 2021"
+  },
+  {
+    "name": "LordQualle",
+    "uuid": "bba9b3ea-511c-4d2f-99cb-b6d3930e1820",
+    "rank": "STRATEGIST",
+    "contributed": 13773747841,
+    "joined": "2021-05-14T12:57:19.353Z",
+    "joinedFriendly": "May 14th 2021"
+  },
+  {
+    "name": "N3bulaHS",
+    "uuid": "dd10bd55-93ad-4fac-b4a5-537c4454ac98",
+    "rank": "RECRUITER",
+    "contributed": 66556999,
+    "joined": "2021-05-17T14:19:13.320Z",
+    "joinedFriendly": "May 17th 2021"
+  },
+  {
+    "name": "LordGonner",
+    "uuid": "0c229131-7875-49b5-937a-01c173daf776",
+    "rank": "CAPTAIN",
+    "contributed": 516890177,
+    "joined": "2021-05-17T17:00:43.224Z",
+    "joinedFriendly": "May 17th 2021"
+  },
+  {
+    "name": "MasterPig1",
+    "uuid": "72bda61d-a186-4a3d-b559-463fcf7710a2",
+    "rank": "RECRUITER",
+    "contributed": 169335985,
+    "joined": "2021-05-17T17:01:54.059Z",
+    "joinedFriendly": "May 17th 2021"
+  },
+  {
+    "name": "EnCrypTeD__",
+    "uuid": "0eab4b9d-596e-4d28-ac75-b934d53f3f2b",
+    "rank": "CAPTAIN",
+    "contributed": 28821107,
+    "joined": "2021-05-21T23:55:42.001Z",
+    "joinedFriendly": "May 21st 2021"
+  },
+  {
+    "name": "LaufeyGL",
+    "uuid": "a04629c1-9080-4a65-bf7e-408bbf660dc1",
+    "rank": "CAPTAIN",
+    "contributed": 0,
+    "joined": "2021-03-01T22:21:33.812Z",
+    "joinedFriendly": "Mar 1st 2021"
+  },
+  {
+    "name": "xAllura",
+    "uuid": "252e4211-aa0b-4f26-84c3-1c33720a33ae",
+    "rank": "RECRUITER",
+    "contributed": 2498017041,
+    "joined": "2021-06-13T23:33:50.446Z",
+    "joinedFriendly": "Jun 13th 2021"
+  },
+  {
+    "name": "underlein",
+    "uuid": "a51f0443-d8b6-4c4a-8b76-50ca7fc3ab3b",
+    "rank": "CAPTAIN",
+    "contributed": 1436274160,
+    "joined": "2021-06-14T17:55:44.187Z",
+    "joinedFriendly": "Jun 14th 2021"
+  },
+  {
+    "name": "WayaBoy",
+    "uuid": "084609b5-b871-4691-95b1-dce7abbcb4bf",
+    "rank": "CAPTAIN",
+    "contributed": 1525264868,
+    "joined": "2021-06-14T18:04:55.283Z",
+    "joinedFriendly": "Jun 14th 2021"
+  },
+  {
+    "name": "the_quaxterr",
+    "uuid": "9e8358c8-50ef-4004-83a7-8b22c1670fc1",
+    "rank": "RECRUITER",
+    "contributed": 785205119,
+    "joined": "2021-06-16T11:29:08.640Z",
+    "joinedFriendly": "Jun 16th 2021"
+  },
+  {
+    "name": "Pffa",
+    "uuid": "49203299-694e-46fe-844e-5330d6b07c70",
+    "rank": "RECRUITER",
+    "contributed": 9513768322,
+    "joined": "2021-06-16T15:59:52.215Z",
+    "joinedFriendly": "Jun 16th 2021"
+  },
+  {
+    "name": "Flora_San_",
+    "uuid": "a82e8dee-4ace-4c4c-9f57-5d02234d9530",
+    "rank": "STRATEGIST",
+    "contributed": 221020975,
+    "joined": "2021-06-16T21:07:06.307Z",
+    "joinedFriendly": "Jun 16th 2021"
+  },
+  {
+    "name": "Kediana",
+    "uuid": "37279bf6-f005-41f7-b7e2-f42db69bf5ec",
+    "rank": "RECRUIT",
+    "contributed": 79466721,
+    "joined": "2021-06-17T14:11:04.337Z",
+    "joinedFriendly": "Jun 17th 2021"
+  },
+  {
+    "name": "wholg",
+    "uuid": "6a22fb47-d398-478d-864f-eb396fa1280e",
+    "rank": "CAPTAIN",
+    "contributed": 232314411,
+    "joined": "2021-05-21T20:36:09.353Z",
+    "joinedFriendly": "May 21st 2021"
+  },
+  {
+    "name": "WildnYT",
+    "uuid": "69eae71a-4921-4e8b-834c-8624821fa6d1",
+    "rank": "RECRUITER",
+    "contributed": 26389015,
+    "joined": "2021-06-17T21:12:28.653Z",
+    "joinedFriendly": "Jun 17th 2021"
+  },
+  {
+    "name": "Illuwm",
+    "uuid": "21a9a844-005b-4567-9db4-2580451d6cba",
+    "rank": "RECRUIT",
+    "contributed": 880737634,
+    "joined": "2021-06-17T22:40:18.546Z",
+    "joinedFriendly": "Jun 17th 2021"
+  },
+  {
+    "name": "kalkapat",
+    "uuid": "474246f4-621d-45b1-9345-ce14aba66d25",
+    "rank": "CAPTAIN",
+    "contributed": 103169363,
+    "joined": "2021-06-19T21:06:20.515Z",
+    "joinedFriendly": "Jun 19th 2021"
+  },
+  {
+    "name": "rehgi",
+    "uuid": "204f975d-18e8-4ba7-b49b-e389ea4fe8d9",
+    "rank": "CAPTAIN",
+    "contributed": 67368483,
+    "joined": "2021-06-27T15:04:31.448Z",
+    "joinedFriendly": "Jun 27th 2021"
+  },
+  {
+    "name": "WoahMan",
+    "uuid": "240897da-c8c1-4279-a346-1c4151b0d114",
+    "rank": "RECRUITER",
+    "contributed": 110924828,
+    "joined": "2021-06-27T17:12:37.212Z",
+    "joinedFriendly": "Jun 27th 2021"
+  },
+  {
+    "name": "Jannyaaa",
+    "uuid": "c96befd3-387a-477b-94ea-a0ffe4a45fa9",
+    "rank": "RECRUITER",
+    "contributed": 15211238,
+    "joined": "2021-06-28T20:02:13.192Z",
+    "joinedFriendly": "Jun 28th 2021"
+  },
+  {
+    "name": "WanPunch",
+    "uuid": "4357f2d9-1624-4be0-8260-a32890e21e25",
+    "rank": "CAPTAIN",
+    "contributed": 67175977,
+    "joined": "2021-06-28T20:26:03.535Z",
+    "joinedFriendly": "Jun 28th 2021"
+  },
+  {
+    "name": "TrilogyXO",
+    "uuid": "a27fbdef-26d3-4435-b036-87c5bf4ef2fa",
+    "rank": "CAPTAIN",
+    "contributed": 12037818852,
+    "joined": "2021-06-30T21:18:46.617Z",
+    "joinedFriendly": "Jun 30th 2021"
+  },
+  {
+    "name": "uwustar",
+    "uuid": "6bff2d8a-8cd5-494f-9864-864a67bb54b1",
+    "rank": "RECRUIT",
+    "contributed": 21363161,
+    "joined": "2021-07-01T01:06:48.924Z",
+    "joinedFriendly": "Jul 1st 2021"
+  },
+  {
+    "name": "OceanTheGreat",
+    "uuid": "8f184e98-7b57-490b-a6f9-b6fbf4ed2e82",
+    "rank": "RECRUIT",
+    "contributed": 9680357,
+    "joined": "2021-07-01T01:12:14.917Z",
+    "joinedFriendly": "Jul 1st 2021"
+  },
+  {
+    "name": "WigglesMan07",
+    "uuid": "866c5d12-7760-4cbc-a85c-e069cacf1901",
+    "rank": "RECRUITER",
+    "contributed": 844749501,
+    "joined": "2021-07-03T18:17:44.461Z",
+    "joinedFriendly": "Jul 3rd 2021"
+  },
+  {
+    "name": "talonexstar",
+    "uuid": "5b79d124-ba55-42fa-8539-2404f584e6f8",
+    "rank": "STRATEGIST",
+    "contributed": 348673551,
+    "joined": "2021-07-05T19:59:20.384Z",
+    "joinedFriendly": "Jul 5th 2021"
+  },
+  {
+    "name": "Savanah__",
+    "uuid": "582f17f7-b90f-4a9c-952f-fdd3b81d1a7a",
+    "rank": "RECRUIT",
+    "contributed": 133958111,
+    "joined": "2021-07-05T20:38:30.762Z",
+    "joinedFriendly": "Jul 5th 2021"
+  },
+  {
+    "name": "SilverSaibot",
+    "uuid": "5bb7eacf-2906-40fa-95c3-5ac5747cc122",
+    "rank": "RECRUIT",
+    "contributed": 333885155,
+    "joined": "2021-07-06T09:10:01.516Z",
+    "joinedFriendly": "Jul 6th 2021"
+  },
+  {
+    "name": "AshZwynn",
+    "uuid": "20c4fb78-dc2f-42f7-8817-9dd6c71e3e94",
+    "rank": "CAPTAIN",
+    "contributed": 88058351,
+    "joined": "2021-07-06T09:46:21.303Z",
+    "joinedFriendly": "Jul 6th 2021"
+  },
+  {
+    "name": "Zephylox",
+    "uuid": "341e4251-6295-41c6-8005-75053a8f518f",
+    "rank": "RECRUIT",
+    "contributed": 0,
+    "joined": "2021-07-06T17:19:35.349Z",
+    "joinedFriendly": "Jul 6th 2021"
+  },
+  {
+    "name": "IceWarox",
+    "uuid": "4631f472-b6e9-4602-9e79-6157c399f0b9",
+    "rank": "CAPTAIN",
+    "contributed": 10324536079,
+    "joined": "2021-07-07T11:21:52.422Z",
+    "joinedFriendly": "Jul 7th 2021"
+  },
+  {
+    "name": "bakklava_",
+    "uuid": "d84646ff-73b6-43a3-a83d-ff8944b204e0",
+    "rank": "RECRUIT",
+    "contributed": 17980002,
+    "joined": "2021-07-07T18:47:43.306Z",
+    "joinedFriendly": "Jul 7th 2021"
+  },
+  {
+    "name": "xXxPony_LoverxXx",
+    "uuid": "3a75b0fa-b798-43ac-b3c2-42d0de1e8826",
+    "rank": "CAPTAIN",
+    "contributed": 2617005,
+    "joined": "2021-07-03T07:31:58.203Z",
+    "joinedFriendly": "Jul 3rd 2021"
+  },
+  {
+    "name": "PlazmaVolt",
+    "uuid": "83dafaab-2c9c-461b-a5e2-8c712f260f15",
+    "rank": "RECRUIT",
+    "contributed": 225146716,
+    "joined": "2021-07-08T02:29:27.218Z",
+    "joinedFriendly": "Jul 8th 2021"
+  },
+  {
+    "name": "Penguins76",
+    "uuid": "defbd47c-9e20-4c58-b0c1-fa855fd345d1",
+    "rank": "RECRUIT",
+    "contributed": 1409503275,
+    "joined": "2021-07-08T13:45:58.302Z",
+    "joinedFriendly": "Jul 8th 2021"
+  },
+  {
+    "name": "SaitoZin",
+    "uuid": "a10010e2-c7ee-4a33-b099-cf106819550f",
+    "rank": "RECRUIT",
+    "contributed": 0,
+    "joined": "2021-07-08T23:04:13.187Z",
+    "joinedFriendly": "Jul 8th 2021"
+  },
+  {
+    "name": "Kewbin",
+    "uuid": "4ca975e2-cb91-4ebc-bcd1-fcd22e40f41b",
+    "rank": "CAPTAIN",
+    "contributed": 14258984821,
+    "joined": "2021-07-13T22:21:51.065Z",
+    "joinedFriendly": "Jul 13th 2021"
+  },
+  {
+    "name": "Varianth",
+    "uuid": "1aca1b32-64ab-4a15-b7e9-b833ed6f9f53",
+    "rank": "RECRUIT",
+    "contributed": 4898844,
+    "joined": "2021-07-14T01:08:03.068Z",
+    "joinedFriendly": "Jul 14th 2021"
+  },
+  {
+    "name": "SiteBite",
+    "uuid": "eada305f-4746-415a-8bac-8d970065571d",
+    "rank": "RECRUIT",
+    "contributed": 37703230,
+    "joined": "2021-07-14T04:08:28.363Z",
+    "joinedFriendly": "Jul 14th 2021"
+  },
+  {
+    "name": "YummyIsIce",
+    "uuid": "7aa0bbc0-a4f9-45fa-a954-c9cbb65d4b39",
+    "rank": "RECRUIT",
+    "contributed": 4542286,
+    "joined": "2021-07-14T15:25:53.487Z",
+    "joinedFriendly": "Jul 14th 2021"
+  },
+  {
+    "name": "turlismus",
+    "uuid": "ddc55272-f843-4aa9-9c44-357178b28ce8",
+    "rank": "RECRUIT",
+    "contributed": 238176098,
+    "joined": "2021-07-14T18:24:08.909Z",
+    "joinedFriendly": "Jul 14th 2021"
+  },
+  {
+    "name": "Lqlx",
+    "uuid": "fbdb7c3b-5b9f-47a3-b008-731566148a8d",
+    "rank": "RECRUITER",
+    "contributed": 41172151,
+    "joined": "2021-07-14T23:25:01.529Z",
+    "joinedFriendly": "Jul 14th 2021"
+  },
+  {
+    "name": "Gumbear",
+    "uuid": "a4fb34df-a976-4957-b1c4-ee9c2ce1f4c9",
+    "rank": "CAPTAIN",
+    "contributed": 51577006967,
+    "joined": "2021-07-15T18:22:57.765Z",
+    "joinedFriendly": "Jul 15th 2021"
+  },
+  {
+    "name": "VireVeonix",
+    "uuid": "db9b5947-f159-43ea-8153-4d4df292b2c4",
+    "rank": "RECRUIT",
+    "contributed": 687427330,
+    "joined": "2021-07-15T21:00:51.267Z",
+    "joinedFriendly": "Jul 15th 2021"
+  },
+  {
+    "name": "xxAim",
+    "uuid": "0d46a2a8-6069-4ffc-adb7-596e1e2c9a32",
+    "rank": "RECRUIT",
+    "contributed": 20928909,
+    "joined": "2021-07-15T23:24:12.825Z",
+    "joinedFriendly": "Jul 15th 2021"
+  },
+  {
+    "name": "AidenPlayzYT",
+    "uuid": "07f22edb-67c1-44e7-826d-3c12138bbcad",
+    "rank": "RECRUIT",
+    "contributed": 1689504748,
+    "joined": "2021-07-17T19:32:44.802Z",
+    "joinedFriendly": "Jul 17th 2021"
+  },
+  {
+    "name": "BurningAspect",
+    "uuid": "ee78ba7b-e6e9-4fc2-8d62-6ada52add467",
+    "rank": "RECRUIT",
+    "contributed": 942436872,
+    "joined": "2021-07-18T00:57:47.920Z",
+    "joinedFriendly": "Jul 18th 2021"
+  },
+  {
+    "name": "AddictedStoner",
+    "uuid": "43f07c42-1efe-4cbb-8392-64e9cbc04c9b",
+    "rank": "RECRUIT",
+    "contributed": 13024281,
+    "joined": "2021-07-18T05:41:49.083Z",
+    "joinedFriendly": "Jul 18th 2021"
+  },
+  {
+    "name": "TricksterTommy",
+    "uuid": "6b811755-bf74-49f0-b3ae-a121cbef6c4d",
+    "rank": "RECRUIT",
+    "contributed": 481258,
+    "joined": "2021-07-19T21:54:35.447Z",
+    "joinedFriendly": "Jul 19th 2021"
+  },
+  {
+    "name": "ItsEddiot",
+    "uuid": "25c52e30-152a-4b38-af8f-82d0d4f0543f",
+    "rank": "RECRUIT",
+    "contributed": 247909011,
+    "joined": "2021-07-19T23:49:38.739Z",
+    "joinedFriendly": "Jul 19th 2021"
+  },
+  {
+    "name": "CebuPacific",
+    "uuid": "89e9a699-a350-4be1-9489-fffbe48c4fe1",
+    "rank": "RECRUIT",
+    "contributed": 1474413922,
+    "joined": "2021-07-20T02:07:24.881Z",
+    "joinedFriendly": "Jul 20th 2021"
+  },
+  {
+    "name": "SleeepingSheep",
+    "uuid": "d9bdfd53-4fa3-4a67-a4de-a9493c6f25a1",
+    "rank": "RECRUIT",
+    "contributed": 3678654452,
+    "joined": "2021-07-20T14:24:37.279Z",
+    "joinedFriendly": "Jul 20th 2021"
+  },
+  {
+    "name": "FeodorRomanov",
+    "uuid": "8c91f720-24d0-4bfb-a1ac-0efb012f6a02",
+    "rank": "STRATEGIST",
+    "contributed": 282474279,
+    "joined": "2021-07-21T18:08:32.786Z",
+    "joinedFriendly": "Jul 21st 2021"
+  },
+  {
+    "name": "PokemonGamer11",
+    "uuid": "bef54242-fc5c-4c5b-b9a9-f735a9a6337c",
+    "rank": "CAPTAIN",
+    "contributed": 10211064136,
+    "joined": "2021-07-22T09:59:01.205Z",
+    "joinedFriendly": "Jul 22nd 2021"
+  },
+  {
+    "name": "Nepttuune",
+    "uuid": "a695c080-a142-4fe2-9b7e-f78e80a41976",
+    "rank": "RECRUIT",
+    "contributed": 1836418,
+    "joined": "2021-07-24T15:53:22.507Z",
+    "joinedFriendly": "Jul 24th 2021"
+  },
+  {
+    "name": "DeepLilac",
+    "uuid": "f0111c78-d7c8-45f7-81a6-3b3b58020eb6",
+    "rank": "RECRUIT",
+    "contributed": 54980329,
+    "joined": "2021-07-24T15:53:38.088Z",
+    "joinedFriendly": "Jul 24th 2021"
+  },
+  {
+    "name": "PicoBlomst",
+    "uuid": "123b65dd-753d-463b-aaa3-c2c2b6b7c8b4",
+    "rank": "RECRUITER",
+    "contributed": 1215702139,
+    "joined": "2021-07-25T11:38:50.537Z",
+    "joinedFriendly": "Jul 25th 2021"
+  },
+  {
+    "name": "07E",
+    "uuid": "762f8643-5aa9-4cfb-ad4e-5e8c95d168c9",
+    "rank": "RECRUIT",
+    "contributed": 0,
+    "joined": "2021-07-25T20:27:47.081Z",
+    "joinedFriendly": "Jul 25th 2021"
+  },
+  {
+    "name": "Populist",
+    "uuid": "a0801200-3d2e-4fbf-a7c9-be09e9630b78",
+    "rank": "RECRUIT",
+    "contributed": 1648821037,
+    "joined": "2021-07-25T22:25:47.965Z",
+    "joinedFriendly": "Jul 25th 2021"
+  },
+  {
+    "name": "5h4w",
+    "uuid": "1e1bfa22-5d9f-478c-bd30-27ddda2c2500",
+    "rank": "RECRUIT",
+    "contributed": 47922296,
+    "joined": "2021-07-26T18:52:49.022Z",
+    "joinedFriendly": "Jul 26th 2021"
+  },
+  {
+    "name": "Funumunuh",
+    "uuid": "b16646f4-9a35-46bd-8db1-dabc76bf768f",
+    "rank": "RECRUIT",
+    "contributed": 0,
+    "joined": "2021-07-26T19:25:04.435Z",
+    "joinedFriendly": "Jul 26th 2021"
+  },
+  {
+    "name": "SaintRuiz",
+    "uuid": "f7e3ee11-4f43-4237-a267-ac7af3e5087e",
+    "rank": "RECRUIT",
+    "contributed": 190810,
+    "joined": "2021-07-27T00:50:20.031Z",
+    "joinedFriendly": "Jul 27th 2021"
+  },
+  {
+    "name": "nerdynerdz",
+    "uuid": "eb57e3dc-6f46-4ace-aad1-962923fcba38",
+    "rank": "RECRUIT",
+    "contributed": 102821333,
+    "joined": "2021-07-28T22:39:31.943Z",
+    "joinedFriendly": "Jul 28th 2021"
+  },
+  {
+    "name": "Nitrogen7",
+    "uuid": "fa6a83d3-202a-43ab-989c-676ca1a75ea4",
+    "rank": "CAPTAIN",
+    "contributed": 11059481379,
+    "joined": "2021-07-29T14:37:47.300Z",
+    "joinedFriendly": "Jul 29th 2021"
+  },
+  {
+    "name": "alex1axel",
+    "uuid": "9726fb92-7de0-40f6-b35c-9a99334ea0fd",
+    "rank": "RECRUIT",
+    "contributed": 189232558,
+    "joined": "2021-07-29T17:23:49.007Z",
+    "joinedFriendly": "Jul 29th 2021"
+  },
+  {
+    "name": "MrSlushie96",
+    "uuid": "67f4346f-7203-4a3e-a439-ff92c2eda6c7",
+    "rank": "RECRUIT",
+    "contributed": 219933210,
+    "joined": "2021-07-30T18:14:38.437Z",
+    "joinedFriendly": "Jul 30th 2021"
+  },
+  {
+    "name": "Iron_Chopper",
+    "uuid": "1dc1ebf3-a4c5-49fa-952f-730ff611059a",
+    "rank": "RECRUITER",
+    "contributed": 204931191,
+    "joined": "2021-07-30T22:32:30.322Z",
+    "joinedFriendly": "Jul 30th 2021"
+  },
+  {
+    "name": "CramCTQ",
+    "uuid": "df1896e1-e468-451b-b3f4-7ff156a7708d",
+    "rank": "RECRUIT",
+    "contributed": 1089639943,
+    "joined": "2021-07-31T15:12:40.332Z",
+    "joinedFriendly": "Jul 31st 2021"
+  },
+  {
+    "name": "Golemboy",
+    "uuid": "32386f22-90bc-4567-8e8b-a9fc5b353c19",
+    "rank": "RECRUIT",
+    "contributed": 285003,
+    "joined": "2021-08-01T00:21:38.685Z",
+    "joinedFriendly": "Aug 1st 2021"
+  },
+  {
+    "name": "Led",
+    "uuid": "722e095a-a585-4f7e-9117-7fc2839e8853",
+    "rank": "RECRUIT",
+    "contributed": 1632267,
+    "joined": "2021-08-01T03:10:06.755Z",
+    "joinedFriendly": "Aug 1st 2021"
+  },
+  {
+    "name": "Strichmann1515",
+    "uuid": "310bce81-6baa-4b05-b8b0-9ea4dcd1dd0b",
+    "rank": "RECRUIT",
+    "contributed": 0,
+    "joined": "2021-08-01T22:53:17.662Z",
+    "joinedFriendly": "Aug 1st 2021"
+  },
+  {
+    "name": "FutaFan",
+    "uuid": "6adaeb8e-9b6e-4c0e-b8c9-02a9e19f22f8",
+    "rank": "RECRUIT",
+    "contributed": 24957505,
+    "joined": "2021-08-03T17:05:11.836Z",
+    "joinedFriendly": "Aug 3rd 2021"
+  },
+  {
+    "name": "znel2002",
+    "uuid": "1065e065-4fff-44be-977b-c66918cb8e8c",
+    "rank": "RECRUIT",
+    "contributed": 0,
+    "joined": "2021-08-03T17:25:17.266Z",
+    "joinedFriendly": "Aug 3rd 2021"
+  },
+  {
+    "name": "simongao1126",
+    "uuid": "0a6b79f0-9c30-4226-8e17-f47745244e0e",
+    "rank": "RECRUITER",
+    "contributed": 324,
+    "joined": "2021-08-03T17:34:08.436Z",
+    "joinedFriendly": "Aug 3rd 2021"
+  },
+  {
+    "name": "Peanutyy",
+    "uuid": "4bca596b-8573-4139-a7f3-616c0f55730d",
+    "rank": "RECRUIT",
+    "contributed": 151636,
+    "joined": "2021-08-03T18:13:31.688Z",
+    "joinedFriendly": "Aug 3rd 2021"
+  },
+  {
+    "name": "MaggaInRagni",
+    "uuid": "02e1342a-8474-45cf-9fd6-72660e129424",
+    "rank": "RECRUIT",
+    "contributed": 0,
+    "joined": "2021-08-04T18:02:12.908Z",
+    "joinedFriendly": "Aug 4th 2021"
+  },
+  {
+    "name": "DeathZoneKaishi",
+    "uuid": "45f80e79-1cdc-48e7-bf34-9d06201717d6",
+    "rank": "CAPTAIN",
+    "contributed": 343712966,
+    "joined": "2021-06-17T21:27:13.562Z",
+    "joinedFriendly": "Jun 17th 2021"
+  }
+]
