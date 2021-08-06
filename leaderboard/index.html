@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- ================================================== -->
+<!-- Thanks xAllura for the idea of the hide feature ;) -->
+<!-- ================================================== -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,10 +14,18 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <table class="leaderboard"></table>
+    <div class="total_guxp"></div>
+    <div class="str_switch">
+    <label class="switch">
+        <input id="hide_str" type="checkbox">
+        <span class="slider round"></span>
+      </label><p class="switch_label">Hide STRATEGIST and above</p>
+    </div>
+      <table class="leaderboard"></table>
 </body>
 <script src="jquery.js"></script>
 <script>
+    total = 0;
     $.ajax({
       	'async': false,
       	'global': true,
@@ -39,6 +50,7 @@ $.ajax({
                 }
             }
             real_xp = data["members"][member]["contributed"] - old_p_data["contributed"]
+            total+=real_xp;
             data["members"][member]["contributed"] = real_xp
         }
 
@@ -47,9 +59,30 @@ $.ajax({
         });
       		for(member in members){
                   player = data["members"][member]
-                  $("table").append("<tr><td>"+(parseInt(member)+1)+"</td><td class=\"head\"><img src=\"https://minotar.net/helm/"+player["uuid"]+"/35.png\"></td><td class=\"playername\">"+player["name"]+"</td><td class=\"contributed\">"+player["contributed"].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"</td></tr>");
+                  $("table").append("<tr rank=\""+player["rank"]+"\"><td>"+(parseInt(member)+1)+"</td><td class=\"head\"><img src=\"https://minotar.net/helm/"+player["uuid"]+"/35.png\"></td><td class=\"playername\">"+player["name"]+"</td><td class=\"contributed\">"+player["contributed"].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"</td></tr>");
               }
+              $(".total_guxp").html("So far we earned in event<br><b>"+ total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") +" XP</b>.<br>Keep up the good work!")
       	}
+  });
+
+  $("#hide_str").change(function(){
+    tr_list = $("tr").toArray();
+    if ($("#hide_str").is(":checked")){
+    for(item in tr_list) {
+        curr_rank = $("tr").eq(item).attr("rank");
+        if (!(["RECRUIT", "RECRUITER", "CAPTAIN"].includes(curr_rank))){
+            $("tr").eq(item).css("display", "none");
+        }
+    }
+} else {
+    for(item in tr_list) {
+        $("tr").eq(item).css("display", "table-row");
+    }
+}
+    tr_visible = $("tr:visible").toArray();
+    for(item in tr_visible) {
+        $("tr:visible:eq("+item+") td:eq(0)").text(parseInt(item)+1);
+    }
   });
 </script>
 </html>
