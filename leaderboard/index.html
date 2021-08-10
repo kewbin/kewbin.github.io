@@ -3,96 +3,103 @@
 <!-- ================================================== -->
 <!-- Thanks xAllura for the idea of the hide feature ;) -->
 <!-- ================================================== -->
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TAq GUXP Leaderboard</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="total_guxp"></div>
     <div class="str_switch">
-    <label class="switch">
-        <input id="hide_str" type="checkbox">
-        <span class="slider round"></span>
-      </label><p class="switch_label">Hide STRATEGIST and above</p>
+        <label class="switch">
+            <input id="hide_str" type="checkbox">
+            <span class="slider round"></span>
+        </label>
+        <p class="switch_label">Hide STRATEGIST and above</p>
     </div>
-      <table class="leaderboard"></table>
+    <table class="leaderboard"></table>
 </body>
 <script src="jquery.js"></script>
 <script>
 
     total = 0;
     $.ajax({
-      	'async': false,
-      	'global': true,
-      	'url': "start.json",
-      	'dataType': "json",
-      	'success': function (data) {
-      		start_data = data;
-      	}
-      });
+        'async': false,
+        'global': true,
+        'url': "start.json",
+        'dataType': "json",
+        'success': function (data) {
+            start_data = data;
+        }
+    });
 
-$.ajax({
-    'url': "https://api.wynncraft.com/public_api.php?action=guildStats&command=The%20Aquarium",
-    'success': function (data) {
+    $.ajax({
+        'url': "https://api.wynncraft.com/public_api.php?action=guildStats&command=The%20Aquarium",
+        'success': function (data) {
 
-        for (member in data["members"]) {
-            for (old_data in start_data){
-                if(start_data[old_data]["uuid"] == data["members"][member]["uuid"]){
-                    old_p_data = start_data[old_data]
-                    break
-                } else if (old_data == start_data.length-1) {
-                    old_p_data["contributed"] = 0;
+            for (member in data["members"]) {
+                for (old_data in start_data) {
+                    if (start_data[old_data]["uuid"] == data["members"][member]["uuid"]) {
+                        old_p_data = start_data[old_data]
+                        break
+                    } else if (old_data == start_data.length - 1) {
+                        old_p_data["contributed"] = 0;
+                    }
+                }
+                real_xp = data["members"][member]["contributed"] - old_p_data["contributed"]
+                total += real_xp;
+                data["members"][member]["contributed"] = real_xp
+            }
+
+            members = data["members"].sort(function (a, b) {
+                return b.contributed - a.contributed;
+            });
+            for (member in members) {
+                player = data["members"][member]
+                $("table").append("<tr id=\"" + player["name"].toLowerCase() + "\" rank=\"" + player["rank"] + "\"><td>" + (parseInt(member) + 1) + "</td><td class=\"head\"><img src=\"https://minotar.net/helm/" + player["uuid"] + "/35.png\"></td><td class=\"playername\">" + player["name"] + "</td><td class=\"contributed\">" + player["contributed"].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</td></tr>");
+            }
+            $(".total_guxp").html("So far we earned in event<br><b>" + total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " XP</b>.<br>Keep up the good work!");
+
+            urlname = new URLSearchParams(window.location.search).get("name").toLowerCase();
+
+            if (urlname != "") {
+                $("#" + urlname).css("background", "rgba(0, 255, 0, .3)")
+                window.scrollTo({
+                    top: document.getElementById(urlname).getBoundingClientRect().top - 75,
+                    behavior: 'smooth'
+                })
+            }
+        }
+
+    });
+
+    $("#hide_str").change(function () {
+        tr_list = $("tr").toArray();
+        if ($("#hide_str").is(":checked")) {
+            for (item in tr_list) {
+                curr_rank = $("tr").eq(item).attr("rank");
+                if (!(["RECRUIT", "RECRUITER", "CAPTAIN"].includes(curr_rank))) {
+                    $("tr").eq(item).css("display", "none");
                 }
             }
-            real_xp = data["members"][member]["contributed"] - old_p_data["contributed"]
-            total+=real_xp;
-            data["members"][member]["contributed"] = real_xp
+        } else {
+            for (item in tr_list) {
+                $("tr").eq(item).css("display", "table-row");
+            }
         }
-
-        members = data["members"].sort(function (a, b) {
-            return b.contributed - a.contributed;
-        });
-      		for(member in members){
-                  player = data["members"][member]
-                  $("table").append("<tr id=\""+player["name"].toLowerCase()+"\" rank=\""+player["rank"]+"\"><td>"+(parseInt(member)+1)+"</td><td class=\"head\"><img src=\"https://minotar.net/helm/"+player["uuid"]+"/35.png\"></td><td class=\"playername\">"+player["name"]+"</td><td class=\"contributed\">"+player["contributed"].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"</td></tr>");
-              }
-              $(".total_guxp").html("So far we earned in event<br><b>"+ total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") +" XP</b>.<br>Keep up the good work!");
-
-              urlname = new URLSearchParams(window.location.search).get("name").toLowerCase();
-
-  $("#"+urlname).css("background","rgba(0, 255, 0, .3)")
-  window.scrollTo({
-      top: document.getElementById(urlname).getBoundingClientRect().top - 75,
-      behavior: 'smooth'
-  })
-      	}
-  });
-
-  $("#hide_str").change(function(){
-    tr_list = $("tr").toArray();
-    if ($("#hide_str").is(":checked")){
-    for(item in tr_list) {
-        curr_rank = $("tr").eq(item).attr("rank");
-        if (!(["RECRUIT", "RECRUITER", "CAPTAIN"].includes(curr_rank))){
-            $("tr").eq(item).css("display", "none");
+        tr_visible = $("tr:visible").toArray();
+        for (item in tr_visible) {
+            $("tr:visible:eq(" + item + ") td:eq(0)").text(parseInt(item) + 1);
         }
-    }
-} else {
-    for(item in tr_list) {
-        $("tr").eq(item).css("display", "table-row");
-    }
-}
-    tr_visible = $("tr:visible").toArray();
-    for(item in tr_visible) {
-        $("tr:visible:eq("+item+") td:eq(0)").text(parseInt(item)+1);
-    }
-  });
+    });
 
 </script>
+
 </html>
