@@ -28,7 +28,7 @@
 </body>
 <script src="jquery.js"></script>
 <script>
-
+    echest = window.localStorage;
     total = 0;
     $.ajax({
         'async': false,
@@ -67,12 +67,18 @@
             }
             $(".total_guxp").html("So far we earned in event<br><b>" + total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " XP</b>.<br>Keep up the good work!");
 
-            urlname = new URLSearchParams(window.location.search).get("name").toLowerCase();
+            if (echest.getItem("hidden") == "true") {
+                tr_list = $("tr").toArray();
+                $("#hide_str").prop("checked", true);
+                hideStrAndAbove();
+                renumberPos();
+            };
+            urlname = new URLSearchParams(window.location.search).get("name");
 
-            if (urlname != "") {
-                $("#" + urlname).css("background", "rgba(0, 255, 0, .3)")
+            if (urlname != undefined) {
+                $("#" + urlname.toLowerCase()).css("background", "rgba(0, 255, 0, .3)")
                 window.scrollTo({
-                    top: document.getElementById(urlname).getBoundingClientRect().top - 75,
+                    top: document.getElementById(urlname.toLowerCase()).getBoundingClientRect().top - 75,
                     behavior: 'smooth'
                 })
             }
@@ -80,24 +86,34 @@
 
     });
 
-    $("#hide_str").change(function () {
-        tr_list = $("tr").toArray();
-        if ($("#hide_str").is(":checked")) {
-            for (item in tr_list) {
-                curr_rank = $("tr").eq(item).attr("rank");
-                if (!(["RECRUIT", "RECRUITER", "CAPTAIN"].includes(curr_rank))) {
-                    $("tr").eq(item).css("display", "none");
-                }
-            }
-        } else {
-            for (item in tr_list) {
-                $("tr").eq(item).css("display", "table-row");
+    function hideStrAndAbove() {
+        for (item in tr_list) {
+            curr_rank = $("tr").eq(item).attr("rank");
+            if (!(["RECRUIT", "RECRUITER", "CAPTAIN"].includes(curr_rank))) {
+                $("tr").eq(item).css("display", "none");
             }
         }
+    }
+
+    function renumberPos() {
         tr_visible = $("tr:visible").toArray();
         for (item in tr_visible) {
             $("tr:visible:eq(" + item + ") td:eq(0)").text(parseInt(item) + 1);
         }
+    }
+
+    $("#hide_str").change(function () {
+        tr_list = $("tr").toArray();
+        if ($("#hide_str").is(":checked")) {
+            echest.setItem("hidden", true);
+            hideStrAndAbove();
+        } else {
+            echest.setItem("hidden", false);
+            for (item in tr_list) {
+                $("tr").eq(item).css("display", "table-row");
+            }
+        }
+        renumberPos();
     });
 
 </script>
