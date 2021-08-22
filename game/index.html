@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+        =====================================================
+                    WATCHA DOIN' HERE BUCKAROO!?
+        =====================================================
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAq GUXP Leaderboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<div id="phone"><p>I WAS TOO LAZY TO OPTIMISE THIS FOR PHONE DEVICES...<br>
+USE PC INSTEAD!!!<br>
+◕‿◕</p></div>
+<div id="final_screen">
+    <p class="score_label">YOUR SCORE...</p>
+    <p id="final_score"></p>
+    <p class="label">CORRECT:</p>
+    <p id="final_correct"></p>
+    <p class="label">INCORRECT:</p>
+    <p id="final_incorrect"></p>
+</div>
+<div id="blockview"></div>
+<div id="players"></div>
+<div id="gamebar">
+    <p id="a">Choose from the players above...</p>
+    <p id="playername"></p>
+    <p id="rounds"></p>
+</div>
+<body>
+</body>
+<script src="jquery.js"></script>
+<script>
+    namelist = [];
+    namemap = {};
+    correct = [];
+    incorrect = [];
+    score = 0
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    $("#phone").css("display","block");
+} else {
+   $.ajax({
+        'url': "https://api.wynncraft.com/public_api.php?action=guildStats&command=The%20Aquarium",
+        'success': function (data) {
+            members = data["members"];
+            for (member in members) {
+                uuid = members[member]["uuid"];
+                namee = members[member]["name"];
+                rank = members[member]["rank"];
+                if(rank != "RECRUIT") {
+                $("#players").append("<img class=\"player\" uuid=\""+uuid+"\" src=\"https://visage.surgeplay.com/bust/352/"+uuid+"\">");
+                namelist.push(namee);
+                namemap[namee] = uuid;
+            }
+            }
+            start();
+        }
+    });
+}
+    function start(){
+    fullpoints = namelist.length;
+    newName();
+    $(".player").mouseleave(function(){
+        $(this).css("background-color","transparent");
+    });
+    $(".player").mouseenter(function(){
+        $(this).css("background-color","#fff");
+    })
+    $(".player").on("click", function(){
+        chosenplayer = $(this).attr("uuid");
+        if (chosenplayer == namemap[guessplayer]){
+            correct.push(guessplayer);
+            score++;
+            $(this).css("background-color","#55eb34");
+            
+        } else {
+            incorrect.push(guessplayer);
+            $(this).css("background-color","#eb3434");
+        }
+        if (namelist.length != 0) {
+            newName();
+        } else {
+            endGame();
+        }
+    })
+}
+
+function newName() {
+    guessplayer = namelist[Math.floor(Math.random() * namelist.length)]
+    $("#playername").text(guessplayer);
+    namelist.splice(namelist.indexOf(guessplayer), 1);
+    $("#rounds").text("Rounds left: "+namelist.length);
+}
+
+function endGame() {
+    $("#blockview").css("display","block");
+    $("#final_screen").css("display","block");
+    $(".player").blur();
+    $("#final_score").text(correct.length + "/" + fullpoints);
+    for (item in correct) {
+        $("#final_correct").append("<p class=\"playerlabel\">" + correct[item] + "</p>");
+    }
+    for (item in incorrect) {
+        $("#final_incorrect").append("<p class=\"playerlabel\">" + incorrect[item] + "</p>");
+    }
+}
+
+</script>
+
+</html>
