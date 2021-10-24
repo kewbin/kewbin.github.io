@@ -26,7 +26,22 @@ nav ul {
     backdrop-filter: blur(3px);
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 500px) {
+
+    nav ul li {
+        display: inline-block;
+        float: none;
+    }
+    nav ul li a {
+        padding: 10px;
+    }
+    nav ul {
+        width: 100%;
+        padding: 0;
+    }
+  }
+
+  @media screen and (max-height: 800px) {
     nav ul li {
         display: inline-block;
         float: none;
