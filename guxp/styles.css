@@ -1,3 +1,15 @@
+.bg-img {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/bg.png');
+    background-size: cover;
+    filter: brightness(.4);
+    z-index: -1;
+    top: 0px;
+    background-position: center;
+}
+
 table {
     position: relative;
     transform: translate(-50%);
@@ -6,18 +18,23 @@ table {
     border-spacing: 0px 10px;
 }
 tr {
-    background: rgba(255, 255, 255, .3);
+    background: rgba(40, 94, 196, 0.1);
     margin: 5px;
-    filter: drop-shadow(0px 0px 5px white);
+    backdrop-filter: blur(5px);
     animation-name: fadein;
     animation-duration: 1s;
+    color: white;
 }
 html {
     background: #020024;
-    background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(16, 138, 222, 1) 50%, rgba(170, 253, 255, 1) 100%);
     height: 100%;
     background-attachment: fixed;
 }
+
+body {
+    margin: 0;
+}
+
 td {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 30px;

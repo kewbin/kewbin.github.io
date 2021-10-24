@@ -1,0 +1,107 @@
+.bg-img {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/bg.png');
+    background-size: cover;
+    filter: brightness(.4);
+    z-index: -1;
+    top: 0px;
+    background-position: center;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+    text-align: center;
+}
+
+.logo {
+    width: 300px;
+    filter: drop-shadow(0px 0px 10px rgb(150, 216, 255));
+    animation: infinite logo 10s;
+}
+
+.content p {
+    position: relative;
+    font-family: 'Barlow Condensed', sans-serif;
+    color: #fff;
+}
+
+.join {
+    font-size: 30px;
+    margin: 0 0 10px 0;
+}
+
+#features {
+    opacity: 1;
+    transition: opacity 0.5s;
+    font-size: 25px;
+    margin: 0 0 30px 0;
+}
+.hide {
+    opacity: 0 !important;
+}
+
+.name {
+    font-size: 60px;
+    margin: 0 0 10px 0;
+    font-weight: bolder;
+    filter: drop-shadow(2px 2px 0px #ffffff30);
+}
+
+.discord {
+    position: absolute;
+    display: inline-block;
+    backdrop-filter: blur(10px);
+    background: rgba(88, 101, 242, .2);
+    transition-duration: .5s;
+    border-radius: 10px;
+    transform: translate(-50%);
+    animation: infinite discord 4s;
+    height: 75px;
+}
+
+.discord:hover {
+    box-shadow: 0px 0px 10px #5865F2;
+    animation: none;
+}
+
+.discord img {
+    display: inline-block;
+    width: 200px;
+    padding: 10px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes discord {
+    0%   {background: rgba(88, 101, 242, .2)}
+    50%  {background: rgba(88, 101, 242, .0)}
+    100% {background-: rgba(88, 101, 242, .2)}
+}
+
+@keyframes logo {
+    0%   {filter: drop-shadow(0px 0px 10px #666783);}
+    50%  {filter: drop-shadow(0px 0px 2px #666783);}
+    100% {filter: drop-shadow(0px 0px 10px #666783);}
+}
+
+@media screen and (max-width: 500px) {
+    .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -65%);
+        text-align: center;
+        width: 100%;
+    }
+    .content {
+        transform: translate(-50%, -60%);
+    }
+}

@@ -6,26 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TAq Guild</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="navbar.css">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&display=swap" rel="stylesheet">
-    <style>
-        html {
-            background-color: rgb(14, 14, 14);
-        }
-        p {
-            position: absolute;
-            font-family: 'Barlow Condensed', sans-serif;
-            text-align: center;
-            font-size: 5vw;
-            transform: translate(-50%, -50%);
-            top: 50%;
-            left: 50%;
-            margin: 0;
-            color: rgb(238, 238, 238);
-        }
-    </style>
 </head>
 <body>
-    <p>Nothing here yet!<br>:)</p>
+    <div class='bg-img'></div>
+    <nav>
+        <ul>
+          <li>
+            <a href="./guxp">GUXP Leaderboard</a>
+          </li>
+          <li>
+            <a href="./members">Members</a>
+          </li>
+          <li>
+            <a href="#">Home</a>
+          </li>
+        </ul>
+      </nav>
+    <div class='content'>
+        <img class='logo' src='img/taq_logo.png'/>
+    <p class='name'>THE AQUARIUM [TAq]</p>
+    <p id='features'>🏆 The #1 Guild 🏆</p>
+    <p class='join'>Convinced? Join us at our</p>
+    <a href='https://discord.gg/v7qB3d8rKv' class='discord'><img src='img/discord.png'></a>
+</div>
+
+<script>
+    var text = ["💬 Friendly and helpful community 💬", "🥇 Events 🥇", "⚔️ Wars ⚔️", "✨ Benefits for active members ✨", "🏆 The #1 Guild 🏆"];
+var counter = 0;
+var elem = document.getElementById("features");
+setInterval(change, 4000);
+
+function change() {
+    elem.classList.add('hide');
+    setTimeout(function () {
+        elem.innerHTML = text[counter];
+        elem.classList.remove('hide');
+        counter++;
+        if (counter >= text.length) {
+            counter = 0;
+        }
+    }, 500);
+}
+</script>
+
 </body>
 </html>
