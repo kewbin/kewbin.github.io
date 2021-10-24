@@ -121,6 +121,7 @@ body {
         position: relative;
         transform: translate(0%, 0%);
         left: 0;
+        padding-bottom: 50px;
     }
 
 }
