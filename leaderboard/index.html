@@ -33,7 +33,7 @@
     $.ajax({
         'async': false,
         'global': true,
-        'url': "start.json",
+        'url': "data/start.json",
         'dataType': "json",
         'success': function (data) {
             start_data = data;
@@ -41,7 +41,7 @@
     });
 
     $.ajax({
-        'url': "final.json",
+        'url': "https://api.wynncraft.com/public_api.php?action=guildStats&command=The%20Aquarium",
         'success': function (data) {
 
             for (member in data["members"]) {
@@ -63,9 +63,9 @@
             });
             for (member in members) {
                 player = data["members"][member]
-                $("table").append("<tr id=\"" + player["name"].toLowerCase() + "\" rank=\"" + player["rank"] + "\"><td>" + (parseInt(member) + 1) + "</td><td class=\"head\"><img src=\"https://minotar.net/helm/" + player["uuid"] + "/35.png\"></td><td class=\"playername\">" + player["name"] + "</td><td class=\"contributed\">" + player["contributed"].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</td></tr>");
+                $("table").append("<tr id=\"" + player["name"].toLowerCase() + "\" rank=\"" + player["rank"] + "\"><td>" + (parseInt(member) + 1) + "</td><td class=\"head\"><img src=\"https://visage.surgeplay.com/face/35/" + player["uuid"] + "\"></td><td class=\"playername\">" + player["name"] + "</td><td class=\"contributed\">" + player["contributed"].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</td></tr>");
             }
-            $(".total_guxp").html("<b>EVENT IS OVER!</b> <br> In total we've earned<br><b>" + total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " XP</b>.<br>Thank you everyone for your contributions!");
+            $(".total_guxp").html("So far we've earned<br><b>" + total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " XP</b>");
 
             if (echest.getItem("hidden") == "true") {
                 tr_list = $("tr").toArray();
