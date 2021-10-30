@@ -33,13 +33,13 @@
         </ul>
       </nav>
     <div class="total_guxp"></div>
-    <div class="str_switch">
+    <!--<div class="str_switch">
         <label class="switch">
             <input id="hide_str" type="checkbox">
             <span class="slider round"></span>
         </label>
         <p class="switch_label">Hide STRATEGIST and above</p>
-    </div>
+    </div>-->
     <table class="leaderboard"></table>
 </body>
 <script src="jquery.js"></script>
@@ -93,12 +93,12 @@
             }
             $(".total_guxp").html("So far we've earned<br><b>" + total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " XP</b>");
 
-            if (echest.getItem("hidden") == "true") {
+            /*if (echest.getItem("hidden") == "true") {
                 tr_list = $("tr").toArray();
                 $("#hide_str").prop("checked", true);
                 hideStrAndAbove();
                 renumberPos();
-            };
+            };*/
             urlname = new URLSearchParams(window.location.search).get("name");
 
             if (urlname != undefined) {
