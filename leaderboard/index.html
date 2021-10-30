@@ -44,7 +44,7 @@
 </body>
 <script src="jquery.js"></script>
 <script>
-    paused = true;
+    paused = false;
     echest = window.localStorage;
     total = 0;
     $.ajax({
@@ -75,15 +75,16 @@
                 real_xp = data["members"][member]["contributed"] - old_p_data["contributed"]
                 total += real_xp;
                 data["members"][member]["contributed"] = real_xp
-                members = data["members"].sort(function (a, b) {
-                    return b.contributed - a.contributed;
-                });
             }
             else {
                 data["members"][member]["contributed"] = 0
                 members = data["members"]
             }
         }
+
+        members = data["members"].sort(function (a, b) {
+                    return b.contributed - a.contributed;
+                });
 
             
             for (member in members) {
