@@ -92,7 +92,7 @@
             
             for (member in members) {
                 player = data["members"][member]
-                $("table").append("<tr id=\"" + player["name"].toLowerCase() + "\" rank=\"" + player["rank"] + "\"><td>" + (parseInt(member) + 1) + "</td><td class=\"head\"><img src=\"https://visage.surgeplay.com/face/35/" + player["uuid"] + "\"></td><td class=\"playername\">" + player["name"] + "</td><td class=\"contributed\">" + player["contributed"].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</td></tr>");
+                $("table").append("<tr id=\"" + player["name"].toLowerCase() + "\" rank=\"" + player["rank"] + "\"><td>" + (parseInt(member) + 1) + "</td><td class=\"head\"><img src=\"https://visage.surgeplay.com/face/36/" + player["uuid"] + "\"></td><td class=\"playername\">" + player["name"] + "</td><td class=\"contributed\">" + player["contributed"].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</td></tr>");
             }
             $(".total_guxp").html("So far we've earned<br><b>" + total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " XP</b>");
 
