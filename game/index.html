@@ -53,7 +53,7 @@ USE PC INSTEAD!!!<br>
                 uuid = members[member]["uuid"];
                 namee = members[member]["name"];
                 rank = members[member]["rank"];
-                if(rank not in ["RECRUIT", "RECRUITER", "CAPTAIN"]) {
+                if(!["RECRUIT", "RECRUITER", "CAPTAIN"].includes(rank)) {
                 $("#players").append("<img class=\"player\" uuid=\""+uuid+"\" src=\"https://visage.surgeplay.com/bust/352/"+uuid+"\">");
                 namelist.push(namee);
                 namemap[namee] = uuid;
