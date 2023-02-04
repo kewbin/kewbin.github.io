@@ -66,9 +66,8 @@ USE PC INSTEAD!!!<br>
     function start(){
     var cards = $(".player");
     for (i = 0; i < cards.length; i++){
-        target = Math.floor(Math.random() * cards.length -1) + 1;
         target2 = Math.floor(Math.random() * cards.length -1) +1;
-        cards.eq(target).before(cards.eq(target2));
+        cards.eq(i).before(cards.eq(target2));
     }
     fullpoints = namelist.length;
     newName();
