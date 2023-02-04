@@ -46,10 +46,11 @@ USE PC INSTEAD!!!<br>
     $("#phone").css("display","block");
 } else {
    $.ajax({
-        'url': "https://api.wynncraft.com/public_api.php?action=guildStats&command=The%20Aquarium",
+        'url': "https://web-api.wynncraft.com/api/v3/guild/The%20Aquarium",
         'success': function (data) {
             members = data["members"];
-            for (member in members) {
+            for (rank in members) {
+                    for (member in rank) {
                 uuid = members[member]["uuid"];
                 namee = members[member]["name"];
                 rank = members[member]["rank"];
@@ -57,6 +58,7 @@ USE PC INSTEAD!!!<br>
                 $("#players").append("<img class=\"player\" uuid=\""+uuid+"\" src=\"https://visage.surgeplay.com/bust/352/"+uuid+"\">");
                 namelist.push(namee);
                 namemap[namee] = uuid;
+                }
             }
             }
             start();
