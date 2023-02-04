@@ -64,7 +64,13 @@ USE PC INSTEAD!!!<br>
     });
 }
     function start(){
-    var cards = $(".player");
+    w = window.screen.width;
+    h = window.screen.height - 134;
+    cards = $(".player");
+    card_count = cards.length;
+    area_per_card = (w*h)/cards;
+    card_size = Math.sqrt(area_per_card);
+    console.log(card_size);
     for (i = 0; i < cards.length; i++){
         target2 = Math.floor(Math.random() * cards.length -1) +1;
         cards.eq(i).before(cards.eq(target2));
