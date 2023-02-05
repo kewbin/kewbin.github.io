@@ -1,0 +1,237 @@
+<html>
+<style>
+	html {
+		background-image: url("bg.png");
+	}
+
+	body {
+		margin: 0px;
+	}
+	.darkness {
+		background-color: #1c0000;
+		opacity: 0.4;
+		width: 2560px;
+		height: 1728px;
+		z-index: -1;
+	}
+
+	.main {
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+	}
+
+	#preview {
+		position: absolute;
+		background-image: url("nether.png");
+		height: 32px;
+		width: 32px;
+		left: 0px;
+		top: 0px;
+		opacity: 0.5;
+		animation-name: preview;
+		animation-iteration-count: infinite;
+		animation-duration: 1.5s;
+	}
+
+	a {
+		position: fixed;
+		bottom: 10px;
+		left: 10px;
+		z-index: 100;
+		cursor: pointer;
+		height: 50px;
+		width: 50px;
+		background-image: url("save.png");
+		background-size: 50px 50px;
+		-webkit-touch-callout: none; /* iOS Safari */
+		-webkit-user-select: none; /* Safari */
+		-khtml-user-select: none; /* Konqueror HTML */
+		-moz-user-select: none; /* Old versions of Firefox */
+		-ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+            supported by Chrome, Opera and Firefox */
+        }
+
+        .block0 {
+        	background-image: url("nether.png");
+        }
+
+        .block1 {
+        	background-image: url("nether1.png");
+        }
+
+        .block2 {
+        	background-image: url("nether2.png");
+        }
+
+        .border_b {
+        	background-image: url("border.png");
+        	position: absolute;
+        	top: 1695px;
+        	width: 2560px;
+        	height: 32px;
+        }
+
+        .border_l {
+        	background-image: url("border.png");
+        	position: absolute;
+        	top: 0px;
+        	width: 32px;
+        	height: 1728px;
+        }
+
+        .border_u {
+        	background-image: url("border.png");
+        	position: absolute;
+        	top: 0px;
+        	width: 2560px;
+        	height: 32px;
+        }
+
+        .border_r {
+        	background-image: url("border.png");
+        	position: absolute;
+        	top: 0px;
+        	left: 2528px;
+        	width: 32px;
+        	height: 1728px;
+        }
+
+        #mode_build {
+	position: fixed;
+    bottom: 10px;
+    left: 70px;
+    cursor: pointer;
+    background-image: url("build.png");
+    background-size: 50px 50px;
+    height: 50px;
+    width: 50px;
+    z-index: 201;
+}
+
+#mode_destroy {
+	position: fixed;
+    bottom: 10px;
+    left: 130px;
+    cursor: pointer;
+    background-image: url("destroy.png");
+    background-size: 50px 50px;
+    height: 50px;
+    width: 50px;
+    z-index: 201;
+}
+
+        @keyframes preview {
+        	0%   {opacity: 0.5;}
+        	50%  {opacity: 0.8;}
+        	100%  {opacity: 0.5;}
+        }
+
+.selected {
+	position: fixed;
+	height: 60px;
+	width: 60px;
+	bottom: 5px;
+	background-image: url("selected.png");
+	background-size: 60px 60px;
+	left: 65px;
+	z-index: 200;
+	transition-duration: 0.2s;
+}
+    </style>
+    <body>
+    	<div class="darkness"></div>
+    	<div class="border_b"></div>
+    	<div class="border_l"></div>
+    	<div class="border_r"></div>
+    	<div class="border_u"></div>
+    	<div class="selected"></div>
+    	<div id="main"><div id="preview"></div></div>
+    	<a download="level.txt" href="#"></a>
+    	<div id="mode_build"></div>
+		<div id="mode_destroy"></div>
+    	<script src="jquery.js"></script>
+    	<script type="text/javascript">
+
+    		scale = 32;
+    		textFile = null;
+    		mode = "build";
+    		i = 0;
+
+    		function makeTextFile(text){
+    			var data = new Blob([text], {type: 'text/plain'});
+
+    // If we are replacing a previously generated file we need to
+    // manually revoke the object URL to avoid memory leaks.
+    if (textFile !== null) {
+    	window.URL.revokeObjectURL(textFile);
+    }
+
+    textFile = window.URL.createObjectURL(data);
+
+    return textFile;
+};
+
+function randint(min, max) {
+	min = Math.ceil(min);
+	max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
+}
+
+function isArrayInArray(arr, item){
+	var item_as_string = JSON.stringify(item);
+
+	var contains = arr.some(function(ele){
+		return JSON.stringify(ele) === item_as_string;
+	});
+	return contains;
+}
+
+blocks = [];
+
+function roundT(x){
+	return parseInt(32*Math.floor(parseFloat(x)/32))
+}
+
+$(document).ready(function(){
+
+	$("#mode_build").on("click", function(){
+		mode = "build";
+		$(".selected").css({"left":"65px"});
+	});
+	$("#mode_destroy").on("click", function(){
+		mode = "destroy";
+		$(".selected").css({"left":"125px"});
+	});			
+	$( document ).on("mousemove",function( event ) {
+		$("#preview").css({"left":roundT(event.pageX)+"px","top":roundT(event.pageY)+"px"});
+		mouse_coordX = roundT(event.pageX);
+		mouse_coordY = roundT(event.pageY);
+	});
+	$("#main").on("mousedown",function( event ) {
+		timeout = setInterval(function(){
+			if(mode == "build"){
+			if(isArrayInArray(blocks, [mouse_coordX/32, mouse_coordY/32]) === false && mouse_coordX/32 > 0 && mouse_coordX/32 < 79 && mouse_coordY/32 > 0 && mouse_coordY/32 < 53){
+				blocks.push([mouse_coordX/32, mouse_coordY/32])
+				document.getElementById("main").innerHTML += '<div class="block block'+randint(0,2)+'" id="'+mouse_coordX/32+'-'+mouse_coordY/32+'" style="position:absolute;width:'+scale+'px;height:'+scale+'px;left:'+mouse_coordX+'px;top:'+mouse_coordY+'px;z-index:99;"></div>';
+				i++
+				}
+			}
+				if(mode == "destroy"){
+					coords = JSON.stringify([mouse_coordX/32, mouse_coordY/32]);
+					blocks = JSON.parse(JSON.stringify(blocks).replace(coords,"").replace(",,",",").replace("[,","[").replace(",]","]"))
+					$("#"+mouse_coordX/32+"-"+mouse_coordY/32).remove();
+				}
+			}, 10);
+		event.preventDefault();
+	});
+	$(document).mouseup(function(){
+		clearInterval(timeout);
+		$("a").attr("href", makeTextFile(JSON.stringify(blocks)))
+		return false;
+	});
+});
+</script>
+</body>
+</html>

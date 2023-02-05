@@ -1,0 +1,324 @@
+<html>
+<style>
+	html {
+		background-image: url("bg.png");
+		scroll-behavior: smooth;
+	}
+
+	body {
+		margin: 0px;
+		overflow: hidden;
+	}
+	#char {
+		transition-duration: 0.3s;
+		transition-timing-function: linear;
+		z-index: 100;
+	}
+
+	#char2 {
+		background-color: blue;
+	}
+
+	#char img {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-29px,-29px);
+		z-index: 100;
+	}
+
+	.block0 {
+		background-image: url("nether.png");
+	}
+
+	.block1 {
+		background-image: url("nether1.png");
+	}
+
+	.block2 {
+		background-image: url("nether2.png");
+	}
+
+	.darkness {
+		background-color: #1c0000;
+		opacity: 0.4;
+		width: 2560px;
+		height: 1728px;
+	}
+
+	#char_anchor {
+		position: absolute;
+		top: -200px;
+		left: -200px;
+	}
+
+	.border_b {
+		background-image: url("border.png");
+		position: absolute;
+		top: 1695px;
+		width: 2560px;
+		height: 32px;
+	}
+
+	.border_l {
+		background-image: url("border.png");
+		position: absolute;
+		top: 0px;
+		width: 32px;
+		height: 1728px;
+	}
+
+	.border_u {
+		background-image: url("border.png");
+		position: absolute;
+		top: 0px;
+		width: 2560px;
+		height: 32px;
+	}
+
+	.border_r {
+		background-image: url("border.png");
+		position: absolute;
+		top: 0px;
+		left: 2528px;
+		width: 32px;
+		height: 1728px;
+	}
+
+	.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: fixed;
+	bottom: 10px;
+	left: 10px;
+	z-index: -1;
+}
+
+.inputfile + label {
+	position: fixed;
+    bottom: 10px;
+    left: 10px;
+    cursor: pointer;
+    background-image: url("save.png");
+    background-size: 50px 50px;
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    transform: rotate(180deg);
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+}
+
+</style>
+<body>
+	<div class="darkness"></div>
+	<div class="border_b"></div>
+	<div class="border_l"></div>
+	<div class="border_r"></div>
+	<div class="border_u"></div>
+	<div id="char_anchor"></div>
+	<input type="file" name="file" id="file" class="inputfile" />
+	<label for="file"></label>
+	<script src="jquery.js"></script>
+	<script type="text/javascript">
+
+		pressed = [];
+		leftcooldown = 0;
+		rightcooldown = 0;
+		upcooldown = 0;
+		downcooldown = 0;
+		moving = 0;
+		direction = "left";
+
+		$(document).keydown(function(e) {
+			if(isArrayInArray(pressed, e.which) === false){
+				pressed.push(e.which);
+			}
+			e.preventDefault();
+		});
+
+		$(document).keyup(function(e) {
+			if(isArrayInArray(pressed, e.which)){
+				index = pressed.indexOf(e.which);
+ 				 pressed.splice(index, 1);
+			}
+		});
+
+		function controls(){
+			if(isArrayInArray(pressed, 37) && leftcooldown == 0 || isArrayInArray(pressed, 65) && leftcooldown == 0){
+				left()
+				leftcooldown = 1;
+				setTimeout(function(){leftcooldown = 0},300);
+			};
+			if(isArrayInArray(pressed, 38) && upcooldown == 0 || isArrayInArray(pressed, 87) && upcooldown == 0){
+				up()
+				upcooldown = 1;
+				setTimeout(function(){upcooldown = 0},300);
+			};
+			if(isArrayInArray(pressed, 39) && rightcooldown == 0 || isArrayInArray(pressed, 68) && rightcooldown == 0){
+				right()
+				rightcooldown = 1;
+				setTimeout(function(){rightcooldown = 0},300);
+			};
+			if(isArrayInArray(pressed, 40) && downcooldown == 0 || isArrayInArray(pressed, 83) && downcooldown == 0){
+				down()
+				downcooldown = 1;
+				setTimeout(function(){downcooldown = 0},300);
+			};
+			setTimeout(controls, 10);
+		}
+		controls();
+
+		function randint(min, max) {
+			min = Math.ceil(min);
+			max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
+}
+
+charx = 1;
+chary = 1;
+charx_t = 1;
+chary_t = 1;
+
+blocks=[];
+
+$(document).ready(function(){
+	fileupload();
+	keepInMid();
+});
+function fileupload(){
+$("#file").on("change", function (){
+    file = this.files[0];
+      fr = new FileReader();
+      fr.onload = loadblocks;
+      fr.readAsText(file);
+});
+}
+
+
+function loadblocks(){
+	$(".block1, .block2, .block0").remove();
+	blocks= JSON.parse(fr.result);
+
+	i = 0
+
+	for (block in blocks){
+	document.body.innerHTML += '<div class="block'+randint(0,2)+'" style="position:absolute;width:'+scale+'px;height:'+scale+'px;left:'+blocks[i][0]*scale+'px;top:'+blocks[i][1]*scale+'px;z-index:99;"></div>';
+	i++
+}
+fileupload();
+keepInMid();
+}
+
+scale = 32
+
+function isArrayInArray(arr, item){
+	var item_as_string = JSON.stringify(item);
+
+	var contains = arr.some(function(ele){
+		return JSON.stringify(ele) === item_as_string;
+	});
+	return contains;
+}
+
+function getViewport() {
+
+ var viewPortWidth;
+ var viewPortHeight;
+
+ // the more standards compliant browsers (mozilla/netscape/opera/IE7) use window.innerWidth and window.innerHeight
+ if (typeof window.innerWidth != 'undefined') {
+   viewPortWidth = window.innerWidth,
+   viewPortHeight = window.innerHeight
+ }
+
+// IE6 in standards compliant mode (i.e. with a valid doctype as the first line in the document)
+ else if (typeof document.documentElement != 'undefined'
+ && typeof document.documentElement.clientWidth !=
+ 'undefined' && document.documentElement.clientWidth != 0) {
+    viewPortWidth = document.documentElement.clientWidth,
+    viewPortHeight = document.documentElement.clientHeight
+ }
+
+ // older versions of IE
+ else {
+   viewPortWidth = document.getElementsByTagName('body')[0].clientWidth,
+   viewPortHeight = document.getElementsByTagName('body')[0].clientHeight
+ }
+ return [viewPortWidth, viewPortHeight];
+}
+
+document.body.innerHTML += '<div id="char" style="position:absolute;width:'+scale+'px;height:'+scale+'px;left:'+charx*scale+'px;top:'+chary*scale+'px;z-index:100;"><img src="char_r.gif"></div>';
+//document.body.innerHTML += '<div id="char2" style="position:absolute;width:'+scale+'px;height:'+scale+'px;left:'+charx*scale+'px;top:'+chary*scale+'px;z-index:99;"></div>';
+
+function keepInMid(){
+	el_anch = $("#char_anchor")[0];
+	timeout = setInterval(function(){
+		viewer = el_anch.getBoundingClientRect();
+		current = $("#char").position();
+	curr_top = current.top;
+	curr_left = current.left;
+	if(direction == "left"){
+		$("#char_anchor").css({"left":curr_left-(getViewport()[0]/2)+"px"});
+	}
+	if(direction == "right"){
+		$("#char_anchor").css({"left":curr_left+(getViewport()[0]/2)+"px"});
+	}
+	$("#char_anchor").css({"top":curr_top+32-(getViewport()[1]/2)+"px"});
+	el_anch.scrollIntoView();
+	},10);
+}
+
+
+
+function movechar(x,y){
+		scrollY = $(window).scrollTop();  //your current y position on the page
+	el = $("#char")[0];
+	var viewportOffset = el.getBoundingClientRect();
+	// these are relative to the viewport, i.e. the window
+		var top = viewportOffset.top;
+		var left = viewportOffset.left;
+	charx_t = charx_t + x
+	chary_t = chary_t + y
+	$("#char").css({"left":charx_t*scale+"px","top":chary_t*scale+"px"});
+	setTimeout(function(){
+		charx = charx + x;
+		chary = chary + y;
+		//$("#char2").css({"left":charx*scale+"px","top":chary*scale+"px"});
+	},150);
+}
+
+function up(event){
+	if(isArrayInArray(blocks, [charx_t, chary_t-1]) === false && chary_t != 1){
+		movechar(0, -1);
+	}
+}
+
+function down(event){
+	if(isArrayInArray(blocks, [charx_t, chary_t+1]) === false && chary_t != 52){
+		movechar(0, 1);
+	}
+}
+
+function right(event){
+	if(isArrayInArray(blocks, [charx_t+1, chary_t]) === false && charx_t != 78){
+		$("#char img").css({"transform":"translate(-29px,-29px) scaleX(1)"});
+		movechar(1, 0);
+		direction = "right";
+	} else {}
+}
+
+function left(event){
+	if(isArrayInArray(blocks, [charx_t-1, chary_t]) === false && charx_t != 1){
+		movechar(-1, 0);
+		$("#char img").css({"transform":"translate(-29px,-29px) scaleX(-1)"});
+		direction = "left";
+	}
+}
+</script>
+</body>
+</html>

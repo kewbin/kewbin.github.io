@@ -1,0 +1,170 @@
+input,
+	textarea,
+	button,
+	select,
+	a {
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
+	}
+	@font-face {
+		font-family: Lilita;
+		src: url('Lilita.ttf') format('truetype');
+	}
+	.brawler {
+		position: relative;
+		width: Calc(100% - 30px);
+		max-width: 400px;
+		height: 100px;
+		border: solid 3px black;
+		box-shadow: 2px 5px rgba(0,0,0,0.3);
+		transform: translate(-50%);
+		left: 50%;
+		filter:grayscale(100%);
+		margin-bottom: 12px;
+	}
+	.noob {
+		background: #5898ff;
+	}
+	.rare {
+		background: #00d804;
+	}
+	.superrare {
+		background: #0084f8;
+	}
+	.brawlers {
+		position: absolute;
+		top:50px;
+		left: 50%;
+		width: 100%;
+		height: Calc(100% - 55px);
+		padding-top: 5px;
+		transform: translate(-50%);
+		overflow-y: scroll;
+	}
+	.brawler img {
+		height: 100px;
+	}
+	.brawlerstats {
+		position: absolute;
+		height: 40px;
+		right: 10px;
+		bottom: 0px;
+	}
+	.brawlerstats img {
+		height: 40px;
+	}
+	.namecost {
+		position: absolute;
+		height: 100px;
+		left: 90px;
+		top: 0px;
+	}
+	.brawlername {
+		font-family: Lilita;
+		font-size: 30px;
+		font-weight: bold;
+		-webkit-text-stroke: 2px black;
+		color: white;
+		text-shadow: 2px 2px 0 #000;
+		height: 50px;
+	}
+	.brawlertitle {
+		font-family: Lilita;
+		font-size: 20px;
+		color: #ecf0f1;
+	}
+	.value {
+		width: 55px;
+		font-family: Lilita;
+		font-size: 20px;
+		font-weight: bold;
+		-webkit-text-stroke: 1.5px black;
+		text-shadow: 1px 1px 0 #000;
+		color: white;
+		text-align: right;
+	}
+	.cost {
+		font-family: Lilita;
+		font-size: 20px;
+		font-weight: bold;
+		-webkit-text-stroke: 1.5px black;
+		text-shadow: 1px 1px 0 #000;
+		color: white;
+	}
+	.topbar {
+		position: absolute;
+		display: table;
+		width: 100%;
+		height: 50px;
+		left: 0px;
+		top: 0px;
+		background: url("topbar.png");
+		background-repeat: repeat-x;
+		background-size: contain;
+		z-index: 1;
+	}
+	.currentmoney {
+		position: absolute;
+		display: table-cell;
+		vertical-align: middle;
+		right: 60px;
+		text-align: right;
+		font-family: Lilita;
+		font-size: 30px;
+		font-weight: bold;
+		-webkit-text-stroke: 1.5px black;
+		text-shadow: 1px 1px 0 #000;
+		color: white;
+		transform: translate(0%,-50%);
+		top: 50%;
+	}
+	.back {
+		position: absolute;
+		font-family: Lilita;
+		font-size: 30px;
+		font-weight: bold;
+		-webkit-text-stroke: 1.5px black;
+		text-shadow: 1px 1px 0 #000;
+		color: white;
+		transform: translate(0%,-50%);
+		top: 50%;
+		left: 10px;
+		text-decoration: none;
+	}
+	.brawlerlevel {
+		position: absolute;
+		height: 40px;
+		right: 0px;
+		top: -1px;
+background: url("levelcover.png");
+background-repeat: repeat-x;
+background-size: contain;
+	}
+	.brawlerlevel:after {
+		position: absolute;
+		background-image: url('levelright.png');
+    background-size: 10px 40px;
+    display: inline-block;
+    width: 10px; 
+    height: 40px;
+    right: -10px;
+    top: 0px;
+    content:"";
+	}
+	.brawlerlevel:before {
+		position: absolute;
+		background-image: url('levelleft.png');
+    background-size: 10px 40px;
+    display: inline-block;
+    width: 10px; 
+    height: 40px;
+    left: -10px;
+    top: 0px;
+    content:"";
+	}
+	.levelvalue {
+		width: 40px;
+		font-family: Lilita;
+		font-size: 20px;
+		color: white;
+		text-align: right;
+	}

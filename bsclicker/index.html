@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="shop.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<style>
+	
+</style>
+<body>
+	<div class="mainwrap">
+
+
+		<div class="gamewrap">
+			<div class="roulette" style="display:none;"> 
+	<div style="background:red;"><img src="brawlericons/darryl.png" style="height:50px"/></div>
+	<img src="brawlericons/barley.png" style="height:50px"/>
+</div>  
+			<img src="wifierror.png" class="wifierror">
+			<div class="cps"><img src="clock.png"><span id="cps"></span></div>
+			<div class="cpc"><span id="cpc"></span><img src="click.png"></div>
+			<img src="shine.png" class="shine" id="shine">
+			<div id="progress"><img src="emptysuper.png" id="super" onmousedown="superactivate()" onmouseup="superend()"></div>
+			<img src="gem.svg" id="coin" onmouseup="clickup()">
+			<span id="counter-money"></span>
+			<img src="shop.png" class="shopicon">
+			<div class="prestigewrap"><div class="currentticket"><img src="ticket.png"><span id="currentticket"></span></div><img src="prestige_icon.png" class="prestigeicon"></div>
+
+			<div class="awaybg"><div class="awaybox"><img src="offline_prod.png" class="offline_header"><span class="missedmoney">While you were away your brawlers collected</span><div class="moneymissed"><img src="gem.svg"><span id="missedmoney" class="missedmoney2"></span></div><div class="claimbtn" onmousedown="claimdown()" onmouseup="claimmoney()"><span>CLAIM</span></div></div></div>
+
+			<div class="prestigebg"><div class="prestigebox"><img src="prestige.png" class="prestige_header"><span class="prestigetext">PRESTIGE<br><br>Prestige resets your progress. But you will recieve tickets based on your current progress.<br><br>Each ticket highers your <i>Gems per second</i> by 5%. After reset you will earn:</span><div class="ticketamount"><img src="ticket.png"><span id="ticketamount" class="ticketamount2"></span></div><div class="cancelbtn" onmousedown="closedown()" onmouseup="closeup()"><span>CANCEL</span></div><div id="prestigebtn" class="prestigebtn prestigeactive" onmousedown="resetdown()"><span>RESET</span></div></div></div>
+		</div>
+
+
+
+		<div class="shopwrap">
+			<div class="topbar">
+				<div class="back">◀ Back</div>
+				<span id="currentmoney" class="currentmoney"></span> <img src="gem.svg" style="position:absolute;height:40px;right:20px;transform: translate(0%,-50%);top:50%;">
+			</div>
+			<div class="brawlers">
+
+
+
+				<div class="brawler noob" id="shelly" onmouseup="upgradeShelly()" ontouchmove="move=1"><img src="brawlericons/shelly.png">
+					<table class="namecost">
+						<tr>
+							<td class="brawlername">Shelly</td>
+						</tr>
+						<tr>
+							<td class="cost"><img src="gem.svg" style="height:25px;margin-top:-15px" align="middle"> <span id="shellycost"></span></td>
+						</tr>
+					</table>
+					<table class="brawlerlevel">
+						<tr>
+							<td class="brawlertitle">Power</td>
+							<td id="shellylevel" class="levelvalue"></td>
+						</tr>
+					</table>
+					<table class="brawlerstats">
+						<tr>
+							<td class="brawlertitle"><img src="click.png" style="height: 40px"></td>
+							<td id="shellycps" class="value">x2</td>
+						</tr>
+					</table>
+				</div>
+
+
+
+				<div class="brawler noob" id="nita" onmouseup="upgradeNita()" ontouchmove="move=1"><img src="brawlericons/nita.png">
+					<table class="namecost">
+						<tr>
+							<td class="brawlername">Nita</td>
+						</tr>
+						<tr>
+							<td class="cost"><img src="gem.svg" style="height:25px;margin-top:-15px" align="middle"> <span id="nitacost"></span></td>
+						</tr>
+					</table>
+					<table class="brawlerlevel">
+						<tr>
+							<td class="brawlertitle">Power</td>
+							<td id="nitalevel" class="levelvalue"></td>
+						</tr>
+					</table>
+					<table class="brawlerstats">
+						<tr>
+							<td class="brawlertitle"><img src="clock.png"></td>
+							<td id="nitacps" class="value">1</td>
+						</tr>
+					</table>
+				</div>
+
+
+
+				<div class="brawler noob" id="colt" onmouseup="upgradeColt()" ontouchmove="move=1"><img src="brawlericons/colt.png">
+					<table class="namecost">
+						<tr>
+							<td class="brawlername">Colt</td>
+						</tr>
+						<tr>
+							<td class="cost"><img src="gem.svg" style="height:25px;margin-top:-15px" align="middle"> <span id="coltcost"></span></td>
+						</tr>
+					</table>
+					<table class="brawlerlevel">
+						<tr>
+							<td class="brawlertitle">Power</td>
+							<td id="coltlevel" class="levelvalue"></td>
+						</tr>
+					</table>
+					<table class="brawlerstats">
+						<tr>
+							<td class="brawlertitle"><img src="clock.png"></td>
+							<td id="coltcps" class="value">3</td>
+						</tr>
+					</table>
+				</div>
+
+
+
+				<div class="brawler noob" id="bull" onmouseup="upgradeBull()" ontouchmove="move=1"><img src="brawlericons/bull.png">
+					<table class="namecost">
+						<tr>
+							<td class="brawlername">Bull</td>
+						</tr>
+						<tr>
+							<td class="cost"><img src="gem.svg" style="height:25px;margin-top:-15px" align="middle"> <span id="bullcost"></span></td>
+						</tr>
+					</table>
+					<table class="brawlerlevel">
+						<tr>
+							<td class="brawlertitle">Power</td>
+							<td id="bulllevel" class="levelvalue"></td>
+						</tr>
+					</table>
+					<table class="brawlerstats">
+						<tr>
+							<td class="brawlertitle"><img src="clock.png"></td>
+							<td id="bullcps" class="value">10</td>
+						</tr>
+					</table>
+				</div>
+
+
+
+				<div class="brawler noob" id="jessie" onmouseup="upgradeJessie()" ontouchmove="move=1"><img src="brawlericons/jessie.png">
+					<table class="namecost">
+						<tr>
+							<td class="brawlername">Jessie</td>
+						</tr>
+						<tr>
+							<td class="cost"><img src="gem.svg" style="height:25px;margin-top:-15px" align="middle"> <span id="jessiecost"></span></td>
+						</tr>
+					</table>
+					<table class="brawlerlevel">
+						<tr>
+							<td class="brawlertitle">Power</td>
+							<td id="jessielevel" class="levelvalue"></td>
+						</tr>
+					</table>
+					<table class="brawlerstats">
+						<tr>
+							<td class="brawlertitle"><img src="clock.png"></td>
+							<td id="jessiecps" class="value">20</td>
+						</tr>
+					</table>
+				</div>
+
+
+
+				<div class="brawler noob" id="brock" onmouseup="upgradeBrock()" ontouchmove="move=1"><img src="brawlericons/brock.png">
+					<table class="namecost">
+						<tr>
+							<td class="brawlername">Brock</td>
+						</tr>
+						<tr>
+							<td class="cost"><img src="gem.svg" style="height:25px;margin-top:-15px" align="middle"> <span id="brockcost"></span></td>
+						</tr>
+					</table>
+					<table class="brawlerlevel">
+						<tr>
+							<td class="brawlertitle">Power</td>
+							<td id="brocklevel" class="levelvalue"></td>
+						</tr>
+					</table>
+					<table class="brawlerstats">
+						<tr>
+							<td class="brawlertitle"><img src="clock.png"></td>
+							<td id="brockcps" class="value">40</td>
+						</tr>
+					</table>
+				</div>
+
+
+
+				<div class="brawler noob" id="dynamike" onmouseup="upgradeDynamike()" ontouchmove="move=1"><img src="brawlericons/dynamike.png">
+					<table class="namecost">
+						<tr>
+							<td class="brawlername">Dynamike</td>
+						</tr>
+						<tr>
+							<td class="cost"><img src="gem.svg" style="height:25px;margin-top:-15px" align="middle"> <span id="dynamikecost"></span></td>
+						</tr>
+					</table>
+					<table class="brawlerlevel">
+						<tr>
+							<td class="brawlertitle">Power</td>
+							<td id="dynamikelevel" class="levelvalue"></td>
+						</tr>
+					</table>
+					<table class="brawlerstats">
+						<tr>
+							<td class="brawlertitle"><img src="clock.png"></td>
+							<td id="dynamikecps" class="value">100</td>
+						</tr>
+					</table>
+				</div>
+
+
+
+				<div class="brawler noob" id="bo" onmouseup="upgradeBo()" ontouchmove="move=1"><img src="brawlericons/bo.png">
+					<table class="namecost">
+						<tr>
+							<td class="brawlername">Bo</td>
+						</tr>
+						<tr>
+							<td class="cost"><img src="gem.svg" style="height:25px;margin-top:-15px" align="middle"> <span id="bocost"></span></td>
+						</tr>
+					</table>
+					<table class="brawlerlevel">
+						<tr>
+							<td class="brawlertitle">Power</td>
+							<td id="bolevel" class="levelvalue"></td>
+						</tr>
+					</table>
+					<table class="brawlerstats">
+						<tr>
+							<td class="brawlertitle"><img src="clock.png"></td>
+							<td id="bocps" class="value">200</td>
+						</tr>
+					</table>
+				</div>
+
+
+
+				<div class="brawler rare" id="elprimo" onmouseup="upgradeElprimo()" ontouchmove="move=1"><img src="brawlericons/elprimo.png">
+					<table class="namecost">
+						<tr>
+							<td class="brawlername">El Primo</td>
+						</tr>
+						<tr>
+							<td class="cost"><img src="gem.svg" style="height:25px;margin-top:-15px" align="middle"> <span id="elprimocost"></span></td>
+						</tr>
+					</table>
+					<table class="brawlerlevel">
+						<tr>
+							<td class="brawlertitle">Power</td>
+							<td id="elprimolevel" class="levelvalue"></td>
+						</tr>
+					</table>
+					<table class="brawlerstats">
+						<tr>
+							<td class="brawlertitle"><img src="clock.png"></td>
+							<td id="elprimocps" class="value">1.00k</td>
+						</tr>
+					</table>
+				</div>
+
+
+
+				<div class="brawler rare" id="barley" onmouseup="upgradeBarley()" ontouchmove="move=1"><img src="brawlericons/barley.png">
+					<table class="namecost">
+						<tr>
+							<td class="brawlername">Barley</td>
+						</tr>
+						<tr>
+							<td class="cost"><img src="gem.svg" style="height:25px;margin-top:-15px" align="middle"> <span id="barleycost"></span></td>
+						</tr>
+					</table>
+					<table class="brawlerlevel">
+						<tr>
+							<td class="brawlertitle">Power</td>
+							<td id="barleylevel" class="levelvalue"></td>
+						</tr>
+					</table>
+					<table class="brawlerstats">
+						<tr>
+							<td class="brawlertitle"><img src="clock.png"></td>
+							<td id="barleycps" class="value">3.00k</td>
+						</tr>
+					</table>
+				</div>
+
+
+
+				<div class="brawler rare" id="poco" onmouseup="upgradePoco()" ontouchmove="move=1"><img src="brawlericons/poco.png">
+					<table class="namecost">
+						<tr>
+							<td class="brawlername">Poco</td>
+						</tr>
+						<tr>
+							<td class="cost"><img src="gem.svg" style="height:25px;margin-top:-15px" align="middle"> <span id="pococost"></span></td>
+						</tr>
+					</table>
+					<table class="brawlerlevel">
+						<tr>
+							<td class="brawlertitle">Power</td>
+							<td id="pocolevel" class="levelvalue"></td>
+						</tr>
+					</table>
+					<table class="brawlerstats">
+						<tr>
+							<td class="brawlertitle"><img src="clock.png"></td>
+							<td id="pococps" class="value">5.00k</td>
+						</tr>
+					</table>
+				</div>
+
+
+
+				<div class="brawler rare" id="rosa" onmouseup="upgradeRosa()" ontouchmove="move=1"><img src="brawlericons/rosa.png">
+					<table class="namecost">
+						<tr>
+							<td class="brawlername">Rosa</td>
+						</tr>
+						<tr>
+							<td class="cost"><img src="gem.svg" style="height:25px;margin-top:-15px" align="middle"> <span id="rosacost"></span></td>
+						</tr>
+					</table>
+					<table class="brawlerlevel">
+						<tr>
+							<td class="brawlertitle">Power</td>
+							<td id="rosalevel" class="levelvalue"></td>
+						</tr>
+					</table>
+					<table class="brawlerstats">
+						<tr>
+							<td class="brawlertitle"><img src="clock.png"></td>
+							<td id="rosacps" class="value">8.50k</td>
+						</tr>
+					</table>
+				</div>
+
+
+				<div class="brawler superrare" id="rico" onmouseup="upgradeRico()" ontouchmove="move=1"><img src="brawlericons/rico.png">
+					<table class="namecost">
+						<tr>
+							<td class="brawlername">Rico</td>
+						</tr>
+						<tr>
+							<td class="cost"><img src="gem.svg" style="height:25px;margin-top:-15px" align="middle"> <span id="ricocost"></span></td>
+						</tr>
+					</table>
+					<table class="brawlerlevel">
+						<tr>
+							<td class="brawlertitle">Power</td>
+							<td id="ricolevel" class="levelvalue"></td>
+						</tr>
+					</table>
+					<table class="brawlerstats">
+						<tr>
+							<td class="brawlertitle"><img src="clock.png"></td>
+							<td id="ricocps" class="value">50.00k</td>
+						</tr>
+					</table>
+				</div>
+
+
+
+				<div class="brawler superrare" id="darryl" onmouseup="upgradeDarryl()" ontouchmove="move=1"><img src="brawlericons/darryl.png">
+					<table class="namecost">
+						<tr>
+							<td class="brawlername">Darryl</td>
+						</tr>
+						<tr>
+							<td class="cost"><img src="gem.svg" style="height:25px;margin-top:-15px" align="middle"> <span id="darrylcost"></span></td>
+						</tr>
+					</table>
+					<table class="brawlerlevel">
+						<tr>
+							<td class="brawlertitle">Power</td>
+							<td id="darryllevel" class="levelvalue"></td>
+						</tr>
+					</table>
+					<table class="brawlerstats">
+						<tr>
+							<td class="brawlertitle"><img src="clock.png"></td>
+							<td id="darrylcps" class="value">80.00k</td>
+						</tr>
+					</table>
+				</div>
+
+
+				<div class="brawler superrare" id="penny" onmouseup="upgradePenny()" ontouchmove="move=1"><img src="brawlericons/penny.png">
+					<table class="namecost">
+						<tr>
+							<td class="brawlername">Penny</td>
+						</tr>
+						<tr>
+							<td class="cost"><img src="gem.svg" style="height:25px;margin-top:-15px" align="middle"> <span id="pennycost"></span></td>
+						</tr>
+					</table>
+					<table class="brawlerlevel">
+						<tr>
+							<td class="brawlertitle">Power</td>
+							<td id="pennylevel" class="levelvalue"></td>
+						</tr>
+					</table>
+					<table class="brawlerstats">
+						<tr>
+							<td class="brawlertitle"><img src="clock.png"></td>
+							<td id="pennycps" class="value">150.00k</td>
+						</tr>
+					</table>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<div class="blackscreen" style="position: absolute; width: 100%; height: 100%; background-color: black; transition-duration: 1s"></div>
+</body>
+<script src="jquery.js"></script>
+<script src="nicernumbers.js"></script>
+<script src="cps.js"></script>
+<script src="progressbar.js"></script>
+<script src="shop_functions.js"></script>
+<script src="loadb.js"></script>
+<script src="upgb.js"></script>
+<script src="roulette.js"></script>
+<script>
+
+	var ulti_ready = new Audio('ulti_ready.ogg');
+	var ulti_press = new Audio('ulti_press.ogg');
+
+	setInterval(updateTotal, 1);
+	setInterval(testcost, 1);
+	setInterval(updatemoney, 1);
+
+	var haswifi = 0;
+
+	if (localStorage.getItem("money") === null || isNaN(parseInt(localStorage.getItem("money")))) {
+		var money = 0;
+		localStorage.setItem('money', 0);
+	} else {
+		var money = parseFloat(localStorage.getItem('money'));
+	}
+
+	if (localStorage.getItem("maxmoney") === null) {
+		var maxmoney = 0;
+		localStorage.setItem('maxmoney', 0);
+	} else {
+		var maxmoney = parseInt(localStorage.getItem('maxmoney'));
+	}
+
+	if (localStorage.getItem("tickets") === null) {
+		var tickets = 0;
+		localStorage.setItem('tickets', 0);
+	} else {
+		var tickets = parseInt(localStorage.getItem('tickets'));
+	}
+
+	if (localStorage.getItem("knowprestige") === null) {
+		var knowprestige = 0;
+		localStorage.setItem('knowprestige', 0);
+	} else {
+		var knowprestige = parseFloat(localStorage.getItem('knowprestige'));
+	}
+
+	if (localStorage.getItem("click") === null) {
+		var click = 1;
+		localStorage.setItem('click',click);
+	} else {
+		var click = parseInt(localStorage.getItem('click'));
+	}
+
+
+	if (localStorage.getItem("cps") === null) {
+		var cps = 0;
+		localStorage.setItem('cps',cps);
+	} else {
+		var cps = parseInt(localStorage.getItem('cps'));
+	}
+
+
+	if (localStorage.getItem("doubleprogress") === null) {
+		var doubleprogress = 0;
+		localStorage.setItem('doubleprogress',doubleprogress);
+	} else {
+		var doubleprogress = parseFloat(localStorage.getItem('doubleprogress'));
+	}
+
+
+
+	if (localStorage.getItem("activesuper") === null) {
+		var activesuper = 0;
+		localStorage.setItem('activesuper',activesuper);
+	} else {
+		var activesuper = parseInt(localStorage.getItem('activesuper'));
+	}
+
+
+
+	if (localStorage.getItem("supertime") === null) {
+		var supertime = 0;
+		localStorage.setItem('supertime',supertime);
+	} else {
+		var supertime = parseInt(localStorage.getItem('supertime'));
+	}
+
+
+
+	$.ajax({
+		dataType: 'json',
+		url: 'http://worldtimeapi.org/api/timezone/Europe/London',
+		success: function (result) {
+			currentdate = Date.parse(result.datetime);
+			var date = Date.parse(localStorage.getItem('date'));
+			diffdate = Math.abs(currentdate - date);
+			if (diffdate > 7200000) {
+				diffdate = 7200000;
+			} else {}
+			localStorage.setItem("haswifi",1);
+			haswifi = 1;
+			if (diffdate > 11000 && cps != 0) {
+				var cps = parseInt(localStorage.getItem('cps'));
+				var money = parseFloat(localStorage.getItem('money'));
+				var tickets = parseInt(localStorage.getItem('tickets'));
+				var missedmoney = (Math.round(diffdate/1000)) * (cps * (1 + (tickets * 0.05)));
+				localStorage.setItem("missedmoney", missedmoney);
+				var missedmoneyabbr = abbreviate(missedmoney, 2, 2, false);
+				$("#missedmoney").text(missedmoneyabbr);
+				$(".awaybg").css({"visibility":"visible"});
+			} else if(haswifi==1) {
+				savedate();
+				setInterval(savedate, 10000);}
+			},
+
+			error: function() {
+				$(".wifierror").css({"visibility":"visible"});
+				localStorage.setItem("haswifi",0);
+				localStorage.setItem("diffdate", 0);
+			}
+		});
+
+	function claimdown() {
+		$(".claimbtn").css({"width":"110px"})
+	}
+	function claimmoney() {
+		var money = parseFloat(localStorage.getItem('money'));
+		var missedmoney = parseInt(localStorage.getItem('missedmoney'));
+		money = money + missedmoney;
+		localStorage.setItem('money', money);
+		savedate();
+		setInterval(savedate, 10000);
+		$(".awaybg").css({"visibility":"hidden"})
+
+	}
+
+	$(document).ready(function() {
+		var tickets = parseInt(localStorage.getItem('tickets'));
+		var knowprestige = parseFloat(localStorage.getItem('knowprestige'));
+		var abbrmoney = abbreviate(money, 2, 2, false);
+		$("#counter-money").text(abbrmoney);
+		activatedcountdown();
+		bar.set(doubleprogress);
+		supercharge();
+		var abbrticket = abbreviate(tickets, 2, 2, false);
+		$("#currentticket").text(abbrticket);
+		if (knowprestige == 1) {
+			$(".prestigewrap").css({"visibility":"visible"})
+		};
+		$(".blackscreen").css({"background-color":"transparent"});
+		$(".blackscreen").css({"visibility":"hidden"});
+	});
+
+	$("#coin").bind('mouseup', function(){
+		$("#coin").css({"height":"250px","width":"250px","filter":"drop-shadow( 3px 6px rgba(43, 42, 66, 0.7))"});
+	});
+
+	$("#coin").bind('mousedown', function() {
+		var doubleprogress = parseFloat(localStorage.getItem('doubleprogress'));
+		var activesuper = parseInt(localStorage.getItem('activesuper'));
+		if (doubleprogress < 1 && activesuper == 0) {
+			doubleprogress = doubleprogress + 0.0005;
+			bar.set(doubleprogress);
+			localStorage.setItem('doubleprogress',doubleprogress);
+			supercharge();
+
+		};
+		var money = parseFloat(localStorage.getItem('money'));
+		if (activesuper == 0) {
+			money = money + click;
+		} else {
+			money = money + (click*5);
+		};
+		updateTotal();
+		localStorage.setItem('money',money);
+		$("#coin").css({"height":"240px","width":"240px","filter":"drop-shadow( 1px 1px rgba(43, 42, 66, 0.7))"});
+	});
+
+	function updateTotal() {
+		var money = parseInt(localStorage.getItem('money'));
+		var cps = parseInt(localStorage.getItem('cps'));
+		var tickets = parseInt(localStorage.getItem('tickets'));
+		var click = parseInt(localStorage.getItem('click'));
+		var activesuper = parseInt(localStorage.getItem('activesuper'));
+		var abbrmoney = abbreviate(money, 2, 2, false);
+		$("#counter-money").text(abbrmoney + " Gems");
+		var abbrcps = abbreviate(cps * (1 + (tickets * 0.05)), 2, 2, false);
+		$("#cps").text(abbrcps);
+		if (activesuper == 0) {
+			var abbrclick = abbreviate(click, 2, 2, false);
+			$("#cpc").text(abbrclick);
+		} else {
+			var abbrclick = abbreviate(click*5, 2, 2, false);
+			$("#cpc").text(abbrclick);
+		}
+	}
+
+
+	var bar = new ProgressBar.Circle(progress, {
+		strokeWidth: 5,
+		duration: 1000,
+		color: '#f1c40f',
+		svgStyle: null
+	});
+
+	function supercharge() {
+		var doubleprogress = parseFloat(localStorage.getItem('doubleprogress'));
+		if (doubleprogress >= 1) {
+			ulti_ready.play();
+			doubleprogress = 1;
+			bar.set(doubleprogress);
+			localStorage.setItem('doubleprogress',doubleprogress);
+			$("#super").attr("src","activesuper.png");
+			$("#progress").addClass("pulsing");
+		}
+	}
+
+	function superactivate() {
+		var doubleprogress = parseFloat(localStorage.getItem('doubleprogress'));
+		var activesuper = parseInt(localStorage.getItem('activesuper'));
+		$("#super").css({"height":"68px"});
+		if (doubleprogress >= 1) {
+			localStorage.setItem('activesuper', 1);
+			localStorage.setItem("supertime",30);
+			ulti_press.play();
+			activatedcountdown()
+		}
+	}
+
+	function superend() {
+		$("#super").css({"height":"70px"});
+	}
+
+	function activatedcountdown() {
+		var activesuper = parseInt(localStorage.getItem('activesuper'));
+		var supertime = parseInt(localStorage.getItem('supertime'));
+		if (activesuper == 1) {
+			doubleprogress = supertime/30;
+			bar.set(doubleprogress);
+			var supertime = parseInt(localStorage.getItem('supertime'));
+			$("#super").attr("src","activesuper.png");
+			$("#cpc").css({"color":"#f1c40f"});
+			$("#progress").addClass("pulsing");
+			supertime = supertime - 1;
+			localStorage.setItem("supertime",supertime);
+			doubleprogress = supertime/30;
+			bar.animate(doubleprogress);
+			localStorage.setItem('doubleprogress',doubleprogress);
+			var x = setInterval(function() {
+				var supertime = parseInt(localStorage.getItem('supertime'));
+				$("#super").attr("src","activesuper.png");
+				$("#cpc").css({"color":"#f1c40f"});
+				$("#progress").addClass("pulsing");
+				supertime = supertime - 1;
+				localStorage.setItem("supertime",supertime);
+				doubleprogress = supertime/30;
+				bar.animate(doubleprogress);
+				localStorage.setItem('doubleprogress',doubleprogress);
+				if (supertime < 0) {
+					clearInterval(x);
+					$("#super").attr("src","emptysuper.png");
+					$("#progress").removeClass("pulsing");
+					localStorage.setItem('activesuper', 0);
+					localStorage.setItem('doubleprogress', 0);
+					doubleprogress = 0;
+					localStorage.setItem('doubleprogress',doubleprogress);
+					localStorage.setItem("supertime",0);
+					bar.set(doubleprogress);
+					$("#cpc").css({"color":"white"});
+				}
+			}, 1000)
+		}
+	};
+
+	$(".shopicon").click( function() {
+		$(".shopwrap").css({"visibility":"visible"});
+		$(".shopwrap").css({"opacity":"1"});
+	});
+
+	$(".back").click( function() {
+		$(".shopwrap").css({"opacity":"0"});
+		$(".shopwrap").css({"visibility":"hidden"});
+	});
+
+	$(".prestigeicon").click( function() {
+		var maxmoney = parseInt(localStorage.getItem('maxmoney'));
+		$(".prestigebg").css({"visibility":"visible"});
+		reset = 0;
+		tickets = Math.floor((Math.sqrt(1+8*(maxmoney/1e9))-1)/2);
+		$("#ticketamount").text(tickets);
+		$(".prestigebtn").css({'font-size':'25px'});
+		$(".prestigebtn span").text('RESET');
+		if (tickets < 1) {
+			$(".prestigebtn").css({"filter":"grayscale(100%)"});
+			worthprestige = 0;
+		} else {
+			worthprestige = 1;
+		}
+	});
+
+	function resetdown() {
+		$(".prestigebtn").css({"width":"110px"})
+	}
+	$('.prestigebtn').bind('mouseup', function() {
+		if (worthprestige == 1) {
+		var tickets1 = parseInt(localStorage.getItem('tickets'));
+		reset++;
+		if (reset == 2) {
+			localStorage.clear();
+			localStorage.setItem('tickets', tickets2);
+			localStorage.setItem('money', 0);
+			localStorage.setItem('knowprestige', 1);
+			location.reload();
+		}
+		else {
+			$(".prestigebtn").css({'font-size':'19px'});
+			$(".prestigebtn span").text('Click Again to Confirm');
+			tickets2 = tickets1 + tickets;
+
+		}
+	} else {
+		$(".prestigebtn").css({"width":"120px"});
+	}
+
+	});
+
+	function closedown() {
+		$(".cancelbtn").css({"width":"110px"})
+	};
+
+	function closeup() {
+		$(".prestigebg").css({"visibility":"hidden"});
+		$(".cancelbtn").css({"width":"120px"})
+	};
+
+</script>
+</body>
+</html>
