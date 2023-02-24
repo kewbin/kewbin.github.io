@@ -66,6 +66,11 @@ tr td:last-child {
  }
 }
 
+#progress_wrapper {
+  display: flex;
+  width: 100%;
+}
+
 .progress {
   background: rgba(255,255,255,0.1);
   justify-content: flex-start;
