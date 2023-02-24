@@ -1,3 +1,7 @@
+:root {
+  --progress: 0%;
+}
+
 .bg-img {
   position: fixed;
   width: 100%;
@@ -62,7 +66,37 @@ tr td:last-child {
  }
 }
 
+.progress {
+  background: rgba(255,255,255,0.1);
+  justify-content: flex-start;
+  border-radius: 100px;
+  align-items: center;
+  position: relative;
+  padding: 0 5px;
+  display: flex;
+  height: 20px;
+  width: 75%;
+}
+
+.progress-value {
+  animation: load 3s normal forwards;
+  box-shadow: 0 10px 40px -10px #34b4eb;
+  border-radius: 100px;
+  background: #34b4eb;
+  height: 10px;
+  width: 0;
+}
+
+@keyframes load {
+  0% { width: 0; }
+  100% { width: var(--progress); }
+}
+
 @media only screen and (max-width: 600px) {
+  .progress {
+    width: 90%;
+  }
+  
   td {
       font-size: 17px;
       padding: 8px 15px;
