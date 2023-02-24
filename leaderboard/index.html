@@ -34,6 +34,7 @@
       </nav>-->
     <div class="total_guxp"></div>
     <div id="progress_wrapper">
+    <div class="level_percentage"></div>
     <div class="progress">
         <div class="progress-value"></div>
     </div>
@@ -73,6 +74,8 @@
             var r = document.querySelector(':root');
             
             r.style.setProperty('--progress', data["xp"] + "%");
+            
+            $(".level_percentage").html("Guild Level: <b>" + data["level"] + "</b> (" + data["xp"] + "%)")
 
             for (member in data["members"]) {
                 if(!paused){
