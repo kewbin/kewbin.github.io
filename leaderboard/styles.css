@@ -94,6 +94,14 @@ tr td:last-child {
   width: 0;
 }
 
+.level_percentage {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    text-align: center;
+    padding-bottom: 5px;
+    color: #fff
+}
+
 @keyframes load {
   0% { width: 0; }
   100% { width: var(--progress); }
