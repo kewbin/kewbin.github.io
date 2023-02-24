@@ -67,6 +67,10 @@
         //'url': "final.json",
         'dataType': "json",
         'success': function (data) {
+            
+            var r = document.querySelector(':root');
+            
+            r.style.setProperty('--progress', data["xp"] + "%");
 
             for (member in data["members"]) {
                 if(!paused){
