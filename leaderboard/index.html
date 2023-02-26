@@ -88,6 +88,9 @@
                     }
                 }
                 real_xp = data["members"][member]["contributed"] - old_p_data["contributed"]
+                if(real_xp < 0){
+                    real_xp = data["members"][member]["contributed"]
+                }
                 total += real_xp;
                 data["members"][member]["contributed"] = real_xp
             }
