@@ -20,13 +20,14 @@ table {
   left: 50%;
   border-collapse: separate;
   border-spacing: 0px 10px;
+  width: 800px;
 }
 tr {
   background: rgba(40, 94, 196, 0.1);
   backdrop-filter: blur(5px);
-  animation-name: fadein;
-  animation-duration: 1s;
+  transition-duration: 1s;
   color: white;
+  transform: translate(-50px);
 }
 html {
   background: #020024;
@@ -129,6 +130,10 @@ tr:nth-child(3) {
 
 @media only screen and (max-width: 600px) {
   .progress {
+    width: 90%;
+  }
+
+  table {
     width: 90%;
   }
   
