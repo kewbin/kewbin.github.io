@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ================================================== -->
+<!-- Thanks xAllura for the idea of the hide feature ;) -->
+<!-- ================================================== -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAq Activity</title>
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../navbar.css">
+</head>
+
+<body>
+    <div class='bg-img'></div>
+    <nav>
+        <ul>
+          <li>
+            <a href="../guxp">GUXP Leaderboard</a>
+          </li>
+          <!--<li>
+            <a href="./members">Members</a>
+          </li>-->
+          <li>
+            <a href="../">Home</a>
+          </li>
+        </ul>
+      </nav>
+    <div class="total_guxp"></div>
+    <!--<div class="str_switch">
+        <label class="switch">
+            <input id="hide_str" type="checkbox">
+            <span class="slider round"></span>
+        </label>
+        <p class="switch_label">Hide STRATEGIST and above</p>
+    </div>-->
+    <table class="leaderboard"></table>
+</body>
+<script src="jquery.js"></script>
+<script>
+    paused = false;
+    echest = window.localStorage;
+    $.ajax({
+        'async': false,
+        'global': true,
+        'url': "start.json",
+        'dataType': "json",
+        'success': function (data) {
+            for (member in data){
+                $.ajax({
+                    'url': 'https://api.wynncraft.com/v2/player/'+member['uuid']+'/stats',
+                    'async': true,
+                    'success': function (ddata) {
+                        member['playtime'] = ddata['data'][0]['meta']['playtime'] - member['playtime']
+                    }
+                })
+            }
+
+            members = data.sort(function (a, b) {
+                    return b.playtime - a.playtime;
+                });
+
+            for (member in members) {
+                player = data[member]
+                $("table").append("<tr id=\"" + player["name"].toLowerCase() + "\" rank=\"" + player["rank"] + "\"><td>" + (parseInt(member) + 1) + "</td><td class=\"head\"><img src=\"https://visage.surgeplay.com/face/35/" + player["uuid"] + "\"></td><td class=\"playername\">" + player["name"] + "</td><td class=\"contributed\">" + player["contributed"].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</td></tr>");
+            }
+
+        }
+    });
+
+    $.ajax({
+        'url': "https://api.wynncraft.com/public_api.php?action=guildStats&command=The%20Aquarium",
+        //'async': false,
+        //'global': true,
+        //'url': "final.json",
+        //'dataType': "json",
+        'success': function (data) {
+
+            for (member in data["members"]) {
+                if(!paused){
+                for (old_data in start_data) {
+                    if (start_data[old_data]["uuid"] == data["members"][member]["uuid"]) {
+                        old_p_data = start_data[old_data]
+                        break
+                    } else if (old_data == start_data.length - 1) {
+                        old_p_data["contributed"] = 0;
+                    }
+                }
+                real_xp = data["members"][member]["contributed"] - old_p_data["contributed"]
+                total += real_xp;
+                data["members"][member]["contributed"] = real_xp
+            }
+            else {
+                data["members"][member]["contributed"] = 0
+                members = data["members"]
+            }
+        }
+
+        members = data["members"].sort(function (a, b) {
+                    return b.contributed - a.contributed;
+                });
+
+            
+            for (member in members) {
+                player = data["members"][member]
+                $("table").append("<tr id=\"" + player["name"].toLowerCase() + "\" rank=\"" + player["rank"] + "\"><td>" + (parseInt(member) + 1) + "</td><td class=\"head\"><img src=\"https://visage.surgeplay.com/face/35/" + player["uuid"] + "\"></td><td class=\"playername\">" + player["name"] + "</td><td class=\"contributed\">" + player["contributed"].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</td></tr>");
+            }
+            $(".total_guxp").html("So far we've earned<br><b>" + total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " XP</b>");
+
+            /*if (echest.getItem("hidden") == "true") {
+                tr_list = $("tr").toArray();
+                $("#hide_str").prop("checked", true);
+                hideStrAndAbove();
+                renumberPos();
+            };*/
+            urlname = new URLSearchParams(window.location.search).get("name");
+
+            if (urlname != undefined) {
+                $("#" + urlname.toLowerCase()).css("background", "rgba(0, 255, 0, .3)")
+                window.scrollTo({
+                    top: document.getElementById(urlname.toLowerCase()).getBoundingClientRect().top - 75,
+                    behavior: 'smooth'
+                })
+            }
+        }
+
+    });
+
+
+
+    function hideStrAndAbove() {
+        for (item in tr_list) {
+            curr_rank = $("tr").eq(item).attr("rank");
+            if (!(["RECRUIT", "RECRUITER", "CAPTAIN"].includes(curr_rank))) {
+                $("tr").eq(item).css("display", "none");
+            }
+        }
+    }
+
+    function renumberPos() {
+        tr_visible = $("tr:visible").toArray();
+        for (item in tr_visible) {
+            $("tr:visible:eq(" + item + ") td:eq(0)").text(parseInt(item) + 1);
+        }
+    }
+
+    $("#hide_str").change(function () {
+        tr_list = $("tr").toArray();
+        if ($("#hide_str").is(":checked")) {
+            echest.setItem("hidden", true);
+            hideStrAndAbove();
+        } else {
+            echest.setItem("hidden", false);
+            for (item in tr_list) {
+                $("tr").eq(item).css("display", "table-row");
+            }
+        }
+        renumberPos();
+    });
+
+</script>
+
+</html>
