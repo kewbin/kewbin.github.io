@@ -111,6 +111,16 @@
                 player = data["members"][member]
                 $("table").append("<tr style=\"opacity:0\" id=\"" + player["name"].toLowerCase() + "\" rank=\"" + player["rank"] + "\"><td>" + (parseInt(member) + 1) + "</td><td class=\"head\"><img src=\"https://visage.surgeplay.com/bust/100/" + player["uuid"] + "\"></td><td class=\"playername\">" + player["name"] + "</td><td class=\"contributed\">" + player["contributed"].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</td></tr>");
             }
+
+            urlname = new URLSearchParams(window.location.search).get("name");
+
+            if (urlname != undefined) {
+                $("#" + urlname.toLowerCase()).css("background", "rgba(0, 255, 0, .3)")
+                window.scrollTo({
+                    top: document.getElementById(urlname.toLowerCase()).getBoundingClientRect().top - 75,
+                    behavior: 'smooth'
+                })
+            }
             
             for (elem in $("table tr").toArray()) {
                 await delay(30)
@@ -124,15 +134,6 @@
                 hideStrAndAbove();
                 renumberPos();
             };*/
-            urlname = new URLSearchParams(window.location.search).get("name");
-
-            if (urlname != undefined) {
-                $("#" + urlname.toLowerCase()).css("background", "rgba(0, 255, 0, .3)")
-                window.scrollTo({
-                    top: document.getElementById(urlname.toLowerCase()).getBoundingClientRect().top - 75,
-                    behavior: 'smooth'
-                })
-            }
         }
 
     });
