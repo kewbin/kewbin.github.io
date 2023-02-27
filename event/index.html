@@ -63,15 +63,13 @@
         }
     });
 
-    const delay = ms => new Promise(res => setTimeout(res, ms));
-
     $.ajax({
         'url': "https://api.wynncraft.com/public_api.php?action=guildStats&command=The%20Aquarium",
         'async': false,
         'global': true,
         //'url': "final.json",
         'dataType': "json",
-        'success': async function (data) {
+        'success': function (data) {
             
             var r = document.querySelector(':root');
             
@@ -106,17 +104,12 @@
                     return b.contributed - a.contributed;
                 });
 
-                $(".total_guxp").html("So far we've earned<br><b>" + total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " XP</b>");
+            
             for (member in members) {
                 player = data["members"][member]
-                $("table").append("<tr style=\"opacity:0\" id=\"" + player["name"].toLowerCase() + "\" rank=\"" + player["rank"] + "\"><td>" + (parseInt(member) + 1) + "</td><td class=\"head\"><img src=\"https://visage.surgeplay.com/bust/100/" + player["uuid"] + "\"></td><td class=\"playername\">" + player["name"] + "</td><td class=\"contributed\">" + player["contributed"].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</td></tr>");
+                $("table").append("<tr id=\"" + player["name"].toLowerCase() + "\" rank=\"" + player["rank"] + "\"><td>" + (parseInt(member) + 1) + "</td><td class=\"head\"><img src=\"https://visage.surgeplay.com/face/36/" + player["uuid"] + "\"></td><td class=\"playername\">" + player["name"] + "</td><td class=\"contributed\">" + player["contributed"].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</td></tr>");
             }
-            
-            for (elem in $("table tr").toArray()) {
-                await delay(30)
-                $("table tr").eq(elem).css({"opacity":1, "transform": "translate(0)"})
-            }
-            
+            $(".total_guxp").html("So far we've earned<br><b>" + total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " XP</b>");
 
             /*if (echest.getItem("hidden") == "true") {
                 tr_list = $("tr").toArray();
