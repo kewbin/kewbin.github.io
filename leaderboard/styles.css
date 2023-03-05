@@ -153,7 +153,15 @@ tr:nth-child(3) {
   
   td {
       font-size: 13px;
-      padding: 8px 15px;
+      padding: 8px 12px;
+  }
+
+  .playername {
+    padding: 8px 0px;
+  }
+
+  .contributed {
+    padding: 8px 15px 8px 5px;
   }
 
   .xp_difference {
@@ -166,7 +174,7 @@ tr:nth-child(3) {
   }
 
   tr:first-child img {
-    height: 50px;
+    height: 38px;
   }
 
   .head {
