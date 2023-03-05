@@ -74,6 +74,12 @@
         'success': async function (data) {
             
             var r = document.querySelector(':root');
+            if(localStorage.prev_data) {
+                prev_data = JSON.parse(localStorage.prev_data)
+            } else {
+                prev_data = data
+            }
+            localStorage.setItem('prev_data', JSON.stringify(data))
             
             r.style.setProperty('--progress', data["xp"] + "%");
             
@@ -90,6 +96,9 @@
                     }
                 }
                 real_xp = data["members"][member]["contributed"] - old_p_data["contributed"]
+                xp_difference = data["members"][member]["contributed"] - prev_data["members"][member]["contributed"]
+                data["members"][member]["xp_difference"] = xp_difference
+
                 if(real_xp < 0){
                     real_xp = data["members"][member]["contributed"]
                 }
@@ -109,7 +118,16 @@
                 $(".total_guxp").html("So far we've earned<br><b>" + total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " XP</b>");
             for (member in members) {
                 player = data["members"][member]
-                $("table").append("<tr style=\"opacity:0\" id=\"" + player["name"].toLowerCase() + "\" rank=\"" + player["rank"] + "\"><td>" + (parseInt(member) + 1) + "</td><td class=\"head\"><img src=\"https://visage.surgeplay.com/bust/100/" + player["uuid"] + "\"></td><td class=\"playername\">" + player["name"] + "</td><td class=\"contributed\">" + player["contributed"].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</td></tr>");
+
+                if(player["xp_difference"] > 0) {
+                    xp_d_string = "<td class=\"xp_difference positive\">+ " + player["xp_difference"].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</td>"
+                } else if (player["xp_difference"] < 0) {
+                    xp_d_string = "<td class=\"xp_difference negative\">- " + Math.abs(player["xp_difference"]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</td>"
+                } else {
+                    xp_d_string = "<td></td>"
+                }
+
+                $("table").append("<tr style=\"opacity:0\" id=\"" + player["name"].toLowerCase() + "\" rank=\"" + player["rank"] + "\"><td>" + (parseInt(member) + 1) + "</td><td class=\"head\"><img src=\"https://visage.surgeplay.com/bust/100/" + player["uuid"] + "\"></td><td class=\"playername\">" + player["name"] + "</td>"+ xp_d_string +"<td class=\"contributed\">" + player["contributed"].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</td></tr>");
             }
 
             urlname = new URLSearchParams(window.location.search).get("name");

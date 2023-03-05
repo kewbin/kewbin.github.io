@@ -123,6 +123,19 @@ tr:nth-child(3) {
     color: #fff
 }
 
+.xp_difference {
+  font-size: 20px;
+  text-align: right;
+}
+
+.positive {
+  color: #27f01c;
+}
+
+.negative {
+  color: #f01c1c;
+}
+
 @keyframes load {
   0% { width: 0; }
   100% { width: var(--progress); }
