@@ -126,6 +126,7 @@ tr:nth-child(3) {
 .xp_difference {
   font-size: 20px;
   text-align: right;
+  padding: 0;
 }
 
 .positive {
@@ -151,12 +152,17 @@ tr:nth-child(3) {
   }
   
   td {
-      font-size: 17px;
+      font-size: 13px;
       padding: 8px 15px;
   }
 
+  .xp_difference {
+    font-size: 10px;
+    text-align: right;
+  }
+
   td img {
-    height: 30px;
+    height: 25px;
   }
 
   tr:first-child img {
