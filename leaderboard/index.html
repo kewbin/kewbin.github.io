@@ -59,7 +59,8 @@
         'url': "data/start.json",
         'dataType': "json",
         'success': function (data) {
-            start_data = data;
+            start_time = data['start_time']
+            start_data = data['members'];
         }
     });
 
@@ -89,14 +90,26 @@
                 if(!paused){
                 for (old_data in start_data) {
                     if (start_data[old_data]["uuid"] == data["members"][member]["uuid"]) {
-                        old_p_data = start_data[old_data]
+                        if(new Date(data["members"][member]["joined"]) > new Date(start_time)) {
+                            old_p_data["contributed"] = 0;
+                        } else {
+                            old_p_data = start_data[old_data];
+                        }
                         break
                     } else if (old_data == start_data.length - 1) {
                         old_p_data["contributed"] = 0;
                     }
                 }
+                for (datum in prev_data["members"]){
+                    if (data["members"][member]["uuid"] == prev_data["members"][datum]["uuid"]) {
+                        prev_member_c = prev_data["members"][datum]['contributed']
+                        break
+                    } else if (datum == prev_data["members"].length - 1) {
+                        prev_member_c = 0
+                    }
+                }
                 real_xp = data["members"][member]["contributed"] - old_p_data["contributed"]
-                xp_difference = data["members"][member]["contributed"] - prev_data["members"][member]["contributed"]
+                xp_difference = data["members"][member]["contributed"] - prev_member_c
                 data["members"][member]["xp_difference"] = xp_difference
 
                 if(real_xp < 0){
