@@ -1,0 +1,24 @@
+body {
+    font-family: 'Chivo Mono', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.countdown-container {
+    text-align: center;
+}
+
+.time-label {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 24px;
+}
+
+h1 {
+    font-size: 36px;
+}
