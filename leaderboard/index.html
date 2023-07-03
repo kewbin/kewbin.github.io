@@ -43,6 +43,7 @@
     <table class="leaderboard"></table>
 </body>
 <script src="jquery.js"></script>
+<script src="chart.js"></script>
 <script>
     paused = false;
     echest = window.localStorage;
@@ -194,6 +195,13 @@
         }
         renumberPos();
     });
+
+    function getXpData(uuid) {
+        const ctx = document.getElementById('myChart');
+        $.getJSON("https://tort.taqguild.space/xp_data/"+uuid, function(data){
+            console.log(data['days'])
+        });
+    }
 
 </script>
 
