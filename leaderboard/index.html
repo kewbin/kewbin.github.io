@@ -16,6 +16,8 @@
 
 <body>
     <div class='bg-img'></div>
+    <div class="backdrop"></div>
+    <div class="graph-wrapper"><canvas id="graph"></canvas><button onclick="closeXp()">Close</button></div>
     <nav>
         <ul>
           <li>
@@ -123,7 +125,7 @@
                     return b.contributed - a.contributed;
                 });
 
-                $(".total_guxp").html("So far we've earned<br><b>" + total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " XP</b>");
+                $(".total_guxp").html("XP earned this season<br><b>" + total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " XP</b>");
             for (member in members) {
                 player = data["members"][member]
 
@@ -135,7 +137,7 @@
                     xp_d_string = "<td></td>"
                 }
 
-                $("table").append("<tr style=\"opacity:0\" id=\"" + player["name"].toLowerCase() + "\" rank=\"" + player["rank"] + "\"><td>" + (parseInt(member) + 1) + "</td><td class=\"head\"><img src=\"https://visage.surgeplay.com/bust/100/" + player["uuid"] + "\"></td><td class=\"playername\">" + player["name"] + "</td>"+ xp_d_string +"<td class=\"contributed\">" + player["contributed"].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</td></tr>");
+                $("table").append("<tr style=\"opacity:0\" id=\"" + player["name"].toLowerCase() + "\" rank=\"" + player["rank"] + "\"><td>" + (parseInt(member) + 1) + "</td><td class=\"head\"><img src=\"https://visage.surgeplay.com/bust/100/" + player["uuid"] + "\"></td><td class=\"playername\" onclick=\"getXpData('"+player["uuid"]+"','"+player["name"]+"')\">" + player["name"] + "</td>"+ xp_d_string +"<td class=\"contributed\">" + player["contributed"].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</td></tr>");
             }
 
             urlname = new URLSearchParams(window.location.search).get("name");
@@ -196,11 +198,50 @@
         renumberPos();
     });
 
-    function getXpData(uuid) {
-        const ctx = document.getElementById('myChart');
+    function getXpData(uuid, name) {
+        const ctx = document.getElementById('graph');
         $.getJSON("https://tort.taqguild.space/xp_data/"+uuid, function(data){
-            console.log(data['days'])
+            if(typeof chart !== 'undefined'){
+                chart.destroy();
+            }
+            chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                  labels: data['days'],
+                  datasets: [{
+                    label: 'XP Contribution',
+                    data: data['xp_contribution'],
+                    borderWidth: 0
+                  }]
+                },
+                options: {
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: name,
+                            font: {
+                                size: 20
+                            }
+                        }
+                    },
+                  scales: {
+                    y: {
+                      beginAtZero: true
+                    }
+                  }
+                }
+            });
+            $(".graph-wrapper").css({'display':'flex'});
+            $(".backdrop").fadeIn(200);
         });
+    }
+
+    function closeXp() {
+        if(typeof chart !== 'undefined'){
+                chart.destroy();
+            }
+            $(".graph-wrapper").css({'display':'none'})
+            $(".backdrop").fadeOut(200);
     }
 
 </script>
