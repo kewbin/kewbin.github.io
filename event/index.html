@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- ================================================== -->
-<!-- Thanks xAllura for the idea of the hide feature ;) -->
-<!-- ================================================== -->
 
 <head>
     <meta charset="UTF-8">
@@ -19,19 +16,18 @@
 
 <body>
     <div class='bg-img'></div>
-    <!--<nav>
+    <div class="backdrop"></div>
+    <div class="graph-wrapper"><canvas id="graph"></canvas><button onclick="closeXp()">Close</button></div>
+    <nav>
         <ul>
           <li>
             <a href="../guxp">GUXP Leaderboard</a>
           </li>
           <li>
-            <a href="./members">Members</a>
-          </li>
-          <li>
-            <a href="../">Home</a>
+            <a href="../wynnguxp">Wynn GUXP Leaderboard</a>
           </li>
         </ul>
-      </nav>-->
+      </nav>
     <div class="total_guxp"></div>
     <div id="progress_wrapper">
     <div class="level_percentage"></div>
@@ -49,19 +45,25 @@
     <table class="leaderboard"></table>
 </body>
 <script src="jquery.js"></script>
+<script src="chart.js"></script>
 <script>
-    paused = false;
+    paused = true;
     echest = window.localStorage;
     total = 0;
+    offset = 0;
+    exclude = ['aa7402cc-bf1c-4aed-838b-fd8897d38836','b646fdf0-c3e8-443b-9637-fb1c614f09f4','bd8b45c2-74a4-4b65-9478-58865564e688','81e3030e-acf2-4683-8ae3-a297ac1151a4'];
     $.ajax({
         'async': false,
         'global': true,
         'url': "data/start.json",
         'dataType': "json",
         'success': function (data) {
-            start_data = data;
+            start_time = data['start_time']
+            start_data = data['members'];
         }
     });
+
+    const delay = ms => new Promise(res => setTimeout(res, ms));
 
     $.ajax({
         'url': "https://api.wynncraft.com/public_api.php?action=guildStats&command=The%20Aquarium",
@@ -69,9 +71,15 @@
         'global': true,
         //'url': "final.json",
         'dataType': "json",
-        'success': function (data) {
+        'success': async function (data) {
             
             var r = document.querySelector(':root');
+            if(localStorage.prev_data) {
+                prev_data = JSON.parse(localStorage.prev_data)
+            } else {
+                prev_data = data
+            }
+            localStorage.setItem('prev_data', JSON.stringify(data))
             
             r.style.setProperty('--progress', data["xp"] + "%");
             
@@ -81,13 +89,28 @@
                 if(!paused){
                 for (old_data in start_data) {
                     if (start_data[old_data]["uuid"] == data["members"][member]["uuid"]) {
-                        old_p_data = start_data[old_data]
+                        if(new Date(data["members"][member]["joined"]) > new Date(start_time)) {
+                            old_p_data["contributed"] = 0;
+                        } else {
+                            old_p_data = start_data[old_data];
+                        }
                         break
                     } else if (old_data == start_data.length - 1) {
                         old_p_data["contributed"] = 0;
                     }
                 }
+                for (datum in prev_data["members"]){
+                    if (data["members"][member]["uuid"] == prev_data["members"][datum]["uuid"]) {
+                        prev_member_c = prev_data["members"][datum]['contributed']
+                        break
+                    } else if (datum == prev_data["members"].length - 1) {
+                        prev_member_c = 0
+                    }
+                }
                 real_xp = data["members"][member]["contributed"] - old_p_data["contributed"]
+                xp_difference = data["members"][member]["contributed"] - prev_member_c
+                data["members"][member]["xp_difference"] = xp_difference
+
                 if(real_xp < 0){
                     real_xp = data["members"][member]["contributed"]
                 }
@@ -104,19 +127,25 @@
                     return b.contributed - a.contributed;
                 });
 
-            
+                $(".total_guxp").html("XP earned this event<br><b>" + total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " XP</b>");
+
             for (member in members) {
                 player = data["members"][member]
-                $("table").append("<tr id=\"" + player["name"].toLowerCase() + "\" rank=\"" + player["rank"] + "\"><td>" + (parseInt(member) + 1) + "</td><td class=\"head\"><img src=\"https://visage.surgeplay.com/face/36/" + player["uuid"] + "\"></td><td class=\"playername\">" + player["name"] + "</td><td class=\"contributed\">" + player["contributed"].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</td></tr>");
-            }
-            $(".total_guxp").html("So far we've earned<br><b>" + total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " XP</b>");
+                if(exclude.includes(player["uuid"])){
+                    offset++;
+                    continue;
+                }
+                else if(player["xp_difference"] > 0) {
+                    xp_d_string = "<td class=\"xp_difference positive\">+ " + player["xp_difference"].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</td>"
+                } else if (player["xp_difference"] < 0) {
+                    xp_d_string = "<td class=\"xp_difference negative\">- " + Math.abs(player["xp_difference"]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</td>"
+                } else {
+                    xp_d_string = "<td></td>"
+                }
 
-            /*if (echest.getItem("hidden") == "true") {
-                tr_list = $("tr").toArray();
-                $("#hide_str").prop("checked", true);
-                hideStrAndAbove();
-                renumberPos();
-            };*/
+                $("table").append("<tr style=\"opacity:0\" id=\"" + player["name"].toLowerCase() + "\" rank=\"" + player["rank"] + "\"><td>" + (parseInt(member) + 1 - offset) + "</td><td class=\"head\"><img src=\"https://visage.surgeplay.com/bust/100/" + player["uuid"] + "\"></td><td class=\"playername\" onclick=\"getXpData('"+player["uuid"]+"','"+player["name"]+"')\">" + player["name"] + "</td>"+ xp_d_string +"<td class=\"contributed\">" + player["contributed"].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</td></tr>");
+            }
+
             urlname = new URLSearchParams(window.location.search).get("name");
 
             if (urlname != undefined) {
@@ -126,6 +155,19 @@
                     behavior: 'smooth'
                 })
             }
+            
+            for (elem in $("table tr").toArray()) {
+                await delay(30)
+                $("table tr").eq(elem).css({"opacity":1, "transform": "translate(0)"})
+            }
+            
+
+            /*if (echest.getItem("hidden") == "true") {
+                tr_list = $("tr").toArray();
+                $("#hide_str").prop("checked", true);
+                hideStrAndAbove();
+                renumberPos();
+            };*/
         }
 
     });
@@ -161,6 +203,52 @@
         }
         renumberPos();
     });
+
+    function getXpData(uuid, name) {
+        const ctx = document.getElementById('graph');
+        $.getJSON("https://tort.taqguild.space/xp_data/"+uuid, function(data){
+            if(typeof chart !== 'undefined'){
+                chart.destroy();
+            }
+            chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                  labels: data['days'],
+                  datasets: [{
+                    label: 'XP Contribution',
+                    data: data['xp_contribution'],
+                    borderWidth: 0
+                  }]
+                },
+                options: {
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: name,
+                            font: {
+                                size: 20
+                            }
+                        }
+                    },
+                  scales: {
+                    y: {
+                      beginAtZero: true
+                    }
+                  }
+                }
+            });
+            $(".graph-wrapper").css({'display':'flex'});
+            $(".backdrop").fadeIn(200);
+        });
+    }
+
+    function closeXp() {
+        if(typeof chart !== 'undefined'){
+                chart.destroy();
+            }
+            $(".graph-wrapper").css({'display':'none'})
+            $(".backdrop").fadeOut(200);
+    }
 
 </script>
 

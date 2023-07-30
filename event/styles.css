@@ -20,14 +20,14 @@ table {
   left: 50%;
   border-collapse: separate;
   border-spacing: 0px 10px;
+  width: 800px;
 }
 tr {
   background: rgba(40, 94, 196, 0.1);
-  margin: 5px;
   backdrop-filter: blur(5px);
-  animation-name: fadein;
-  animation-duration: 1s;
+  transition-duration: 1s;
   color: white;
+  transform: translate(-50px);
 }
 html {
   background: #020024;
@@ -46,13 +46,42 @@ td {
 }
 
 td img {
-  vertical-align: middle;
+  display: table-cell;
+  vertical-align: bottom;
+  height: 50px;
+  padding-top: 5px;
+  margin: 0;
 }
 tr td:first-child {
   border-radius: 10px 0px 0px 10px;
 }
 tr td:last-child {
   border-radius: 0px 10px 10px 0px;
+}
+.head {
+  padding: 0;
+}
+
+.playername {
+  cursor: pointer;
+}
+
+.playername:hover {
+  color: #dbdbdb;
+}
+
+tr:first-child {
+  background: rgba(255, 208, 0, 0.1);
+}
+tr:first-child img {
+  height: 80px;
+  padding-top: 5px;
+}
+tr:nth-child(2) {
+  background: rgba(255, 255, 255, 0.1);
+}
+tr:nth-child(3) {
+  background: rgba(167, 57, 13, 0.1);
 }
 .contributed {
   text-align: right;
@@ -103,6 +132,71 @@ tr td:last-child {
     color: #fff
 }
 
+.xp_difference {
+  font-size: 20px;
+  text-align: right;
+  padding: 0;
+}
+
+.positive {
+  color: #27f01c;
+}
+
+.negative {
+  color: #f01c1c;
+}
+
+.graph-wrapper {
+  position: fixed;
+  width: 90%;
+  z-index: 9;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #fcfcfc;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.graph-wrapper button {
+  padding: 10px 18px;
+  margin: 5px;
+  margin-bottom: 15px;
+    font-family: "Barlow Condensed";
+    text-transform:uppercase;
+    color: #fff;
+    background-color: #e95151;
+    font-size: 18px;
+    text-decoration: none;
+    display: block;
+    transition-duration: .4s;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.graph-wrapper button:hover {
+  background-color: #c93b3b;
+}
+
+#graph {
+  padding: 20px;
+}
+
+.backdrop {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #00000080;
+  z-index: 8;
+  top: 0px;
+}
+
 @keyframes load {
   0% { width: 0; }
   100% { width: var(--progress); }
@@ -112,14 +206,39 @@ tr td:last-child {
   .progress {
     width: 90%;
   }
+
+  table {
+    width: 90%;
+  }
   
   td {
-      font-size: 17px;
-      padding: 8px 15px;
+      font-size: 13px;
+      padding: 8px 12px;
+  }
+
+  .playername {
+    padding: 8px 0px;
+  }
+
+  .contributed {
+    padding: 8px 15px 8px 5px;
+  }
+
+  .xp_difference {
+    font-size: 10px;
+    text-align: right;
   }
 
   td img {
-      height: 20px;
+    height: 25px;
+  }
+
+  tr:first-child img {
+    height: 38px;
+  }
+
+  .head {
+    padding: 0;
   }
 }
 .head {
@@ -223,14 +342,3 @@ tr td:last-child {
         opacity: 1;
    }
 }
-
-@media only screen and (max-width: 600px) {
-    td {
-        font-size: 17px;
-        padding: 8px 15px;
-    }
-
-    td img {
-        height: 20px;
-    }
-  }
