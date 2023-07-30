@@ -54,3 +54,37 @@ nav ul {
         padding: 0;
     }
   }
+
+#navbar {
+  display: flex;
+  justify-content: center;
+  align-content: stretch;
+}
+
+#navbar > div {
+  text-align: center;
+  padding: 15px;
+  border-radius: 0 0 10px 10px;
+  font-family: "Barlow Condensed";
+  text-transform:uppercase;
+  font-size: 18px;
+  display: block;
+  transition-duration: .4s;
+  cursor: pointer;
+}
+
+#navbar > div:hover {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(3px);
+}
+
+#navbar > div > a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.selected {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(3px);
+  color: #fff;
+}

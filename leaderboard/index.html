@@ -18,19 +18,7 @@
     <div class='bg-img'></div>
     <div class="backdrop"></div>
     <div class="graph-wrapper"><canvas id="graph"></canvas><button onclick="closeXp()">Close</button></div>
-    <nav>
-        <ul>
-          <li>
-            <a href="../guxp">GUXP Leaderboard</a>
-          </li>
-          <li>
-            <a href="../wynnguxp">Wynn GUXP Leaderboard</a>
-          </li>
-          <li>
-            <a href="../event">Event Leaderboard</a>
-          </li>
-        </ul>
-      </nav>
+    <div id="navbar"></div>
     <div class="total_guxp"></div>
     <div id="progress_wrapper">
     <div class="level_percentage"></div>
@@ -49,6 +37,7 @@
 </body>
 <script src="jquery.js"></script>
 <script src="chart.js"></script>
+<script src="../navbar.js"></script>
 <script>
     paused = false;
     echest = window.localStorage;
