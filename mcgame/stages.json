@@ -1,0 +1,298 @@
+[{
+"stage": 0,
+"textures": ["dirt.png", "dirt.png", "dirt.png", "dirt.png", "dirt.png", "dirt.png"],
+"durab": 10,
+"name": "Dirt",
+"money_pb": 1,
+"color": "b86723",
+"xp_goal": 100
+},{
+"stage": 1,
+"textures": ["grass_block_top.png", "grass_block_side.png", "grass_block_side.png", "grass_block_side.png", "grass_block_side.png", "dirt.png"],
+"durab": 20,
+"name": "Grass Block",
+"money_pb": 2,
+"color": "b86723",
+"xp_goal": 200
+},{
+"stage": 2,
+"textures": ["oak_log_top.png", "oak_log.png", "oak_log.png", "oak_log.png", "oak_log.png", "oak_log_top.png"],
+"durab": 30,
+"name": "Oak Log",
+"money_pb": 4,
+"color": "421e00",
+"xp_goal": 300
+},{
+"stage": 3,
+"textures": ["oak_planks.png", "oak_planks.png", "oak_planks.png", "oak_planks.png", "oak_planks.png", "oak_planks.png"],
+"durab": 40,
+"name": "Oak Planks",
+"money_pb": 7,
+"color": "bf814d",
+"xp_goal": 400
+},{
+"stage": 4,
+"textures": ["crafting_table_top.png", "crafting_table_front.png", "crafting_table_front.png", "crafting_table_side.png", "crafting_table_front.png", "oak_planks.png"],
+"durab": 60,
+"name": "Crafting Table",
+"money_pb": 10,
+"color": "693e1b",
+"xp_goal": 500
+},{
+"stage": 5,
+"textures": ["cobblestone.png", "cobblestone.png", "cobblestone.png", "cobblestone.png", "cobblestone.png", "cobblestone.png"],
+"durab": 75,
+"name": "Cobblestone",
+"money_pb": 13,
+"color": "474747",
+"xp_goal": 600
+},{
+"stage": 6,
+"textures": ["granite.png", "granite.png", "granite.png", "granite.png", "granite.png", "granite.png"],
+"durab": 100,
+"name": "Granite",
+"money_pb": 17,
+"color": "c26b55",
+"xp_goal": 700
+},{
+"stage": 7,
+"textures": ["diorite.png", "diorite.png", "diorite.png", "diorite.png", "diorite.png", "diorite.png"],
+"durab": 120,
+"name": "Diorite",
+"money_pb": 22,
+"color": "cccccc",
+"xp_goal": 800
+},{
+"stage": 8,
+"textures": ["andesite.png", "andesite.png", "andesite.png", "andesite.png", "andesite.png", "andesite.png"],
+"durab": 140,
+"name": "Andesite",
+"money_pb": 27,
+"color": "8f8f8f",
+"xp_goal": 900
+},{
+"stage": 9,
+"textures": ["furnace_top.png", "furnace_side.png", "furnace_side.png", "furnace_front.png", "furnace_side.png", "cobblestone.png"],
+"durab": 170,
+"name": "Furnace",
+"money_pb": 34,
+"color": "4f4f4f",
+"xp_goal": 1000
+},{
+"stage": 10,
+"textures": ["coal_ore.png", "coal_ore.png", "coal_ore.png", "coal_ore.png", "coal_ore.png", "coal_ore.png"],
+"durab": 200,
+"name": "Coal Ore",
+"money_pb": 41,
+"color": "4f4f4f",
+"xp_goal": 1100
+},{
+"stage": 11,
+"textures": ["coal_block.png", "coal_block.png", "coal_block.png", "coal_block.png", "coal_block.png", "coal_block.png"],
+"durab": 240,
+"name": "Coal Block",
+"money_pb": 49,
+"color": "000000",
+"xp_goal": 1200
+},{
+"stage": 12,
+"textures": ["iron_ore.png", "iron_ore.png", "iron_ore.png", "iron_ore.png", "iron_ore.png", "iron_ore.png"],
+"durab": 280,
+"name": "Iron Ore",
+"money_pb": 59,
+"color": "4f4f4f",
+"xp_goal": 1300
+},{
+"stage": 13,
+"textures": ["iron_block.png", "iron_block.png", "iron_block.png", "iron_block.png", "iron_block.png", "iron_block.png"],
+"durab": 330,
+"name": "Iron Block",
+"money_pb": 70,
+"color": "fff",
+"xp_goal": 1400
+},{
+"stage": 14,
+"textures": ["redstone_ore.png", "redstone_ore.png", "redstone_ore.png", "redstone_ore.png", "redstone_ore.png", "redstone_ore.png"],
+"durab": 380,
+"name": "Redstone Ore",
+"money_pb": 83,
+"color": "4f4f4f",
+"xp_goal": 1500
+},{
+"stage": 15,
+"textures": ["redstone_block.png", "redstone_block.png", "redstone_block.png", "redstone_block.png", "redstone_block.png", "redstone_block.png"],
+"durab": 440,
+"name": "Redstone Block",
+"money_pb": 98,
+"color": "bd0000",
+"xp_goal": 1600
+},{
+"stage": 16,
+"textures": ["lapis_ore.png", "lapis_ore.png", "lapis_ore.png", "lapis_ore.png", "lapis_ore.png", "lapis_ore.png"],
+"durab": 510,
+"name": "Lapis Ore",
+"money_pb": 110,
+"color": "4f4f4f",
+"xp_goal": 1700
+},{
+"stage": 17,
+"textures": ["lapis_block.png", "lapis_block.png", "lapis_block.png", "lapis_block.png", "lapis_block.png", "lapis_block.png"],
+"durab": 580,
+"name": "Lapis Block",
+"money_pb": 130,
+"color": "336bc4",
+"xp_goal": 1800
+},{
+"stage": 18,
+"textures": ["gold_ore.png", "gold_ore.png", "gold_ore.png", "gold_ore.png", "gold_ore.png", "gold_ore.png"],
+"durab": 670,
+"name": "Gold Ore",
+"money_pb": 160,
+"color": "4f4f4f",
+"xp_goal": 1900
+},{
+"stage": 19,
+"textures": ["gold_block.png", "gold_block.png", "gold_block.png", "gold_block.png", "gold_block.png", "gold_block.png"],
+"durab": 760,
+"name": "Gold Block",
+"money_pb": 180,
+"color": "eeff00",
+"xp_goal": 2000
+},{
+"stage": 20,
+"textures": ["diamond_ore.png", "diamond_ore.png", "diamond_ore.png", "diamond_ore.png", "diamond_ore.png", "diamond_ore.png"],
+"durab": 870,
+"name": "Diamond Ore",
+"money_pb": 210,
+"color": "4f4f4f",
+"xp_goal": 2100
+},{
+"stage": 21,
+"textures": ["diamond_block.png", "diamond_block.png", "diamond_block.png", "diamond_block.png", "diamond_block.png", "diamond_block.png"],
+"durab": 990,
+"name": "Diamond Block",
+"money_pb": 240,
+"color": "00f2ff",
+"xp_goal": 2200
+},{
+"stage": 22,
+"textures": ["emerald_ore.png", "emerald_ore.png", "emerald_ore.png", "emerald_ore.png", "emerald_ore.png", "emerald_ore.png"],
+"durab": 1100,
+"name": "Emerald Ore",
+"money_pb": 280,
+"color": "4f4f4f",
+"xp_goal": 2300
+},{
+"stage": 23,
+"textures": ["emerald_block.png", "emerald_block.png", "emerald_block.png", "emerald_block.png", "emerald_block.png", "emerald_block.png"],
+"durab": 1300,
+"name": "Emerald Block",
+"money_pb": 320,
+"color": "00ff48",
+"xp_goal": 2400
+},{
+"stage": 24,
+"textures": ["obsidian.png", "obsidian.png", "obsidian.png", "obsidian.png", "obsidian.png", "obsidian.png"],
+"durab": 1400,
+"name": "Obsidian",
+"money_pb": 360,
+"color": "010021",
+"xp_goal": 2500
+},{
+"stage": 25,
+"textures": ["netherrack.png", "netherrack.png", "netherrack.png", "netherrack.png", "netherrack.png", "netherrack.png"],
+"durab": 1600,
+"name": "Netherrack",
+"money_pb": 420,
+"color": "750000",
+"xp_goal": 2600
+},{
+"stage": 26,
+"textures": ["soul_sand.png", "soul_sand.png", "soul_sand.png", "soul_sand.png", "soul_sand.png", "soul_sand.png"],
+"durab": 1800,
+"name": "Soul Sand",
+"money_pb": 480,
+"color": "361401",
+"xp_goal": 2700
+},{
+"stage": 27,
+"textures": ["nether_wart_block.png", "nether_wart_block.png", "nether_wart_block.png", "nether_wart_block.png", "nether_wart_block.png", "nether_wart_block.png"],
+"durab": 2000,
+"name": "Nether Wart Block",
+"money_pb": 540,
+"color": "b00023",
+"xp_goal": 2800
+},{
+"stage": 28,
+"textures": ["nether_quartz_ore.png", "nether_quartz_ore.png", "nether_quartz_ore.png", "nether_quartz_ore.png", "nether_quartz_ore.png", "nether_quartz_ore.png"],
+"durab": 2300,
+"name": "Nether Quartz Ore",
+"money_pb": 620,
+"color": "750000",
+"xp_goal": 2900
+},{
+"stage": 29,
+"textures": ["quartz_block.png", "quartz_block.png", "quartz_block.png", "quartz_block.png", "quartz_block.png", "quartz_block.png"],
+"durab": 2600,
+"name": "Quartz Block",
+"money_pb": 700,
+"color": "ffffff",
+"xp_goal": 3000
+},{
+"stage": 30,
+"textures": ["glowstone.png", "glowstone.png", "glowstone.png", "glowstone.png", "glowstone.png", "glowstone.png"],
+"durab": 2900,
+"name": "Glowstone",
+"money_pb": 800,
+"color": "ffd500",
+"xp_goal": 3100
+},{
+"stage": 31,
+"textures": ["magma.png", "magma.png", "magma.png", "magma.png", "magma.png", "magma.png"],
+"durab": 3200,
+"name": "Magma",
+"money_pb": 910,
+"color": "ff5b00",
+"xp_goal": 3200
+},{
+"stage": 32,
+"textures": ["nether_bricks.png", "nether_bricks.png", "nether_bricks.png", "nether_bricks.png", "nether_bricks.png", "nether_bricks.png"],
+"durab": 3600,
+"name": "Nether Bricks",
+"money_pb": 1000,
+"color": "170000",
+"xp_goal": 3300
+},{
+"stage": 33,
+"textures": ["red_nether_bricks.png", "red_nether_bricks.png", "red_nether_bricks.png", "red_nether_bricks.png", "red_nether_bricks.png", "red_nether_bricks.png"],
+"durab": 4000,
+"name": "Red Nether Bricks",
+"money_pb": 1200,
+"color": "80030f",
+"xp_goal": 3400
+},{
+"stage": 34,
+"textures": ["end_stone.png", "end_stone.png", "end_stone.png", "end_stone.png", "end_stone.png", "end_stone.png"],
+"durab": 4500,
+"name": "End Stone",
+"money_pb": 1300,
+"color": "fffcbf",
+"xp_goal": 3500
+},{
+"stage": 35,
+"textures": ["end_stone_bricks.png", "end_stone_bricks.png", "end_stone_bricks.png", "end_stone_bricks.png", "end_stone_bricks.png", "end_stone_bricks.png"],
+"durab": 5000,
+"name": "End Stone Bricks",
+"money_pb": 1500,
+"color": "fffcbf",
+"xp_goal": 3600
+},{
+"stage": 36,
+"textures": ["purpur_block.png", "purpur_block.png", "purpur_block.png", "purpur_block.png", "purpur_block.png", "purpur_block.png"],
+"durab": 5600,
+"name": "Purpur Block",
+"money_pb": 1700,
+"color": "e65cd8",
+"xp_goal": 3700
+}
+]

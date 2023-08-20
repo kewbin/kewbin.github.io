@@ -1,27 +1,30 @@
 function abbreviate(number, maxPlaces, forcePlaces, forceLetter) {
   number = Number(number)
   forceLetter = forceLetter || false
-  if(forceLetter !== false) {
+  if (forceLetter !== false) {
     return annotate(number, maxPlaces, forcePlaces, forceLetter)
   }
   var abbr
-  if(number >= 1e21) {
+  if (number >= 1e21) {
     abbr = 'ac'
   }
-  else if(number >= 1e18) {
+  else if (number >= 1e18) {
     abbr = 'ab'
   }
-  else if(number >= 1e15) {
+  else if (number >= 1e15) {
     abbr = 'aa'
   }
-  else if(number >= 1e12) {
+  else if (number >= 1e12) {
     abbr = 'T'
   }
-  else if(number >= 1e9) {
+  else if (number >= 1e9) {
     abbr = 'B'
   }
-  else if(number >= 1e6) {
+  else if (number >= 1e6) {
     abbr = 'M'
+  }
+  else if (number >= 1e4) {
+    abbr = 'k'
   }
   else {
     abbr = ''
@@ -32,7 +35,7 @@ function abbreviate(number, maxPlaces, forcePlaces, forceLetter) {
 function annotate(number, maxPlaces, forcePlaces, abbr) {
   // set places to false to not round
   var rounded = 0
-  switch(abbr) {
+  switch (abbr) {
     case 'ac':
       rounded = number / 1e21
       break
@@ -51,17 +54,20 @@ function annotate(number, maxPlaces, forcePlaces, abbr) {
     case 'M':
       rounded = number / 1e6
       break
+    case 'k':
+      rounded = number / 1e3
+      break
     case '':
       rounded = number
       break
   }
-  if(maxPlaces !== false) {
+  if (maxPlaces !== false) {
     var test = new RegExp('\\.\\d{' + (maxPlaces + 1) + ',}$')
-    if(test.test(('' + rounded))) {
+    if (test.test(('' + rounded))) {
       rounded = rounded.toString().match(/^-?\d+(?:\.\d{0,4})?/)[0]
     }
   }
-  if(forcePlaces !== false && number >= 1e3) {
+  if (forcePlaces !== false && number >= 1e3) {
     rounded = rounded.toString().match(/^-?\d+(?:\.\d{0,3})?/)[0]
   }
   return rounded + abbr
