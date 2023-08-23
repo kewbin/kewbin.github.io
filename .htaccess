@@ -1,2 +1,2 @@
 RewriteEngine on
-RewriteRule ^(.*)$ https://lunarity.space/ [R=301,L]
+RewriteRule ^(.*)$ https://lunarity.space/$1 [R=301,L]
