@@ -1,2 +1,0 @@
-RewriteEngine on
-RewriteRule ^(.*)$ https://lunarity.space/$1 [R=301,L]
